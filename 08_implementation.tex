@@ -1,0 +1,76 @@
+%!TEX root = thesis.tex
+\chapter{Implementation} % (fold)
+\label{ch:implementation}
+
+\todonote{css: conditional styling}
+
+\section{Server}
+
+using hash of url as ids.
+
+looking for images and videos in the article.
+
+\subsection{Word tagging}
+tagging: maxent\_treebank\_pos\_tagger, Treebank Part of Speech Tagger (Maximum entropy) - sikkert upenn corpus.
+%upenn\_treebank.pdf
+
+alternativt: Treebank Part of Speech Tagger (HHM)
+
+
+wordnet\_enrich: ``W-kmeans: Clustering News Articles Using WordNet'', 116262780379.pdf
+
+wordnet sammensatte ord
+
+cite ``Text Classification Using WordNet Hypernyms.pdf''
+hypen density. This is better in 116262780379.pdf
+
+using nouns and adjectives NOT nouns and verbs as in ``Text Classification Using WordNet Hypernyms.pdf''
+
+
+tagging på feeds er givet fra feedets navn. Kan bruges til at verificere min classification.
+
+
+
+Opbygge en database med articler og bruge det som basis for similarity queries.
+wordnet\_ic Information Content: Load an information content file from the wordnet\_ic corpus.
+\begin{lstlisting}[caption=cap,label=lst:lab,float=htbp]
+	>>> from nltk.corpus import wordnet_ic
+	>>> brown_ic = wordnet_ic.ic('ic-brown.dat')
+	>>> semcor_ic = wordnet_ic.ic('ic-semcor.dat')
+	>>> dog.res_similarity(cat, brown_ic)
+	7.9116665090365768
+	>>> dog.res_similarity(cat, genesis_ic)
+	7.1388833044805002
+\end{lstlisting}
+
+
+
+\section{Client Side}
+
+worker.js to create a background worker to perform the constriant programming.
+
+Model-View-Control using backbone.js
+
+Paging: single page web apps + manipulation the browser history \url{https://developer.mozilla.org/en/DOM/Manipulating_the_browser_history}
+
+
+Assignment from library in stead of arbitrary assignment? The latter is a more hypothetical approach. Providing the library as a constraint, where each variable assignment must have a unique combination from one of the possibilities of the constraint.
+(sim,breaking,chars,date,sections?,columns):list
+
+
+Ranges can be optimised in space by converting them to integer ranges. This can be done by setting min = 0 and max = (b-a)/gap.
+
+Furthermore each subdomain should be able to be represented by a set of ranges and atomic values. Propagating through values causes many iterations and a whole range may be discarded by looking at its maximum and minimum value. However, if the range holds a potential valid value (solution to a variable) it can be divided into smaller ranges and their minimum and maximum values may be examined. This divide-and-conquer technique may continue until the search reaches atomic values (determined by the gap value of the range). If some atomic values and ranges seems to fulfil the constraints they should be returned. And the subdomain now consists of both ranges and atomic values.
+
+Optimal/promising
+fixed budget computation
+
+The library could take any combination of constraints and then organise them into conjunctions of disjunctions, with the constraints taking fewer values first.
+
+In the implementation this is done by hand, so the program takes conjunctions of disjunctions of constraints organised with constraints that takes fewer values first. Constraint weighing could also help organising the disjunctions and furthermore lead the search to concentrate on variables that is bound by these constraints. (p. 222 AIRussel).
+
+Constraints should point to specific variables, this makes it somewhat rigid/ineffective because I have to write at global constraint that accounts for everything (ineffective in propagation -  might also be a problem if it does not show progress in changing values, i.e. it is a hard constraints and not returning a cost of the set of values.) or divide it into smaller constraints separated by an `or' (v). The latter is ineffective because there would should be a combination of constraints accounting for every situation, e.g. if the first variable is satisfying an unary constraint, the next say 3 variables (if the problem holds 4 variables) could satisfy three unary constraints, an unary and a binary (two combinations exists) or a constraint that takes three variables. This grows fast with the number of constraints.
+
+\todonote{Does it make sense that a continuous range cannot have specific values removed? Should it be possible for it be divided into subranges if the user decides to remove a range of values in between its domain of [min;max]?}
+
+% section design (end)

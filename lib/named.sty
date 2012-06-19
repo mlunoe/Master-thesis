@@ -1,0 +1,42 @@
+% /usr/local/lib/tex/bibtex/named.sty, Mon Jun 29 13:16:46 1992
+% Edit by Nelson H. F. Beebe <beebe@plot79.math.utah.edu>
+%
+% This LaTeX option file is for use with bibliographies produced with
+% named.bst.
+%
+
+\def\@makechapterhead#1{%
+  \vspace*{50\p@}%
+  {\parindent \z@ \raggedright \normalfont
+   \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter
+        \large\scshape \@chapapp \space\space \Huge\upshape\thechapter
+        \par\nobreak
+        \vskip 20\p@
+      \fi
+    \fi
+    \interlinepenalty\@M
+    \flushleft\parbox{\textwidth}{\raggedleft \sffamily\Huge\bfseries  #1}
+     \par\nobreak
+     \vskip 15pt
+     \hrule height 0.4pt
+    \vskip 80\p@
+  }}
+
+\def\@makeschapterhead#1{%
+  \vspace*{50\p@}%
+  {\parindent \z@ \raggedright \normalfont
+    \interlinepenalty\@M
+%    \flushleft\parbox{\textwidth}{\raggedleft \sffamily\Huge\bfseries  #1}
+     \sffamily\huge\bfseries  #1
+
+     \par\nobreak
+     \vskip 15pt
+     \hrule height 0.4pt
+    \vskip 80\p@
+  }}
+
+\let\@internalcite\cite
+\def\cite{\def\citeauthoryear##1##2{##1, ##2}\@internalcite}
+\def\shortcite{\def\citeauthoryear##1##2{##2}\@internalcite}
+\def\@biblabel#1{\def\citeauthoryear##1##2{##1, ##2}[#1]\hfill}

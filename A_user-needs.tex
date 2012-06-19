@@ -1,0 +1,118 @@
+%!TEX root = thesis.tex
+\chapter{User Needs}
+This section will define the user needs for the application.
+
+\section{Personas}
+%http://www.pewinternet.org/Reports/2010/Generations-2010.aspx 2010
+%http://epp.eurostat.ec.europa.eu/portal/page/portal/statistics/search_database
+%http://epp.eurostat.ec.europa.eu/tgm/table.do?tab=table&init=1&plugin=1&language=en&pcode=tin00097
+%Individuals using the Internet for reading / downloading online newspapers / news magazines (tin00097)
+
+\begin{itemize}
+	\item \url{student} 35\%, \url{employees self-employed family workers} 31\%, unemployed, retired or other inactive
+	\item \url{high formal education} 50\%, medium formal education, no or low formal education
+	\item \url{male} 55\%, female
+	\item \url{16-24} 34\%, \url{25-54} 34\%, 55-64, 65-74
+\end{itemize}
+
+\subsection{Thomas: student medium formal education male 21}
+Thomas is 21 and a student at the Technical University of Denmark to be a bachelor of engineering in software. He is very interested in soccer and is therefore always updated on sports news. He reads about it online, newspapers and talks about it with friends. With big events he even likes to post it on Facebook. As a soon-to-be software engineer he has a natural thirst for news about technology, and he mainly reads these at home at the dormitory.
+wired.com, newz.dk, engadget.com, facebook.com
+computer, Samsung Galaxy Tab
+
+\subsection{Laura: employed high formal education female 39}
+Laura is 39 and is employed as a key account manager. She likes to be updated on strategies and economical status of rivalling companies. She is also very interested in politics and likes to discuss this subject with her friends. She reads economical news and likes to be updated on the run.
+b.dk, borsen.dk, twitter.com
+iPhone, iPad
+
+\subsection{Marie: unemployed no or low formal education female 61}
+Marie is 61 and a currently unemployed housekeeper. She spends her day looking for a job and taking care of her pet cat until her husband comes home. She mostly looks for the gossip sections or news about crime or big disasters. She also spends some time reading through the travelling guides as she dreams of going away with her husband.
+ekstrabladet.dk, bt.dk, nyhederne.tv2.dk
+computer, Lenovo IdeaPad A1
+
+\subsection{Carl: retired or other inactive high formal education male 69}
+Carl is a retired professor in psychology. He likes to discuss human behaviour and relation with his acquaintances and is very interested in cultural events. Therefore he often seeks the cultural sections and discussion fora to see what is going on. 
+politiken.dk, aok.dk, dr.dk
+computer, iPad
+
+\section{Scenarios}
+\subsection{Thomas}
+Thomas comes home after a day at the study, picks up his tablet computer and opens Editor from the desktop. Editor opens and shows him the front page where all the headlines stories are displayed. The main story is about a new version of the Android OS that has been released today and presses it to read more. The story opens in a full window display with quality images to match the articles. He reads the first section and feels satisfied with the amount of information, but wants to share the information on Facebook, so he clicks share button and writes a comment and posts it on his Facebook wall. He closes the article and returns to the front page. He sees a top story below the main story about Mr. Mærsk Mc-Kinney Møller who has died. It is not a story that falls into his key interests, but as the news is big he is satisfied that he got informed about it. Thomas feels like reading more about technology so he opens the menu and chooses the ``Tech'' section he has installed in the application. The section opens with a head line and a page number to let him know where in his paper he has navigated to and finds an article about a new multicore CPU technology. He has never been interested in CPU technology before, but finds this technology interesting after reading about it, so he opens the application settings and types in keywords about the technology under his ``Tech'' section to keep him updated about it. He also adjusts the ratio between general and personal news, to be less personal as he feels like he needs to broaden his horizon a bit with respect to news. He closes the settings menu and Editor immediately starts updating the articles. Some new articles about CPU technology has been included amongst the articles in the ``Tech'' section after paging through the section and reading some of the most interesting articles he closes the application.
+
+It could be nice if the key words of a story could be or is already highlighted, so he can click it and add it to his positive or negative list.
+
+``Define keywords and user preferences as rules (static and ageing, dynamic)'' \cite{Personalizing-your-electronic-newspaper.pdf}
+
+\subsection{Laura}
+Laura is on the train on her way to a business meeting this morning and pulls out her tablet and sees she has one notification from Editor. She opens Editor to get updated on todays news. The front page is displayed and there are headlines from different top articles and a notification is shown in the corner. She presses the notification and the pages turns to show her the article, which opens in full screen. After reading it she wants to see todays headlines, so she presses the back button to return to the paper and presses the return to front page button and the paper turns pages to reach the front page. She scans the page to see if there is any big news about her rivalling companies. There is no breaking news, so she just turns the page to browse the content of todays paper. As she browses the ``Politics'' section of her paper she finds an article about the Prime Minister introducing a new bill about a toll ring around the capitol city. She chooses the article and it is shown in full screen. As she reaches the bottom of the article she sees the comments about it where her friends and most others are against it. She decides to join the discussion and posts a comment on the article wall. She also sees one of her friends has not commented on the article wall and decides to share the article with her as she thinks she would agree with her opinion. She presses the share button and chooses the Editor logo. A list of her friends is shown, some of them who has already read the article is greyed out, but the one she was looking for is not. So she chooses her and a notification is sent to her.
+
+\subsection{Marie}
+It is morning and Marie wants to check the news with her coffee in the couch, so she opens Editor from her tablet to get updated. The front page is displayed with a collection of stories as highlights of the content of the paper. It mainly contains stories about celebrities and a big disaster that has happened in japan, but there is also a story about a big political change, that she does not find interesting. So she goes to the settings menu and types in ``politics'' to add to her negative list. She also adjusts the personal/general news ratio to contain only personal news as she wants only news that is directed to her. She returns to the front page which is now free of political stories. Her newspaper contains many images and videos as she has set her graphical/textual content ratio more towards graphical content.
+
+\subsection{Carl}
+Cultural, funnies
+
+\section{Business Case}
+
+\subsection{Need}
+User value: personal quality fresh stories (content providers should be chosen!) enriched with quality images. Same navigation as actual newspapers, but faster. Instantly up-to-date. Adaptive layout. Adjustable user profile.
+
+\subsection{Approach}
+personalised content + layout.
+
+Constraint Programming: fast computation - good for optimal solutions, describes the generic solution in stead of how to solve or find it, very easy to tailor the problem definition of the solution and adjust it and even let users make the adjustments, transparent.
+
+Content providers can get to know their readers preferences better and improve the provided content.
+
+\subsection{Benefit Per Cost}
+revenue flow: Content providers are paid. Income from advertisers (scattered \cite[p. 6-7]{kristin_fredrik.pdf}) and users. Income from selling user behaviour. Free version w. commercials + paid (monthly) without.
+
+\subsection{Competition}
+Flip board, Wired magazine and app with actual editors affiliated.
+
+\todonote{Which design choices to focus on?}
+
+\begin{itemize}
+	\item ``open, turn pages, chose article, read and return'' \cite[p. 6]{FULLTEXT01.pdf}
+	\item both general and personal news (collaborate filtering solves that some news are not received, but are universally interesting \cite{fulltext.pdf})
+	\item full screen display of article
+	\item images + video? adjustable
+	\item graphical/textual content ratio
+	\item opens in front page view (summery of newspaper 8 articles) \cite[p. 8]{kristin_fredrik.pdf}
+	\item put in personalised sections
+	\item back page, funnies?
+	\item section headline \cite[p. 6-7]{kristin_fredrik.pdf}
+	\item article headlines
+	\item article summaries / extracts \cite{fulltext.pdf}
+	\item menu w. section headlines \cite[p. 8]{kristin_fredrik.pdf}
+	\item page numbers \cite[p. 6-7]{kristin_fredrik.pdf}
+	\item page turn
+	\item press ``like'' or key word based user profile (mark self or highlighted? right click to add): positive + negative list (keywords+categories \cite{10-1-1-19-5583}, \cite{fulltext.pdf} and \cite{gervasum2001ws.pdf})
+	\item adjust variables
+	\item share social network
+	\item share directly (grey out the ones who have read it)
+	\item comment
+	\item see friends comments
+\end{itemize}
+
+\section{Technical Requirements}
+\begin{itemize}
+	\item ``the clear overview of content, including a beginning and an end, the ease of use, typography and design'' \cite[p. 7]{FULLTEXT01.pdf}
+	\item familiarity in design from printed paper \cite[p. 7]{FULLTEXT01.pdf}
+	\item  ``news valuation, e.g. positioning of lead story'' \cite[p. 7]{FULLTEXT01.pdf}
+	\item  mobility \cite[p. 7]{FULLTEXT01.pdf}
+	\item  continuous updates \cite[p. 7]{FULLTEXT01.pdf}
+	\item  ability to search \cite[p. 7]{FULLTEXT01.pdf}
+	\item  ``easy and intuitive navigation'' \cite[p. 7]{FULLTEXT01.pdf}
+	\item add video and sound \cite[p. 7]{FULLTEXT01.pdf}
+	\item Landscape + portrait \cite[p. 6-7]{kristin_fredrik.pdf}
+	\item touch screen interaction \cite[p. 6-7]{kristin_fredrik.pdf}
+	\item Design+layout from printed newspaper \cite{hcii2005_1004.pdf}
+	\item Functionality from online newspaper \cite{hcii2005_1004.pdf}
+	\item Name of columnist \cite[p. 4]{gervasum2001ws.pdf}
+	\item Transparency of implicit relevance feedback (see/modify current weights of categories) \cite[p. 7]{gervasum2001ws.pdf}
+	\item dynamic short-term + static long-term user profile \cite{10-1-1-19-5583}, \cite{fulltext.pdf} and \cite{gervasum2001ws.pdf}
+	\item relevance feedback \cite{10-1-1-19-5583}, \cite{fulltext.pdf} and \cite{gervasum2001ws.pdf}
+\end{itemize}
+
+In which period of time is an article relevant to a user? Maybe if it is still available, then it is still interesting - new approaches or discussion about the subject might arise. How do we control that a news item is not missed? Keep index of what has been viewed in addition to what has been read.

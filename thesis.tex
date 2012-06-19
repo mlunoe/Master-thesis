@@ -1,0 +1,85 @@
+%  PHDTHESIS TEMPLATE FILE
+%  Adopted from Thomas Fabricius and Henrik Aalborg Nielsen
+%  Jan Larsen, IMM, DTU, Nov 2003 ver 1.0
+%  Updated by Finn Kuno Christensen, fkc@imm.dtu.dk Aug 15, 2008
+
+%  COMPILATION STEPS USING INVOLVING A PS FILE
+%\documentclass[10pt,twoside,dvips]{book}
+%  latex phdthesis.tex
+%  dvips -D600 -Pamz -Pcmz -j0 phdthesis.dvi -o phdthesis.ps
+%  ps2pdf -sPAPERSIZE#b5 phdthesis.ps phdthesis.pdf (or use Acrobat Distiller)
+
+%  COMPILATION STEP USING PDFLATEX
+\documentclass[10pt,twoside]{book}
+%  pdflatex thesis.tex
+
+%%%%%%%%%%% MODIFY THESE LINES ONLY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\thesisyear{2012} % Year thesis submitted
+\def\thesisnumber{??}  % Only number no year
+\def\thesisauthor{Michael Lunøe} % Thesis author
+\def\thesistitle{Personalising the Editorial Mix for a Digital Newspaper using Constraint Programming} % Title of thesis
+\def\thesiskeywords{constraint programming, editorial mix, personalisation}
+\def\thesisISBN{????-????} %OBSOBS provide ISBN number for industrial phd students ONLY
+\def\thesisversion{print} %OBSOBS choose this for printed version send to printing
+%\def\thesisversion{net} %OBSOBS choose this for the net version for the web and publication database
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\np}{$\mathcal{NP}$}
+
+\input{preamble}
+\begin{document}
+
+\input{00_frontpage}
+
+% PREFACE CHAPTERS INCLUDE
+\frontmatter
+\pagenumbering{roman}
+
+\input{01_summary}
+\markboth{}{}
+\input{02_resume}
+\markboth{}{}
+\input{03_preface}
+\markboth{}{}
+%\input{papers.tex} TODO:
+%\markboth{}{}
+\input{04_acknowledge}
+\markboth{}{}
+
+% TABLE OF CONTENTS
+\newpage\mbox{}\newpage
+\chaptermark{Contents}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\sectionmark{Contents}
+\addtolength{\parskip}{-\baselineskip}
+\tableofcontents
+\addtolength{\parskip}{\baselineskip}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+% MAIN CHAPTERS INCLUDE
+\mainmatter
+\include{05_introduction}
+\include{06_theory}
+\include{07_analysis}
+\include{08_implementation}
+\include{09_discussion}
+\include{10_conclusion}
+
+% APPENDIX CHAPTERS INCLUDE
+\appendix
+
+% Appendix A, B, ...
+\include{appendix}
+
+\backmatter
+
+\chaptermark{Bibliography}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\sectionmark{Bibliography}
+
+%%%%%%%BIBLIOGRAPHY INCLUDE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliography{thesis}    % Bibliography
+\bibliographystyle{lib/named}
+
+\end{document}
