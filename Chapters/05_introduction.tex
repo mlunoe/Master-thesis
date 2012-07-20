@@ -1,0 +1,257 @@
+%!TEX root = ../thesis.tex
+\chapter{Creating the Editorial Mix} % (fold)
+\label{ch:introduction}
+This chapter introduces the editorial mix of a digital newspaper and which parameters to account for when composing the newspaper. It is afterwards discussed which of these parameters are suited for personalisation, and how this can be done. The proposed approach is then presented with its pros and cons, which results in a list of contributions this project has to the field of personalisation.
+%\todo[inline]{Introduce an automated editorial mix to the digital newspaper. Bringing rss-readers and digital newspapers closer together.}
+
+\section{What is the Editorial Mix}
+In the conventional newspapers the editors job is to compose an intriguing front page that offers the contents of the sections that might interest the individual user. His challenge is to accommodate the needs of the newspapers segment of readers, divide the articles into sections, with a nice reading flow and attractive illustrations, and hand-pick articles to go on the front page. But what if a computer could do this?
+%"their segment of readers", hvis readers? Måske det ville lyde bedre hvis man skrev "the paper's segment of readers" eller noget i den dur.
+
+\cite{perkowitz-Adaptive-Web-Sites} decomposes the problem of synthesising adapted page into several subproblems\sidenote{In the subproblems stated here, ``hyperlink'' has been replaced by ``item'' to appreciate them more generally, rather than the original specific sense.}:
+\begin{itemize}
+	\item What is the content (that is, set of items) of the index page?
+	\item Does it have a coherent topic? What should its title be?
+	\item How are the items on the page ordered?
+	\item How are the items labeled?
+	\item Is the page consistent with the site's overall graphical style?
+	\item Is it appropriate to add the page to the site? If so, where?
+\end{itemize}
+
+Some efforts have been made to digitally calculate similarities between articles and based on a current article suggest similar reading material or use collaborate filtering to suggest articles based on other users reading behaviour. Some papers proposes a composition of articles from user picked RSS-feeds, which can, e.g.\ in the case of Google Reader, be divided into sections. This comes close to conventional newspapers, but there is no ordering of the flow of articles. The ordering, flow and choice of relevant articles is here on referred to as the \emph{relational} part of the editorial mix.
+% "Others offer composition of articles..." Others giver ikke mening her, hvem mener du?
+
+The solution for some digital newspapers are still to have an editor to create their coherent composed digital newspaper, like the New York Times or Wired Magazine. Flipboard, on the other hand, composes their editorial mix of articles from feeds and divides their pages  into three or more rarely four or five articles\sidenote{Flipboard includes specialised layouts with more articles per page for Twitter.} with excerpts and images, much like conventional newspapers front pages. How they choose their composition is kept a business secret, but it does seem to vary a lot, see Figure~\ref{fig:flipboard-screenshot}.
+
+\begin{figure}[h!tb]
+ 	\begin{center}
+ 		\includegraphics[width=.45\textwidth]{img/flipboard2}
+ 	\end{center}
+ 	\caption{A screenshot of composition of three articles in Flipboard, with different subjects, i.e.\ world crime, world finance and technology news.}
+ 	\label{fig:flipboard-screenshot}
+\end{figure}
+
+\todo[inline]{Maybe put in a reference to a conventional newspaper.}
+
+It is hard to say if there is a control behind the placement of content other than the choice of featured and non-featured articles, but this is actually an example of a computationally composed newspaper. The placement and amount of room given for an article is here on referred to as the \emph{spacial} part of the editorial mix.
+
+Finally, subjects of articles have more relevance at some points in time than others and editors choose the amount of time stories should be available in, where RSS-readers just displays the newest articles first, which are not always the most relevant. This selection of articles within a chosen time frame is here on referred to as the \emph{temporal} part of the editorial mix.
+
+One thing that is vastly different from newspapers to RSS-readers is the ability to deliver personalised content, in that a user can choose which RSS-feeds to follow, whereas readers of newspapers need to navigate it in order to find interesting articles. Also where newspapers have quality assurance of its content, RSS-readers have a seemingly unlimited amount of articles.
+
+\section{Personalising a Digital Newspaper}
+\cite{BushMemex} describes a collective memory library machine that can be indexed, called the memex. Items in the library are linked together forming personal association trails. This is the early conception of the hypertext media that would later become the World Wide Web and later personalised web applications. With many respects that is what this project tries to achieve; i.e.\ link information in the form of articles together and present them in personalised trials defined by the user. As opposed to \cite{BushMemex} proposed manual linking it is now possible to, e.g.\ classify and compute similarity automatically, which greatly aids the process. 
+
+User preferences are very diverse and it is therefore hard to accommodate every individual in a single solution. A digital solution must be bound to a specific domain, but must also be open for novel use.
+
+%\begin{quotation}
+%	``Web personalization is the process of customizing a Web site to the needs of specific users, taking advantage of the knowledge acquired from the analysis of the user's navigational behavior (usage data) in correlation with other information collected in the Web context, namely, structure, content, and user profile data.'' \cite{MagdaliniWebMining}
+%\end{quotation}
+\begin{minipage}{.8\largefigure}
+\begin{flushleft}{\slshape
+``Web personalization is defined as any action that adapts the information or services provided by a Web site to the needs of a particular user or a set of users, taking advantage of the knowledge gained from the users' navigational behavior and individual interests, in combination with the content and the structure of the Web site.''} \\ \medskip
+-- \cite{MagdaliniWebMining}
+\end{flushleft}
+\end{minipage}
+	
+%\cite{WebMiningMulvenna} defines the goal of personalisation systems as follows: ``to provide users with the information they want or need, without expecting from them to ask for it explicitly''
+
+The three categories of the editorial mix can be described in the sense of personalisation as well. Accommodating user preference based on spacial personalisation is achieved by a placement of articles, temporal personalisation by selecting articles of higher news value based on their relevance time frame and finally, relational personalisation by selecting articles that provides more value based on their respective and collaborate topics. Temporal personalisation is also obtained by letting user preferences have a life time and decrease the preference influence on which articles to select as time passes.
+%Der er noget galt her, men er ikke helt sikker på hvad: "decrease its in influence.."
+
+All three categories are related as they each provide some value to the editorial mix, e.g.\ a different spacial placement of a specific article can provide a different composition of the editorial mix and therefore a different temporal and/or relational value to the user.
+%or the editorial composition/arrangement
+
+\section{Contributions of Constraint Programming}
+\hspace{-\marginparwidth}
+\begin{minipage}{.8\largefigure}
+\begin{flushright}{\slshape
+	``Informally, declarative programming involves stating \emph{what} is computed, but not necessarily \emph{how} it is computed. Equivalently, in the terminology of Kowalski's equation $algorithm = logic + control$, it involves stating the \emph{logic} of an algorithm, but not necessarily the \emph{control}.''} \\ \medskip
+-- \cite{LloydDeclarative}
+\end{flushright}
+\end{minipage}
+%
+%\begin{quotation}
+%``The logic component determines the meaning of the algorithm whereas the control component only affects its efficiency [...] When logic is separated from control, it is possible to distinguish (in the logic) what the program does from how the program does it (in the control)'' \cite{KowalskiAlgo}
+%\end{quotation}
+
+As a declarative programming language, Constraint Programming (CP) offers means for describing the problem to be solved using constraints and a general purpose constraint solver. Once the general purpose solver is set up, the constraints can be defined to model the problem to be solved, but does not necessarily make it easy. However, the problem definition can easily be extended and/or modified afterwards.
+
+\hspace{-\marginparwidth}
+\begin{minipage}{.8\largefigure}
+\begin{flushright}{\slshape
+	``Ordinary people generally aren't interested (and rightly so) in low-level programming details -- they just want to express the problem in some reasonably congenial way and let the system get on with solving the problem. [...] Having to deal only (or mostly) with the logic component simplifies many things for the programmer. First, (the logic component of) a declarative program is generally easier to write and to understand than a corresponding imperative program. Second, a declarative program is also easier to reason about and to transform, as much current research in functional and logic programming shows.''} \\ \medskip
+-- \cite{LloydDeclarative}
+\end{flushright}
+\end{minipage}
+
+Also, with logic comes precise solutions, but this does not come without a cost as stochastic approaches often beat logic by lengths. However, stochastic variables can be introduced to CP.
+
+%\section{Short Introduction to Constraint Programming}
+%\label{sec:CP}
+To be able to work with personalisation problems as Constraint Satisfaction Problems (CSPs) or Constraint Optimisation Problems (COPs), these need to be defined. The following descriptions of CSPs and COPs have been modified to fit personalisation problems from the original definitions provided by \cite{AIRussell} and~\cite{CPApt}.
+
+A Constraint Satisfaction Problem is defined by the 3-tuple $(\mathcal{X}, \mathcal{D}, \mathcal{C})$, where $\mathcal{X}$ is the set of variables, $\mathcal{D}$ is the corresponding set of domains and $\mathcal{C}$ is the set of constraints on the variables.
+
+Each variable has sub-domains corresponding to the sub-value of each value. And unlike \cite{AIRussell} and~\cite{CPApt} a constraint is here defined as a function of specific variables returning a boolean value. Therefore the tuple of $n$ variables with $m$ sub-variables and $k$ constraints on $r$ and $s$ number of variables, respectively, can be expanded to:
+
+\begin{align*}
+\begin{pmatrix}\vspace{3pt}
+	\mathcal{X} :
+	\begin{Bmatrix}
+		x_1 :
+		\begin{pmatrix}
+			x_1.a_1\\
+			\ldots\\
+			x_1.a_m\\
+		\end{pmatrix}
+		, \cdots,
+		x_n :
+		\begin{pmatrix}
+			x_n.a_1\\
+			\ldots\\
+			x_n.a_m\\
+		\end{pmatrix}
+	\end{Bmatrix},\\\vspace{1pt}
+	\mathcal{D} :
+	\begin{Bmatrix}
+		d_1 :
+		\begin{pmatrix}
+			d_1.a_1\\
+			\ldots\\
+			d_1.a_m\\
+		\end{pmatrix}
+		, \cdots,
+		d_n :
+		\begin{pmatrix}
+			d_n.a_1\\
+			\ldots\\
+			d_n.a_m\\
+		\end{pmatrix}
+	\end{Bmatrix},\\\hspace{3pt}
+	\mathcal{C} :
+	\begin{Bmatrix}
+		c_1 : func(x_i, \cdots,x_{i+r}) \rightarrow \mathbb{B}, \cdots, c_k : func(x_j, \cdots,x_{j+s}) \rightarrow \mathbb{B}
+	\end{Bmatrix}\hspace{3pt}
+\end{pmatrix}
+\end{align*}
+Where $\mathbb{B}$ is either \texttt{true} or \texttt{false}.
+
+A CSP is a subset of a Constraint Optimisation Problem (COP) and a COP is defined by the 4-tuple $(\mathcal{X}, \mathcal{D}, \mathcal{C}, \mathcal{O})$, where the three first elements are defined as in a CSP and $\mathcal{O}$ is a set objective (or cost) functions on variables, that determines the quality of a current state. The set of objective functions can be described with the same structure as constraints in CSPs and can be expanded as follows with $l$ number of functions on $t$ and $u$ number of variables, respectively.
+
+\begin{align*}
+	\mathcal{O} :
+	\begin{Bmatrix}
+		o_1 : func(x_i, \cdots,x_{i+t}) \rightarrow \mathbb{R}, \cdots, o_l : func(x_j, \cdots,x_{j+u}) \rightarrow \mathbb{R}
+	\end{Bmatrix}
+\end{align*}
+
+Where $\mathbb{R}$ is the set of real numbers.
+
+Satisfaction (or regular) constraints are also called hard constraints and objective functions, soft constraints because a solution can be found if all hard constraints are satisfied, whereas and optimal assignment is enough to satisfy objective functions.
+%\subsection{Constraint Optimisation Problems}
+%Wiki: ``A constraint optimization problem can be defined as a regular constraint satisfaction problem in which constraints are weighted and the goal is to find a solution maximizing the weight of satisfied constraints.
+%Alternatively, a constraint optimization problem can be defined as a regular constraint satisfaction problem augmented with a number of `local' cost functions. The aim of constraint optimization is to find a solution to the problem whose cost, evaluated as the sum of the cost functions, is maximized or minimized.''
+%\todo[inline]{Find reference that is not from wikipedia}
+
+%\todo[inline]{? Første side er vigtig for karaktergivningen. ``Det er komplekst det her, Nå, der er et bud på det... osv.''}
+%\todo[inline]{Introduce web personalisation}
+\section{Problem Description}
+This project is a feasibility study of the implementation of CP in the field of personalisation. The criteria of success is whether it is possible to successfully implement the techniques of personalisation using CP and to make personalisation more accessible with the aid of CP.
+%\footnote{In constraint satisfaction, constrained optimization seeks for a solution maximizing or minimizing a cost function, Wikipedia.}
+%\footnote{Personalization involves using technology to accommodate the differences between individuals, Wikipedia.}
+%The overall idea is to implement CP as a technique for personalisation of digital solutions and attempt to make personalisation more accessible with the aid of CP.
+Therefore the project will be divided into two main areas; i.e.\ the an assessment of the use of CP in the context of personalisation and a direct application of this in the form of a personal digital newspaper, where CP is used to personalise the content and composition of a digital newspaper.
+
+Many techniques for personalising digital solutions already exists, but the role of CP within this domain has not been determined. This project seeks to explore CP as a tool to make the personalisation of digital solutions more accessible.
+
+\subsection{Personalisation Challenges}
+In an attempt to introduce a personal editorial mix in the digital newspaper, the report will try to analyse which preferences the users will have with respect to the content, composition and the time frame of relevant articles. It will describe the search for articles to fit the user needs as an Constraint Optimisation Problem and try to solve it. What makes a newspaper is not only the accumulated content of its articles, but the arrangement of them. ``Which articles should go where'' is just as important, and the placement of articles in the newspaper should therefore go through an equal solving process.
+
+\subsection{Algorithmic Challenges}
+To be able to use and assess CP in the context of personalisation a full understanding must be acquired. Features that can be solved using CP will be modelled as a COP and solved. Furthermore, because the problem has a fixed budget for finding a solution, its algorithmic complexity will be analysed. The findings will be concluded in an evaluation of the applicability of CP to personalisation problems.
+
+%
+%
+%
+%\subsection{Subproblem specification}
+%Before evaluating the use of COPs with respect to personalisation it needs to be determined whether the problem can actually be described as a COP. Moreover, the editorial constraints needs to be defined. These will constitute a knowledge base of ground rules from which a paper will be generated. The article will look into current media, i.e.\ radio programmes, television programmes, magazines and of cause news papers, to try to specify rules of layout and succession of articles based on metadata. The first part of this article will address this problem.
+%
+%A crucial part of the project is also to lay down the means of bringing content to the paper. A normal way to do this would be to use feeds or to scrape web sites (extracting information from web sites) of articles. The pros and cons of each method and further options needs to be addressed and an optimal solution chosen. This will constitute the second part of the article.
+%
+%
+%
+%
+%bedste måde at inddrive den information vi skal bruge for at kunne arbejde med det og generere den digitale avis der passer dig bedst
+%
+%analyse -- cop i dybden medier kan -- synagien i et layout genskabes fra links og tweets?, design, implementation -- web, anvende, test (evaluere). Realtion til playlist -- som går på at få en stemning kommunikeret. Bygge en oplevelse -- hver artikel bidrager til helheden. tværsnit. analyse=model+brugerpræferencer. topic (flere) vs. genre (én). grænseværdi for topics (hvor mange giver mening) granulalitet. genre i første omgang. analysere sig frem til sammensætning af ord => definere topics -- distributioner af ord. mappe ord fra topic knowledge base til artikel. opbygge og glemme viden gradvist (1 måned eller 1 år?). Udvælge punkter der kunne være at undersøge.
+%
+%
+%%%%%%%%%%%%%%%%%%%%% Initial problem specification %%%%%%%%%%%%%%%%%%%%%%%%%
+% Optimising the Editorial Mix for a Digital Newspaper using Constraint Programming
+% Optimering af den Redaktionelle Sammensætning i en Digital Avis med brug af Constraint Programmering
+% start 6/2
+% aflevering 3/8
+% General project objectives:
+% The overall objective of the project is to make the student familiar with Constraint Programming, especially Constraint Optimised Problems, and its uses in the context of personalisation. A specific personalisation problem is implemented and solved using Constraint Programming and relevant metaheuristics. Finally, the project provides a conceptual basis for developing personal digital solutions and the uses for Constraint Programming.
+% Learning objectives:
+% Explore existing literature and summarise it.
+% Analyse the applicability of personalisation in a given domain and derive features of the problem to be personalised.
+% Find applicable metaheuristics for personalisation problems and refine them accordingly.
+% Model the identified features as constraints in a Constrained Optimisation Problem. Solve the defined Constraint Optimisation Problem in Constraint Programming.
+% Evaluate Constraint Programming as a tool for personalisation problems and compare the solution to existing solutions.
+% Describe and discuss the project in a report and present it orally.
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection{General Project Objectives}
+%The overall objective of the project is to make the student familiar with Constraint Programming, especially Constraint Optimised Problems, and its uses in the context of personalisation. A specific personalisation problem is implemented and solved using Constraint Programming and relevant metaheuristics. Finally, the project provides a conceptual basis for developing personal digital solutions and the uses for Constraint Programming.
+%
+%\subsection{Learning Objectives}
+%Explore existing literature and summarise it.
+%Analyse the applicability of personalisation in a given domain and derive features of the problem to be personalised.
+%Find applicable metaheuristics for personalisation problems and refine them accordingly.
+%Model the identified features as constraints in a Constrained Optimisation Problem.
+%Solve the defined Constraint Optimisation Problem in Constraint Programming.
+%Evaluate Constraint Programming as a tool for personalisation problems and compare the solution to existing solutions.
+%Describe and discuss the project in a report and present it orally.
+%
+%%%%%%%%%%%%%%%%%%%%% Revised Problem Specification: %%%%%%%%%%%%%%%%%%%%%%%%%%
+% Blooms taxonomy:
+%knowledge
+%comprehension
+%application
+%analyse
+%synthesise
+%evaluate
+%
+%\subsection{Title}
+%Personalising the Editorial Mix for a Digital Newspaper using Constraint Programming
+%
+%\subsection{Danish Title}
+%Personalisering af den Redaktionelle Sammensætning i en Digital Avis med brug af Constraint Programmering
+%
+%\subsection{Time Frame}
+%Project start 6/2-2012, delivery 3/8-2012.
+%
+%\subsection{General Project Objectives}
+%The overall objective of the project is to make the student familiar with personalisation and the concept of modelling user preferences in digital solutions. A specific personalisation problem is analysed and relevant design proposals are discussed. A chosen design is implemented and solved using Constraint Programming. The project provides a conceptual basis for the use of Constraint Programming in the context of developing personalised digital solutions. Finally, the project attempts to make personalisation more accessible for developers with the introduction of Constraint Programming to the field.
+%
+%\subsection{Learning Objectives}
+%Explore existing literature and summarise it.
+%
+%Analyse the applicability of personalisation in a given domain and derive features of the problem to be personalised.
+%
+%%Identify features in the domain that can be solved using Constraint Programming.
+%
+%Model the identified features as constraints and solve them using Constraint Programming.
+%
+%%Refine the identified features into general guidelines for the use of Constraint Programming in the context of personalisation.
+%
+%%Evaluate Constraint Programming as a tool for personalisation problems and compare the solution to existing solutions.
+%
+%Evaluate the solution and compare existing techniques for personalisation to the ones used in the solution.%betyder dette også at definere dens plads iblandt?
+%
+%Describe and discuss the project in a report and present it orally.
+%%%%%%%%%%%%%%%%%%%%%%%%%%% end of Revised problem spec %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% section introduction (end)

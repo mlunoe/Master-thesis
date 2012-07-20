@@ -1,0 +1,40 @@
+Changes in version 4.0.3 (February 2012)
+o Fixed page numbers with "oneside" global option
+
+Changes in version 4.0.2 (February 2012)
+o Fixed some details in the documentation
+
+Changes in version 4.0.1 (February 2012)
+o Bug fix: caption package loaded via arsclassica
+o Fixed some details in the documentation
+
+Changes in version 4.0 (February 2012)
+o Added compatibility with the version 4.0 of ClassicThesis and its new text body size
+
+Changes in version 3.0 (June 2010)
+o Added compatibility with the version 3.0 of ClassicThesis
+o Removed language option: the package now has no option at all  
+o Fixed the chapter titles spreading in more than one line
+o \ctTeX command fixed
+o biblatex package used to make the bibliography in the documentation
+o Documentation only in English 
+
+Changes in version 2.7 (February 2010)
+o Added compatibility with the "backref" option of classicthesis-ldpkg, introduced with the 2.7 version of ClassicThesis
+
+Changes in version 2.5.4 (January 2009)
+o Corrected some typos in the documentation
+
+Changes in version 2.5.3 (January 2009)
+o Documentation both in English and in Italian 
+o Support for the English, French, Spanish and German language, via the new options "english" (default), "french", "spanish" and "german", respectively
+
+Changes in version 2.5.2 (December 2008)
+o The numbers of parts are now in Roman (uppercase), rather than in roman (lowercase)
+
+Changes in version 2.5.1 (November 2008)
+o Fixed some details in the documentation
+o Note: Thanks to all the folks who already sent me some advices!
+
+Version 2.5 (November 2008)
+o First public release

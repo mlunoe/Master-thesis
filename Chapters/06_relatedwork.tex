@@ -1,0 +1,53 @@
+%!TEX root = ../thesis.tex
+\chapter{Perspectives and Inspirations}
+\label{ch:related_work}
+Web personalisation is by \cite{DataMiningMobasher} divided into phases of data collection and preprocessing, pattern discovery and evaluation, and applying the discovered knowledge in real-time to mediate between the user and the Web. There have been many suggestions on how to tackle these different processes of creating the interactive personalised digital newspaper. \cite{gervasum2001ws.pdf} proposes a strictly stochastic approach to dynamic personalisation obtained by characterisation of content and user's interests. Both implicit and explicit relevance feedback\footnote{Implicit is when the (unaware) user's behaviour is recorded to determine relevance and explicit is where the user is aware of the action of giving the feedback.} is used to refine the user models. Stochastic approaches have the advantage of being effective, but often solves a very specific problem. Also, these approaches tend to get very complex in order to deliver promising results. Some cope with this by introducing logic to the problem like it is done in \cite{SpacialLogicNilsson} with a spacial approach. In this project it is possible to benefit from the structure of the logic approach of CP and the effectiveness of a stochastic approach by introducing preference constraints with an objective function.
+
+\todo[inline]{Reference for stochastic approaches?}
+
+Many uses the approach of computing the tf-idf similarity with a cosine function as the distance function, as it is done in \cite{fulltext.pdf} to apply relational personalisation. It is based on a set of keywords extracted from the news items and a set of training documents. This constitutes the initial approach for computing similarity in this project. However, \cite{10-1-1-19-5583} argues that semantic knowledge is more substantial than keywords. 
+
+Classification techniques can be applied in order to ease the task of selecting relevant articles and determine their mutual relationships. \cite{gervasum2001ws.pdf} uses a library of documents to train a categorisation algorithm and the users are then asked to select categories of which they have interest. \cite{10-1-1-19-5583}, on the other hand uses a thesaurus of hierarchically, and to the task specifically, structured terms to index news articles. Results of the indexing are thereafter mapped with user profiles to select the relevant articles. In stead of using predefined root terms as the basis for a classification, WordNet can be used to obtain semantic knowledge for a document. WordNet is a large lexical database of English words and their relationships in the form of different graphs. \cite{116262780379.pdf} presents an algorithm for enriching articles using WordNet's hypernym-graphs. WordNet also contains similarity functions between words. These functions will later on constitute the next step for computing similarity in this project.
+
+\cite{fulltext.pdf} does present the means of combining the use of categories and keywords, but this approach demands predefined categories, which must be kept updated in order to follow semantic changes to the field. The time limitations and prioritisation of this project did not allow for a thesaurus to be obtained to aid the classification and will therefore not be introduced to the solution. One, could also argue that semantic assumptions are made, when categories are predefined, which could lead to some false classification. Whereas the structure of \cite{116262780379.pdf}'s algorithm bases its semantic structure only on words from the article and the general semantic (and more neutral) structure that constitutes the basis for WordNet.
+
+\cite{10.1.1.45.5230.pdf} presents a combination of content-based and collaborate filters to predict interest in articles based on a user profile.
+
+\cite{10.1.1.45.5230.pdf} presents a front page design and available sections. A section can appear as their front page.
+relevance feedback
+
+their editorial mix consists of ordering the articles by most predicted interest first.
+
+\cite{fulltext.pdf} along with both a short- and long-term representation of the user models. Furthermore, a global user profile, to get the process of generating the user model started.
+
+\cite{Personalizing-your-electronic-newspaper.pdf} incorporates temporal personalisation in that it is possible to ask for articles in the newspaper based on a specific period, but also by incorporate ageing of user interests.
+
+\cite{Estebanetal.pdf} incorporates temporal features of their personalisation of a digital newspaper based on Yahoo! Spain. Automatic Categorisation of news items, long- and short-term user models.
+
+In the explored literature users shows much interest in being able to turn pages as it is done in a regular newspaper. \cite{FULLTEXT01.pdf} describes this as ``open, turn pages, chose article, read and return''.
+
+\cite{fulltext.pdf} proposes the use of collaborate filtering to handle the problem of converging, which is what will happen if no non-personalised articles are introduced, but this still only concerns articles that are within the area of the users interest. If e.g.\ a user has not shown interest in politics, the news of Barack Obama becoming the President of USA will never be included in the newspaper. Instead a ratio between personalised and general articles will solve this issue, and since it is not within everyones interest to receive general news, this ratio should be adjustable.
+
+Users navigate the newspaper using sections and headlines as the main entry points \cite{FULLTEXT01.pdf} and these should therefore be kept in the digital version.
+
+Users express that these should be put into menu \cite{kristin_fredrik.pdf}.
+
+\cite{fulltext.pdf} proposes personalised excerpts from the articles to further ease the navigation.
+
+There exist many different examples of preference modelling using CP, and \cite{Constraint-Satisfaction-Methods-for-Information-Personalization.pdf} describes a factual information system to find personal information, e.g.\ about healthcare. They present two constraints: (1) select only information-objects that correspond to the user-model and; (2) the content of the retained information-items do not contradict each other. This is an example of an editorial mix in that it incorporates the relational features, i.e.\ both between user and articles, and articles in between. However, they do not take into account the spacial part of their editorial mix, nor do they take into account any temporal features of the information needed. It is of cause notable that the user needs for a strictly factual information system are different than from a newspaper.
+
+Another application of preference modelling using CP is \cite{LSVossen}. He proposes a CP approach to automatic playlist generation, which very much relates to what this project attempts to achieve. A playlist can be perceived as a, in this case, personal mix of songs. He presents constraints to exclude songs with certain attributes, to model that certain songs should be similar to each other or a user preference, to describe preference about the number of songs from a specific artist and the well-known \texttt{all-diff} constraint. These can be directly translated to the editorial mix of a newspaper, where the songs are articles and artists could be a specific author or content provider.
+
+%``Constraint programming (CP) is an emergent software technology for declarative description and effective solving of large, particularly combinatorial, problems especially in areas of planning and scheduling. [...] it is attracting widespread commercial interest as well, in particular, in areas of modelling heterogeneous optimisation and satisfaction problems.'' \cite{RomanCP}
+%
+%Where CP provides a declarative approach, with the possibility of introducing stochastic variables a purely stochastic approach also has it advantages.
+%
+%Stochastic approaches like the graph based Hidden Markov Model or the spacial like the one proposed in  are usually very effective, but often at the cost of being imprecise, but logic can also be introduced to stochastic approaches, \cite{SpacialNilsson}.
+%\todo[inline]{Find reference for this.}
+%
+%A graph approach to the problem could be a good solution as fast algorithms have been developed to minimise computation time. An example of this is the Hidden Markov Model which works on a dynamic Bayesian network\footnote{For more information \url{http://en.wikipedia.org/wiki/Hidden_Markov_model}.}. Here attributes or meta data of the article can be 
+%
+%\todo[inline]{Alternative solutions: graph based (Hidden-Markov-Models) and clustering, spacial distance (references to ConQuest NilssonHaav.pdf and 10 -Concept Spaces.pdf) in n-dimensional space is fast.}
+%\todo[inline]{formal logical approach will probably be beaten by stochastic solutions in speed, however they are imprecise. The happy medium is a combination of logical and stochastic approaches. Trade-off: imprecise stochastic/precise logic. To find the balance is very hard.}
+%\subsection{Existing solutions}
+%Personalisation of digital solutions becomes more common everyday and users demand personalised solution to accommodate their needs.

@@ -1,0 +1,395 @@
+% ****************************************************************************************************
+% 1. Configure classicthesis for your needs here, e.g., remove "drafting" below 
+% in order to deactivate the time-stamp on the pages
+% ****************************************************************************************************
+\PassOptionsToPackage{eulerchapternumbers,listings,drafting,%
+                 pdfspacing,%floatperchapter,%linedheaders,%
+                 subfig,beramono,parts}{classicthesis}    
+
+\usepackage{xspace} % To get the spacing after macros right
+
+\addtolength{\parskip}{\baselineskip}
+ \setlength{\parindent}{0pt}
+
+\newcommand{\myTitle}{Personalising the Editorial Mix for a Digital Newspaper using Constraint Programming\xspace}
+%\newcommand{\mySubtitle}{An Homage to The Elements of Typographic Style\xspace}
+%\newcommand{\myDegree}{Doktor-Ingenieur (Dr.-Ing.)\xspace}
+\newcommand{\myName}{Michael Lun\o e\xspace}
+%\newcommand{\myProf}{Put name here\xspace}
+%\newcommand{\myOtherProf}{Put name here\xspace}
+\newcommand{\mySupervisor}{Michael Kai Petersen\xspace}
+\newcommand{\myOtherSupervisor}{Carsten Witt\xspace}
+%\newcommand{\myFaculty}{\xspace}
+\newcommand{\myDepartment}{Department of Informatics and Mathematical Modelling\xspace}
+\newcommand{\myUni}{Technical University of Denmark\xspace}
+\newcommand{\myLocation}{Kgs. Lyngby\xspace}
+\newcommand{\myTime}{August 2012\xspace}
+%\newcommand{\myVersion}{}
+
+
+%----------------------------------------------------------------------------------------
+%   HYPERREFERENCES
+%----------------------------------------------------------------------------------------
+
+\PassOptionsToPackage{pdftex,hyperfootnotes=false,pdfpagelabels}{hyperref}
+\usepackage{hyperref}  % backref linktocpage pagebackref
+\pdfcompresslevel=9
+\pdfadjustspacing=1
+\sloppy
+
+\hypersetup{
+% Uncomment the line below to remove all links (to references, figures, tables, etc)
+%draft, 
+colorlinks=true, linktocpage=true, pdfstartpage=3, pdfstartview=FitV,
+% Uncomment the line below if you want to have black links (e.g. for printing black and white)
+%colorlinks=false, linktocpage=false, pdfborder={0 0 0}, pdfstartpage=3, pdfstartview=FitV, 
+breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,
+plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,
+hypertexnames=true, pdfhighlight=/O, urlcolor=webbrown, linkcolor=RoyalBlue, citecolor=webgreen,
+%------------------------------------------------
+% PDF file meta-information
+pdftitle={\myTitle},
+pdfauthor={\textcopyright\ \myName, \myUni, \myDepartment},
+pdfsubject={},
+pdfkeywords={},
+pdfcreator={pdfLaTeX},
+pdfproducer={LaTeX with hyperref and classicthesis}
+%------------------------------------------------
+}
+% ********************************************************************
+% hyperref
+% ******************************************************************** 
+\newcommand{\mail}[1]{\href{mailto:#1}{\texttt{#1}}}
+
+%----------------------------------------------------------------------------------------
+%   BACKREFERENCES
+%----------------------------------------------------------------------------------------
+\usepackage{ifthen} % Allows the user of the \ifthenelse command
+\newboolean{enable-backrefs} % Variable to enable backrefs in the bibliography
+\setboolean{enable-backrefs}{false} % Variable value: true or false
+
+\newcommand{\backrefnotcitedstring}{\relax} % (Not cited.)
+\newcommand{\backrefcitedsinglestring}[1]{(Cited on page~#1.)}
+\newcommand{\backrefcitedmultistring}[1]{(Cited on pages~#1.)}
+\ifthenelse{\boolean{enable-backrefs}} % If backrefs were enabled
+{
+\PassOptionsToPackage{hyperpageref}{backref}
+\usepackage{backref} % to be loaded after hyperref package 
+\renewcommand{\backreftwosep}{ and~} % separate 2 pages
+\renewcommand{\backreflastsep}{, and~} % separate last of longer list
+\renewcommand*{\backref}[1]{}  % disable standard
+\renewcommand*{\backrefalt}[4]{% detailed backref
+\ifcase #1 
+\backrefnotcitedstring
+\or
+\backrefcitedsinglestring{#2}
+\else
+\backrefcitedmultistring{#2}
+\fi}
+}{\relax} 
+
+%----------------------------------------------------------------------------------------
+%   AUTOREFERENCES SETUP
+%   Redefines how references in text are prefaced for different 
+%   languages (e.g. "Section 1.2" or "section 1.2")
+%----------------------------------------------------------------------------------------
+
+\makeatletter
+\@ifpackageloaded{babel}
+{
+\addto\extrasbritish{
+\renewcommand*{\figureautorefname}{Figure}
+\renewcommand*{\tableautorefname}{Table}
+\renewcommand*{\partautorefname}{Part}
+\renewcommand*{\chapterautorefname}{Chapter}
+\renewcommand*{\sectionautorefname}{Section}
+\renewcommand*{\subsectionautorefname}{Section}
+\renewcommand*{\subsubsectionautorefname}{Section}
+}
+\providecommand{\subfigureautorefname}{\figureautorefname} % Fix to getting autorefs for subfigures right
+}{\relax}
+\makeatother
+
+
+% ********************************************************************
+% makeidx, multicol
+% ********************************************************************
+\let\orgtheindex\theindex
+\let\orgendtheindex\endtheindex
+\def\theindex{%
+	\def\twocolumn{\begin{multicols}{2}}%
+	\def\onecolumn{}%
+	\clearpage
+	\orgtheindex
+}
+\def\endtheindex{%
+	\end{multicols}%
+	\orgendtheindex
+}
+
+\makeindex
+
+
+% ********************************************************************
+% listings
+% ********************************************************************
+
+\definecolor{lightergray}{gray}{0.99}
+
+\lstset{language=[LaTeX]Tex,
+    keywordstyle=\color{RoyalBlue},
+    basicstyle=\normalfont\ttfamily,
+    commentstyle=\color{Emerald}\ttfamily,
+    stringstyle=\rmfamily,
+    numbers=none,
+    numberstyle=\scriptsize,
+    stepnumber=5,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frameround=ftff,
+    frame=lines,
+    backgroundcolor=\color{lightergray}
+} 
+
+\lstset{	morekeywords=%
+        {RequirePackage,newboolean,DeclareOption,setboolean,%
+        ProcessOptions,PackageError,ifthenelse,boolean,%
+        chapterNumber,sodef,textls,allcapsspacing,%
+        MakeTextLowercase,orgtheindex,endtheindex,%
+        @ifpackageloaded,undefined,sfdefault,%
+        DeclareRobustCommand,spacedallcaps,%
+        microtypesetup,MakeTextUppercase,lowsmallcapsspacing,%
+        lowsmallcapsspacing,spacedlowsmallcaps,
+        spacedlowsmallcaps,lehead,headmark,color,%
+        headfont,partname,thepart,titleformat,part,
+        titlerule,chapter,thechapter,thesection,%
+        subsection,thesubsection,thesubsubsection,%
+        paragraph,theparagraph,descriptionlabel,titlespacing,%
+        graffito,lineskiplimit,finalhyphendemerits,%
+        colorbox,captionsetup,labelitemi,%
+        myincludegraphics,hypersetup,setlength,%
+        definecolor,lsstyle,textssc,subsubsection,%
+        graffito@setup,includegraphics,ifdefined,%
+        myTitle,textcopyright,myName,lstset,lstnewenvironment,%
+        setkeys,lst@BeginAlsoWriteFile,contentsname,%
+        toc@heading,@ppljLaTeX,z@,check@mathfonts,%
+        sf@size,ptctitle,mtctitle,stctitle,lst@intname,%
+        @empty,math@fontsfalse,@ppljscTeX,@iwonaTeX,%
+        @iwonascLaTeX,@ctTeX,tw@,ct@sc,@ctTeX,f@family,%
+        f@shape,ct@sc,ctLaTeX,ctLaTeXe,@twoe,@sctwoe,%
+        texorpdfstring,m@th,ctTeX,@mkboth,ProvidesPackage,%
+        theindex,PackageInfo,PackageWarningNoLine,%
+        mtifont,mtcindent,@iwonaLaTeX,@ppljTeX,@iwonascTeX,%
+        rohead,orgendtheindex,@ppljscLaTeX,%
+        @ifclassloaded,toc@headingbkORrp,backreftwosep,%
+        backrefalt,backreflastsep,areaset,pnumfont,%
+        arsincludegraphics,ExecuteOptions,PackageWarning,textcolor,%
+        MessageBreak,ars@@includegraphics,ifcld@backref,rofoot,formatchapter,%
+        if@twoside},
+        commentstyle=\color{Emerald}\ttfamily,%
+        frame=lines}
+
+\lstset{basicstyle=\normalfont\ttfamily}
+\lstset{flexiblecolumns=true}
+\lstset{moredelim={[is][\normalfont\itshape]{/*}{*/}}}
+\lstset{basicstyle=\normalfont\ttfamily}
+\lstset{flexiblecolumns=false}
+\lstset{moredelim={[is][\ttfamily]{!?}{?!}}} 
+\lstset{escapeinside={£*}{*£}}
+\lstset{firstnumber=last}
+\lstset{moredelim={[is][\ttfamily]{!?}{?!}}}
+
+\DeclareRobustCommand*{\pacchetto}[1]{{\normalfont\ttfamily#1}%
+\index{Pacchetto!#1@\texttt{#1}}%
+\index{#1@\texttt{#1}}}
+
+\DeclareRobustCommand*{\bibtex}{\textsc{Bib}\TeX%
+\index{bibtex@\textsc{Bib}\protect\TeX}%
+}
+
+\DeclareRobustCommand*{\amseuler}{\protect\AmS{} Euler%
+\index{AmS Euler@\protect\AmS~Euler}%
+\index{Font!AmS Euler@\protect\AmS~Euler}}
+
+\lstnewenvironment{code}% 
+{\setkeys{lst}{columns=fullflexible,keepspaces=true}%
+\lstset{basicstyle=\small\ttfamily}%
+}{}
+
+\lstset{extendedchars} 
+\lstnewenvironment{sidebyside}{% 
+    \global\let\lst@intname\@empty 
+    \setbox\z@=\hbox\bgroup 
+    \setkeys{lst}{columns=fullflexible,% 
+    linewidth=0.45\linewidth,keepspaces=true,%
+    breaklines=true,% 
+    breakindent=0pt,%
+    boxpos=t,%
+    basicstyle=\small\ttfamily
+}% 
+    \lst@BeginAlsoWriteFile{\jobname.tmp}% 
+}{% 
+    \lst@EndWriteFile\egroup 
+        \begin{center}% 
+            \begin{minipage}{0.45\linewidth}% 
+                \hbox to\linewidth{\box\z@\hss} 
+            \end{minipage}% 
+            \qquad 
+            \begin{minipage}{0.45\linewidth}%
+            \setkeys{lst}{frame=none}% 
+                \leavevmode \catcode`\^^M=5\relax 
+                \small\input{\jobname.tmp}% 
+            \end{minipage}% 
+        \end{center}% 
+} 
+
+\newcommand{\omissis}{[\dots\negthinspace]}
+
+%\graphicspath{{Graphics/}}
+
+%\hyphenation{Robert Bring-hurst DejaVu
+%Bera Mono Vera Classic-Thesis suite Knuth Zapf}
+
+\newcommand{\meta}[1]{$\langle${\normalfont\itshape#1}$\rangle$}
+\lstset{escapeinside={£*}{*£}}
+
+
+\DeclareRobustCommand*{\miktex}{MiK\TeX%
+\index{miktex@MiK\protect\TeX}%
+}
+
+\DeclareRobustCommand*{\metafont}{\MF%
+\index{METAFONT@\protect\MF}%
+}
+
+\DeclareRobustCommand*{\metapost}{\MP%
+\index{METAPOST@\protect\MP}%
+}
+
+\DeclareRobustCommand*{\texlive}{\TeX{}~Live%
+\index{texlive@\protect\TeX{}~Live}%
+}
+
+%----------------------------------------------------------------------------------------
+%   USEFUL COMMANDS
+%----------------------------------------------------------------------------------------
+
+\newcommand{\ie}{i.\,e.}
+\newcommand{\Ie}{I.\,e.}
+\newcommand{\eg}{e.\,g.}
+\newcommand{\Eg}{E.\,g.} 
+
+\usepackage{todonotes}
+%\newcommand\todonote[1]{\textcolor{red}{\todo[bordercolor=red,backgroundcolor=white,inline]{? #1}}}
+
+\newcounter{dummy} % Necessary for correct hyperlinks (to index, bib, etc.)
+\providecommand{\mLyX}{L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
+
+
+\PassOptionsToPackage{smaller}{acronym} % Include printonlyused in the first bracket to only show acronyms used in the text
+\usepackage{acronym} % nice macros for handling all acronyms in the thesis
+
+%------------------------------------------------
+
+%\renewcommand*{\acsfont}[1]{\textssc{#1}} % For MinionPro
+\renewcommand{\bflabel}[1]{{#1}\hfill}
+
+%------------------------------------------------
+
+\PassOptionsToPackage{pdftex}{graphicx}
+\usepackage{graphicx}
+\usepackage[lofdepth,lotdepth]{subfig}
+%\usepackage{subfigure}
+%\newcommand{\goodgap} {\hspace{\subfigtopskip} \hspace{\subfigbottomskip}}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+
+
+%----------------------------------------------------------------------------------------
+%   FLOATS: TABLES, FIGURES AND CAPTIONS SETUP
+%----------------------------------------------------------------------------------------
+
+\usepackage{tabularx} % Better tables
+\setlength{\extrarowheight}{3pt} % Increase table row height
+\newcommand{\tableheadline}[1]{\multicolumn{1}{c}{\spacedlowsmallcaps{#1}}}
+\newcommand{\myfloatalign}{\centering} % To be used with each float for alignment
+%\usepackage{caption}
+%\captionsetup{format=hang,font=small}
+%\usepackage{subfig} 
+
+
+% ********************************************************************
+% biblatex
+% ******************************************************************** 
+
+%\bibliography{Bibliography}
+%
+%\renewcommand{\nameyeardelim}{, }
+%
+%\defbibheading{bibliography}{%
+%\cleardoublepage
+%\manualmark
+%\phantomsection
+%\addcontentsline{toc}{chapter}{\tocEntry{\bibname}}
+%\chapter*{\bibname\markboth{\spacedlowsmallcaps{\bibname}}
+%{\spacedlowsmallcaps{\bibname}}}}     
+%
+%  \DeclareCiteCommand{\citeyearpar}[\mkbibparens] 
+%  {\boolfalse{citetracker}% 
+%   \boolfalse{pagetracker}% 
+%   \usebibmacro{prenote}} 
+%  {\printtext[bibhyperref]{\printfield{year}}} 
+%  {\multicitedelim} 
+%  {\usebibmacro{postnote}} 
+%
+%\makeatletter 
+%  \DeclareCiteCommand{\citetalias} 
+%  {\usebibmacro{prenote}} 
+%  {\usebibmacro{citeindex}% 
+%   \bibhyperref{\@citealias{\thefield{entrykey}}}} 
+%  {\multicitedelim} 
+%  {\usebibmacro{postnote}} 
+%\makeatother 
+
+%\setcounter{biburlnumpenalty}{9000}
+%\setcounter{biburlucpenalty}{9000}
+%\setcounter{biburllcpenalty}{9000}
+
+
+% ********************************************************************
+% other commands
+% ******************************************************************** 
+
+%\newcommand{\ita}[1]{% 
+%  \begin{otherlanguage*}{italian}#1\end{otherlanguage*}}
+  
+%\DeclareRobustCommand*{\pkgname}[1]{{\normalfont\sffamily#1}%
+%\index{Package!#1@\textsf{#1}}%
+%\index{#1@\textsf{#1}}}
+%
+%\DeclareRobustCommand*{\envname}[1]{{\normalfont\ttfamily#1}%
+%\index{Environment!#1@\texttt{#1}}%
+%\index{#1@\texttt{#1}}}
+%
+%\DeclareRobustCommand*{\optname}[1]{{\normalfont\ttfamily#1}%
+%\index{Option!#1@\texttt{#1}}%
+%\index{#1@\texttt{#1}}}
+%
+%\DeclareRobustCommand*{\clsname}[1]{{\normalfont\sffamily#1}%
+%\index{Class!#1@\textsf{#1}}%
+%\index{#1@\textsf{#1}}}
+%
+%\DeclareRobustCommand*{\cmdname}[1]{\mbox{\lstinline!\\#1!}%
+%\index{#1@\texttt{\hspace*{-1.2ex}\textbackslash#1}}}
+%
+%\DeclareRobustCommand*{\classicthesis}{Classic\-Thesis}
+%
+%\DeclareRobustCommand*{\arsclassica}{{\normalfont\sffamily ArsClassica}}
+%
+%\DeclareRobustCommand*{\miktex}{MiK\TeX%
+%\index{miktex@MiK\protect\TeX}}
+%
+%\DeclareRobustCommand*{\texlive}{\TeX{}~Live%
+%\index{texlive@\protect\TeX{}~Live}}
+
+

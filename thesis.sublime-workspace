@@ -1,0 +1,508 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "thesis.tex",
+			"settings":
+			{
+				"buffer_size": 6324,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Chapters/05_introduction.tex",
+			"settings":
+			{
+				"buffer_size": 22289,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Chapters/06_relatedwork.tex",
+			"settings":
+			{
+				"buffer_size": 9267,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Chapters/06_analysis.tex",
+			"settings":
+			{
+				"buffer_size": 17634,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Chapters/08_design.tex",
+			"settings":
+			{
+				"buffer_size": 9669,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Chapters/09_implementation.tex",
+			"settings":
+			{
+				"buffer_size": 4077,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Chapters/10_evaluation.tex",
+			"settings":
+			{
+				"buffer_size": 5334,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "classicthesis.sty",
+			"settings":
+			{
+				"buffer_size": 33293,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "arsclassica-settings.tex",
+			"settings":
+			{
+				"buffer_size": 14038,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 67.0,
+		"selected_items":
+		[
+			[
+				"figure",
+				"Snippet: Figure"
+			],
+			[
+				"figur",
+				"Snippet: Figure"
+			],
+			[
+				"tabe",
+				"Snippet: Table"
+			],
+			[
+				"table",
+				"Snippet: table"
+			],
+			[
+				"figre",
+				"Snippet: Figure"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/ml/Dropbox/Courses/Master thesis/thesis/classic.ist",
+		"/Users/ml/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/ml/Dropbox/Courses/Master thesis/report/preamble.tex",
+		"/Users/ml/Dropbox/Courses/Master thesis/report/07_analysis.tex",
+		"/Users/ml/Dropbox/Courses/Master thesis/code/Columns/README.md"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"tablecaptionabove",
+			"cap",
+			"caption",
+			"cap",
+			"caption",
+			"singlelinecheck",
+			"caption",
+			"sf",
+			"sffamily",
+			"part",
+			"halfgrey",
+			"Black",
+			"ct@",
+			"ct@parttext",
+			"part",
+			"goodgap",
+			"Columns",
+			"Editor",
+			"10.1.1.45.5230.pdf",
+			"colla",
+			"music",
+			"traditional",
+			"10.1.1.45.5230",
+			"Combining",
+			"front",
+			"FULLTEXT01.pdf",
+			"interest",
+			"temporal"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "thesis.tex",
+					"settings":
+					{
+						"buffer_size": 6324,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								818,
+								818
+							]
+						],
+						"settings":
+						{
+							"spell_check": true,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Chapters/05_introduction.tex",
+					"settings":
+					{
+						"buffer_size": 22289,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1445,
+								1445
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Chapters/06_relatedwork.tex",
+					"settings":
+					{
+						"buffer_size": 9267,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Chapters/06_analysis.tex",
+					"settings":
+					{
+						"buffer_size": 17634,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6136,
+								6136
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 977.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Chapters/08_design.tex",
+					"settings":
+					{
+						"buffer_size": 9669,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Chapters/09_implementation.tex",
+					"settings":
+					{
+						"buffer_size": 4077,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "Chapters/10_evaluation.tex",
+					"settings":
+					{
+						"buffer_size": 5334,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "classicthesis.sty",
+					"settings":
+					{
+						"buffer_size": 33293,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								28953,
+								28953
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/TeX.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 9729.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "arsclassica-settings.tex",
+					"settings":
+					{
+						"buffer_size": 14038,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6081,
+								6084
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1924.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 258.0,
+	"status_bar_visible": true
+}
