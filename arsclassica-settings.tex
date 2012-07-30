@@ -31,7 +31,7 @@
 %   HYPERREFERENCES
 %----------------------------------------------------------------------------------------
 
-\PassOptionsToPackage{pdftex,hyperfootnotes=false,pdfpagelabels}{hyperref}
+\PassOptionsToPackage{hyperfootnotes=false,pdfpagelabels}{hyperref}%,pdftex,
 \usepackage{hyperref}  % backref linktocpage pagebackref
 \pdfcompresslevel=9
 \pdfadjustspacing=1
@@ -134,6 +134,7 @@ pdfproducer={LaTeX with hyperref and classicthesis}
 % listings
 % ********************************************************************
 
+
 \definecolor{lightergray}{gray}{0.99}
 
 \lstset{language=[LaTeX]Tex,
@@ -208,9 +209,9 @@ pdfproducer={LaTeX with hyperref and classicthesis}
 \index{bibtex@\textsc{Bib}\protect\TeX}%
 }
 
-\DeclareRobustCommand*{\amseuler}{\protect\AmS{} Euler%
-\index{AmS Euler@\protect\AmS~Euler}%
-\index{Font!AmS Euler@\protect\AmS~Euler}}
+%\DeclareRobustCommand*{\amseuler}{\protect\AmS{} Euler%
+%\index{AmS Euler@\protect\AmS~Euler}%
+%\index{Font!AmS Euler@\protect\AmS~Euler}}
 
 \lstnewenvironment{code}% 
 {\setkeys{lst}{columns=fullflexible,keepspaces=true}%
@@ -246,7 +247,7 @@ pdfproducer={LaTeX with hyperref and classicthesis}
 
 \newcommand{\omissis}{[\dots\negthinspace]}
 
-%\graphicspath{{Graphics/}}
+%\graphicspath{{img}}
 
 %\hyphenation{Robert Bring-hurst DejaVu
 %Bera Mono Vera Classic-Thesis suite Knuth Zapf}

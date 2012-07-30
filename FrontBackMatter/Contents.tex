@@ -1,10 +1,11 @@
+%!TEX root = ../thesis.tex
 % Table of Contents - List of Tables/Figures/Listings and Acronyms
 
 \refstepcounter{dummy}
 
 \pdfbookmark[1]{\contentsname}{tableofcontents} % Bookmark name visible in a PDF viewer
 
-\setcounter{tocdepth}{2} % Depth of sections to include in the table of contents - currently up to subsections
+\setcounter{tocdepth}{1} % Depth of sections to include in the table of contents - currently up to subsections
 
 \setcounter{secnumdepth}{3} % Depth of sections to number in the text itself - currently up to subsubsections
 
@@ -73,10 +74,14 @@
 
 \chapter*{Acronyms}
 
-\begin{acronym}[UML]
-\acro{DRY}{Don't Repeat Yourself}
-\acro{API}{Application Programming Interface}
-\acro{UML}{Unified Modeling Language}
+\begin{acronym}[]
+\acro{API}{Application Programming Interface: A specification intended to be used as an interface by software components to communicate with each other.}
+\acro{CP}{Constraint Programming: Constraint programming is a programming paradigm wherein relations between variables are stated in the form of constraints.}
+\acro{CSP}{Constraint Satisfaction Problem: Mathematical problems defined as a set of objects whose state must satisfy a number of constraints or limitations.}
+\acro{COP}{Constraint Optimisation Problem: Can be defined as a regular constraint satisfaction problem in which constraints are weighted and the goal is to find a solution maximizing the weight of satisfied constraints.}
+\acro{RSS}{Really Simple Syndication: A family of web feed formats used to publish frequently updated works—such as blog entries, news headlines, audio, and video—in a standardized format.}
+% .*, Aa: [A-Z][A-Z]+
+% .*: \\emph\{(\w)*
 \end{acronym}  
                    
 \endgroup

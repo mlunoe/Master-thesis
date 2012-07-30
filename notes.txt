@@ -1,0 +1,515 @@
+///////////////// log book ///////////////////
+Week 7
+Current activities:
+Research. Found relevant articles on producing a digital newspaper. Selected articles with useful content. Started reading.
+
+Near future activities:
+Read and note down the findings. Describe an early model of user preferences, personalisation features and the general editorial mix based on articles. Describe new approaches and how to acquire data to achieve them.
+
+Week 8
+Current activities:
+Reading articles. Discussing approach:
+- Weight on defining the model from user data -> gives me direct guide lines, but requires a lot of work and therefore gives less focus on the actual product.
+- Weight on the product and testing the user experience. Model is defined from guidelines gathered from printed news papers rules and articles -> gives my personal desired weight on the product, but it is hard to measure a failure or success.
+
+Near future activities:
+Finish reading articles.
+
+Week 9:
+Current activities:
+Mostly reading. (Been working a lot at Creuna this week).
+
+Near future activities:
+Finish reading articles. Decide on approach. Structuring the implementation - how will the article space be distributed.
+
+Week 10:
+Finish reading articles. Decide on approach. Structure the implementation.
+
+Near future activities:
+Server
+Get a thesaurus, get a article database => implement pearson correlation, define editorial constraints (editorial model)
+Client
+user constraints (user profile) => implement newspaper generator
+
+Week 11:
+Only work. Start on analysis.
+
+Week 12:
+Mostly work. Start on backend.
+
+Week 13:
+First draft on backend done.
+
+Week 14:
+Defining layout constraints for a single section.
+
+Personalisation features more or less in place. Found an article that describes a general layout - this could be the base for the model for the layout in the application.
+
+Near future activities:
+Read the rest of the articles. Find a solution to how to define the general model with respect to content.
+
+Week 15:
+
+Week 16:
+nu user needs ()
+
+/////////////////// Motivation ////////////////////
+``We need information retrieval to help us organize newspaper articles so that we may spend more of our time reading articles of interest.'' \cite{10.1.1.19.5583.pdf} >2001
+
+///////////////// Introduction //////////////////////
+This paper does not concern with the device on which the application is viewed, but some concerns about the size will be considered. \cite[p. 1]{personal and FULLTEXT01.pdf}
+
+Best from both worlds and target three different groups - no best of both worlds combined! \cite[p. 2]{personal and FULLTEXT01.pdf}
+
+//////////////// Implementation //////////////////
+Use relevance feedback: \cite{21172_ftp.pdf}
+Use thesaurus? English/Dutch, International Press Thesaurus (IPT) \cite{10.1.1.19.5583.pdf} >2001
+User profile? thesaurus? \cite{10.1.1.19.5583.pdf} >2001
+
+Optimisation. Personal note.
+
+When should calculation of recommendations be done?
+1. User profile is fetched by server
+2. Articles are found using thesaurus on server
+3. Articles are send back to the client and presented to the user
+4. User makes a change, go to 1.
+
+No one, so far, has a succession constraint. The ability to arrange articles that complement each other nearby each other. Personal note.
+
+Define keywords and user preferences as rules (static and ageing, dynamic) \cite{Personalizing-your-electronic-newspaper.pdf} 1999
+
+A5 (A4 if reducible)
+Landscape (designers thought portrait) - I think both and ability to scroll the whole page!
+menu w. front page (main stories), sections and headlines on the left (maybe not on the left) (menu should be able to hide p. 8)
+scattered advertisements
+page numbers or timeline
+touch screen interaction
+------not------
+headlines on the right half
+chosen article on the left
+back/forward buttons in right bottom corner
+e-mail
+--------------- \cite[p. 6-7]{kristin_fredrik.pdf}
+
+Design+layout from printed newspaper
+Functionality from online newspaper \cite{hcii2005_1004.pdf}
+
+Name of columnist \cite[p. 4]{gervasum2001ws.pdf}
+
+Full articles or cut off articles with [...] personal note and \cite{erik}
+
+Transparency of implicit relevance feedback (see/modify current weights of categories) \cite[p. 7]{gervasum2001ws.pdf}
+
+14.732x20.828cm \cite[p. 1]{FULLTEXT01.pdf}
+Design model of layout (direct reference not found but from Design 2020 : visions of the newspaper of the future. Conference: J. Montgomery Curtis Memorial Seminar (16th : 1999).) \cite[p. 4]{FULLTEXT01.pdf}
+What to bring from print+digital \cite[p. 8]{FULLTEXT01.pdf}
+user needs (interaction, layout, personalisation) \cite[p. 9]{FULLTEXT01.pdf}
+user needs (which links with cite[p. 6-7]{kristin_fredrik.pdf} - same project base) \cite[p. 10]{FULLTEXT01.pdf}
+
+Design choices regarding the user profile \cite[p. 1-2]{fulltext.pdf}
+Short-term + long-term user profile \cite[p. 2]{fulltext.pdf}
+
+///////////// Issues ////////////////
+In which period of time is an article relevant to a user?
+
+similarities between \cite{10.1.1.19.5583.pdf}, \cite{fulltext.pdf} and \cite{gervasum2001ws.pdf}: long-term/short-term, transparency, relevance feedback, dictionary, keywords+categories.
+
+Collaborate filtering + global user profile, user adapted summaries \cite[p. 137]{fulltext.pdf}
+vector space mode + tf-idf \cite[p. 138]{fulltext.pdf}
+General public news problem <- solved by collaborate filtering \cite[p. 151]{fulltext.pdf}
+
+
+////////////// Solutions ////////////////
+
+International Herald Tribue (the global edition of the new york times) 398mm/6 = 66.333333333mm, i.e. 2.97/2.23 columns landscape/portrait
+Børsen 285mm/5-6 = 47.5mm - 57mm
+Information 285mm/5 (bagsiden 4) = 57mm (bagsiden 71.25mm)
+the guardian 314mm/5 = 62.8mm
+Politiken 392mm/6 = 65.333333333mm
+Berlingske 285mm/4 = 71.25mm
+
+Total:
+(57+57+62.8+65.3+71.3+66.3)/6 = 63.283333333mm, i.e. 3.11/2.34 columns landscape/portrait
+(57+57+62.8+65.3+71.3+66.3+71.3)/7 = 64.428571429mm, i.e. 3.06/2.3 columns landscape/portrait
+
+3.71mm
+64.43mm
+
+1 x 1.618
+
+iPad screen:
+197 x 148 mm
+1024 x 768px
+3 x 2 columns landscape
+
+1200px screen:
+1200*197/1024/63.28 = 3.65, 197/1024 = px to mm ratio, 63.28 = lowest column width
+
+column size in px:
+1024/197*63.28 = 329px
+1024/197*64.43 = 335px
+average = 332px
+
+breaking = how many content providers that sources the article
+
+////////////// Further development ////////////////
+archive w. articles
+settings
+adapt text size
+save article
+archive w. full newspapers
+Voice recitation\cite[p. 7]{kristin_fredrik.pdf}
+search queries, short term modeling \cite[p. ?]{gervasum2001ws.pdf}
+
+////////////// Test /////////////////
+requirements analysis - categorised user needs
+Mockups
+Focus groups with video \cite[p. 8-9]{kristin_fredrik.pdf}
+
+////// TALKS WITH OTHERS ////////////
+
+PHD om approach (10-15/2-2012):
+noilerpipe
+python: NLTK, gensim: http://en.wikipedia.org/wiki/Tf*idf, http://books.google.dk/books?id=5CR2bG1BNSwC&pg=PA80&lpg=PA80&dq=Create+a+stop+list,+define+a+minimum+word+occurrence&source=bl&ots=vtpyJeO4ty&sig=uhd59Xw7ngLerrh0nmS6ZSY3WRM&hl=en&sa=X&ei=s1VwT6DJJ-b24QTFxfS_Ag&redir_esc=y#v=onepage&q&f=false
+unsupervised: topic modelling => topics and keywords + weight
+
+Hvordan validerer jeg det
+
+designe et eksperiment: er det her noget som interesserer dig?
+er det her en artikel du ville læse? JA-NEJ sprøgsmål
+vil du have en forside?
+lav din egen avis????
+spørgeskemaundersøgelse online
+
+, træningsdata+test og se at der er flere der interesserer brugeren
+hvordan evaluerer brugeren det her layout?
+
+
+Michael Kai om approach (10-15/2-2012):
+Financial times, app.ft.com, 1. mil. downloads.
+Top news category
+Politiken app?
+Wired magazine app, fancy layout.
+(Kåre + Bo: flipboard, wavii.com, http://blog.getprismatic.com/blog/2012/4/17/clustering-related-stories.html)
+
+Selv definiere ud fra standard avis, app's som wired og articles:
+Billede eller ej?
+Spalter? Hvor mange?
+Temaer?
+Forside?
+naboer?
+Fordeling % i grid'et.
+
+Relevance feedback:
+click
+Scroll
+time
+etc...
+
+Masters møde (29/3-2012):
+morten - LDA vs. LSI
+user profile => business case (aftale med content udbydere?) : brug til at argumentere for designvalg (user needs).
+personalisering af content vs. layout: start med layout (hvilken opsætning er bedst af disse forslag?) og senere content. Statisk artikel database.
+hvor store er denne nyhed. Afskære kategori/sektion, så emnerne er naturligt afgrænset.
+Hvor mange spalter, med billede/uden billede.
+Diskutere forskellige enheder - responsive design.
+Motivation: væk fra rss liste mania.
+
+Snak med Bo (5?/5-2012):
+wsgi?
+heroku+python
+morten valvig
+http://www.laurentluce.com/posts/twitter-sentiment-analysis-using-python-and-nltk/
+
+Snak med Kåre (16/4-2012):
+Hardcode sections ind i constraints, men prøve at lave dem så dynamiske som muligt (forberedelse til dictionary).
+Finde billeder online. Open Calais?
+Analysere flip board layout. Bruger den templates? Bruger den medsendte eller finder den billeder online?
+
+Master møde (26/4-2012):
+Hvad vil jeg præcist måle på?
+Hvordan præcist måle det?
+
+Møde med Carsten (15/5-2012):
+matrix of sims
+vægtet sum på breaking og sim
+nedskalere ift. alder
+hvad gør jeg når jeg ikke finder en løsning?
+
+Masters møde (16/5-2012):
+
+Bo + NCP + Erik (22/5-2012):
+focus-mode
+link original
+similar
+typeface: ability to choose
+avoid lines between articles?
+
+keep view of same article, when resizing
+
+avis normally: headline sans-sherif, body sherif
+computer: headline sherif, body sans-sherif
+
+David (23/5-2012):
+zite
+
+Michael Kai (23/5-2012):
+Hvad er fordelen ved det ene og det andet layout? -> implementation. Discard the first draft, argument for it in the report.
+
+redaktionelt mix + links, similar, 
+
+samle ting der ligner hinanden under afsnit => mit editorial mix + rest similar.
+hurtigt overblik
+rest similar: kan være fra år tilbage (dato på). vælger jeg fra key words? eller tid?
+good-bad: key words og hele artiklen
+
+forside:
+billeder øverst
+excerpt+billeder+lead(similar+breaking)
+størtste historie skal have et billede
+
+breaking alert (måske uden billede)
+skabe værdi og overblik på forsiden
+
+inspiration fra nyheder: forskellen mit og deres er at brugeren selv bestemmer hvad der skal ske i mit
+
+similarity:
+samme navneord => omhandler samme historie
+key words på articlen => lignende historier
+key words på section => historier under samme emne (vises under fokus - inspiration Wall Street Journal/NY Times)
+
+colourbar til at visualisere similarity
+
+test:
+negativ test giver bedre resultat
+
+
+data:
+alt det der bliver genereret fra en brugeren baseret på bag of words, daglig, uge, måned, skiftende trends over tid. Valgt det her for at skabe værdi. Denne information giver mulighed for at skabe værdi.
+timestamp på keywords
+
+snak med sune om hvad jeg kan bruge denne bag of words til
+
+business case:
+sælge key words. hvilken værdi har de? Google Adwords, adsense, hvad giver mening i mit indhold
+
+Få Google til at levere reklmarne.
+Give dem de mest optimale ord hele tiden, ville jeg kunne optimere Googles valg af reklamer.
+Jeg har en artikel der passer til det du søger på nu.
+
+Facebook skal key word analysere for at kunne skabe værdi.
+
+En avis er nogle anoncer, så skal jeg finde artikler og et editorial mix der understøtter til disse anoncer.
+Folk vil betale for historien på Wall Street Journal, fordi de er så gode.
+
+Content providers: information om deres læsere eller betaling.
+
+breaking hvor mange andre kilder den optræder hos
+
+raport:
+Stort designafsnit, test på det jeg har nu.
+oversætte hvad andre gør til generiske tegninger. oversætte mine designvalg til generiske.
+illustrationer, der skaber værdi for læseren. Små farvekoder på hvor ligner noget hinanden. Bruge patterns aktivt.
+mylab.imm.dk: "learning behavioural patterns in a mobile context using smartphones".
+
+Mig selv (23/5 - 2012):
+video feed med tekst kan bruges til at finde videoer der passer til historierne. Reuters, Wall Street Journal, ABC News, BBC, 
+
+
+Jens (2/6 -2012):
+Reeder (read it later/pocket), Instapaper
+Mulighed for at kunne gemme artikler, søge i sit arkiv.
+
+Master møde (6/6-2012):
+Jakob Nielsen reference, 5 brugere er nok
+
+rapport:
+Hvis jeg kigger det på denne her vinkel, så får jeg det her og det her ud af det.
+Hvordan kommer vi videre med det her, hvad er det der er det vigtige.
+
+
+funktionalitet:
+like/dislike + publicér - integrering med Facebook/Twitter/LinkedIn. Se på andre, hvad har de gjort. Ikke lave et isoleret univers. Profil på sociale medier og udgive poplære artikler.
+
+De første sider er vigtige. Efter den første side havde man en god ide om hvor de ligger henne. Er det præcist eller er det meget snakkende.
+
+Det der har været interessant indenfor de sidste par år:
+indhold er mere og mere brugergeneret
+det her gør de andre (udgiver populære artikler)
+i princippet understøtte de ting som sker.
+
+Data og keywords:
+Kigge på Google AdWords osv. Sende til Google og få det retur i form af nogle anoncer. < revenue.
+Hvor langt tid er en artikel interessant > hvor lang tid er en annonce interessant.
+Hvornår er en artikel støj for en anden - en måde at sortere støj fra.
+Skal jeg måske vægte overskriften højere?
+
+Slå navne op i wikipedia og får information. Bruge Open Calais http://www.opencalais.com/ - hente information og billeder?
+http://googleresearch.blogspot.dk/2012/05/from-words-to-concepts-and-back.html
+
+Hvordan løser jeg mit similar til andre artikler problem? Implementér similar til mig!
+
+Ændre learning objectives og projektbeskrivelse!
+
+Sune møde (6/6-2012):
+Trending (Google trending):
+- (mig selv: hvad er in for tiden?)
+- (mig selv: bruge det til at holde reklamer up-to-date.)
+Collaborate filtering på brugere > brugergrupper:
+- dem der har læst det her har også læst det her!
+- reklamering på brugergruppe basis
+- bruge det til at forbedre sektioner: andre der interesserer sig for tech interesserer sig også for gaming. (mig selv: spørge brugeren om dette emne kunne være interessant.)
+
+Implementering:
+- lave en dictionary med par at hypens der passer godt sammen.
+- sammenligne vektorer, det burde gå stærkt!
+
+Carsten møde (11/6-2012):
+Optimal/promising
+fixed budget computation (mig selv: local search)
+
+Snak med Buba (12/6-2012):
+Display box til billede-span fix
+Viewports til opdeling af columns
+
+Michael Kai (21/6-2012):
+hele tiden relatere - fra starten (intro + teori)
+
+bush 1945 ide om det personlige desktop hypotestisk memic system, personlig samling
+http://en.wikipedia.org/wiki/Memex
+http://en.wikipedia.org/wiki/As_We_May_Think
+
+spacial, temporalt, topics (content) - en distribution over topics - (probabilistisk model - distribution af ord - referer til en lda model),
+lidt det samme at tale om et billede og musik
+Refernce: Introduction to probabilistik topic modelling, blei
+
+stenkast hen til hvem brugeren er.
+
+Masters møde (27/6-2012):
+dato for forsvar: 
+Bo's censor: Erik Frøkjær DIKU
+Morten censor: (4.-5. september) 
+censor: Gert Hvedstrup Jensen, (4.-5. september)
+
+Fra Michael Kai's mail:
+1) introducere editorial mix i.e. hvordan vi intuitivt opfatter indhold spatielt og tidsmæssigt i forhold til relevans og nyhedsværdi baseret fonts, number of rows columns image size, top bottom left right
+2) de kan opfattes som skjulte variabler og defor burde man kunne anvende constraint programming som approach til at finde layout for de forskellige parametre
+3) vi har alle forskellige præferencer så for at personlisere indholdet vil du prøve at lære de parametre ud fra den konkrete brugeradfærd .. 
+4) og dernæst så forklare constraint programming (gerne mere intuitivt), editorial mix features (illustrationer), data mining og design ?
+
+Indhold:
+hvad er et editorial mix, hvad er det for noget.
+lære disse parametre at kende
+kan man overhovedet lave et editorial mix og hvad er det, det plejer jo at være en redaktør. Det er ikke redaktøren men brugeren der infuerer.
+
+----- Bo's noter -------
+General feedback under Michael: Man springer hurtigt 3 led over, og f.eks. springer til constrained programming i stedet for først at kigge på "hvad er et godt editorial mix", "hvordan gemmer vi nogle parametre om det", "kan man bruge constrained programming til at lave et editorial mix" -> Men den interessante problemstilling er: "Kan det overhovedet gøre at lade en computer lave et editorial mix?" for derefter at skrive om at "Vi forresten også har et constrained programming language til"
+En idé er at skrive explicit i introduktionen hvilke bidrag man kommer med i rapporten: For michael et constrained programming library.
+Altså skrive hvilke bidrag der er på forskellige niveauer i rapporten.
+------------------------
+
+online auktion af reklamer via adwords.
+Se på hvad der sker normalt på disse områder.
+
+hvad er det for nogle contributions man kommer med i introduktionen.
+1. hvad vil man gerne sige
+2. sig det
+3. hvad har jeg sagt
+
+Hvofor er det her interessant
+det er også et resultat, det der ikke lykkes.
+hvor ligger problemet, hos mig eller hos andre, så er bidraget: "vi kan ikke se det her"
+
+Heuristics evaluering?
+
+iPad rapport, (nngroup.com ipad usability). nielsen-norman group? Første var katastrofe anden var meget bedre.
+
+http://en.wikipedia.org/wiki/Memex
+http://en.wikipedia.org/wiki/As_We_May_Think
+
+Diskussionen er det interessante, det andet skal man bare forstå nok.
+
+Efter aflevering:
+Brug tiden efter aflevering til at implementere nye ting.
+
+Præsentation:
+forklare hvad jeg har skrevet på 15 min. Sige det man ikke har sagt til fremlæggelsen. Genfortæl ikke rapporten.
+1. et meget hurtigt (ultra kort) overview, med contributions
+2. så dyk ned, tag 2 kerneproblemer, det mest ikke trivielle
+3. brug slides der viser processen, f.eks. 3 forskellige iterationer
+
+Brug video til præsentationen.
+Live går det altid galt.
+
+Carsten Møde:
+worst-case time (and space complexity) give et bud er godt nok til hvor langt tid brugeren skal vente.
+
+
+/////////// RAPPORT STRUKTUR //////////
+
+Creating the Editorial Mix (Introduction + Theory)
+- What is the Editorial Mix
+- Personalising a Digital Newspaper
+- Contributions of Constraint Programming
+- Problem Description
+
+Perspectives and Inspirations (Related Work)
+
+Features to be Personalised (Analysis)
+- Prerequisites
+- User Needs
+- Technical Requirements
+- Delimitation
+
+Proposed Design (Design)
+- Acquiring and Mining Data for Personalisation
+  - Spacial, temporal and relational personalisation
+  - Wordnet Enriching articles
+  - Meta Data from Open Calais
+  - Computing Similarity
+    - Storing Data
+- Layout and Typography (Interface Design)
+- Interactions (Interface Design)
+- The Editorial Mix (constraints)
+
+Technical Specification (Implementation)
+- Constraint Personalisation Library
+  - Data Structure
+  - General Purpose Solver
+- Front End
+  - Dynamic Page (created from form)
+- Backend worker.js
+  - Lazy Loading Sections
+  - Knowledge Passing
+
+Evaluation
+  - User Experience
+  - The Editorial Mix
+  - Quality Improvements
+    - Hard Constraints
+  - Effeciency Improvements
+    - Propagation
+    - Simulated Annealing
+
+Conclusion
+
+//////// ARTICLES /////////
+Find articles from:
+"Constriant Optimization personalisation"
+Page layout (fetched):
+Kamba, T., Sakagami, H. and Koseki, Y. (1997): "ANATAGONOMY: A Personalized Newspaper on the WWW," International Journal of Human-Computer Studies, Special Issue on Innovative Applications of the World Wide Web (to be appeared in March 1997).
+Front page layout (fetched):
+M. Claypool, A. Gokhale, T. Miranda, P. Murnikov, D. Netes and M. Sartin, Combining Content-Based and Collaborative Filters in an Online Newspaper, ACM SIGIR Workshop on Recommender Systems, Berkeley, CA, August 19, 1999.
+Content (fetched):
+D. Billsus, and M. Pazzani, (1999). "A Hybrid User Model for News Story Classification", Proceedings of the Seventh International Conference on User Modeling (UM '99), Banff, Canada, June 20-24, 1999.
+Filtering (could not be found):
+T. Miranda, P. Murnikov, D. Netes and M. Sartin, Collaborative Filtering of an Online Newspaper, Major Qualifying Project MQP- MLC-0002, Computer Science Department, Worcester Polytechnic Institute, Spring 1999.
+
+DigiNews\cite{kristin_fredrik.pdf} and \cite{hcii2005_1004.pdf}
+flipboard \cite{kåre}
+
+all \cite{fulltext.pdf}, all but last \cite{gervasum2001ws.pdf}
+WebMate - Chen, L., Sycara, K.P.: WebMate: A Personal Agent for Browsing and Searching. In: Proceedings of the Second International Conference on Autonomous Agents, Minneapolis, (1998) http://www.cs.cmu.edu/~softagents/webmate/ + /Setup_and_Run.html
+News Dude - Billsus, D., Pazzani, M.J.: A Hybrid User Model for News Story Classification. In: Proceedings of the Seventh International Conference on User Modeling, Banff, Canada (1999)
+SIFT - Yan, T.W., Garcia-Molina, H.: SIFT – A Tool for Wide-Area Information Dissemination. In: Proceedings of the USENIX Technical Conference, (1995)
+IFTool and PIFT - F. Asnicar, M.D. Fant and C. Tasso, User model-based infor- mation filtering, in: Fifth Conference of the Italian Associa- tion for Artificial Intelligence (AI*IA97), M. Lenzerini, ed., Springer-Verlag, Roma, 1997.

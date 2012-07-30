@@ -11,7 +11,7 @@
 			"file": "thesis.tex",
 			"settings":
 			{
-				"buffer_size": 6324,
+				"buffer_size": 6354,
 				"line_ending": "Unix"
 			}
 		},
@@ -19,7 +19,7 @@
 			"file": "Chapters/05_introduction.tex",
 			"settings":
 			{
-				"buffer_size": 22289,
+				"buffer_size": 22483,
 				"line_ending": "Unix"
 			}
 		},
@@ -35,7 +35,7 @@
 			"file": "Chapters/06_analysis.tex",
 			"settings":
 			{
-				"buffer_size": 17634,
+				"buffer_size": 19110,
 				"line_ending": "Unix"
 			}
 		},
@@ -67,7 +67,7 @@
 			"file": "classicthesis.sty",
 			"settings":
 			{
-				"buffer_size": 33293,
+				"buffer_size": 33757,
 				"line_ending": "Unix"
 			}
 		},
@@ -128,6 +128,7 @@
 	},
 	"file_history":
 	[
+		"/Users/ml/Dropbox/Courses/Master thesis/thesis/FrontBackMatter/Contents.tex",
 		"/Users/ml/Dropbox/Courses/Master thesis/thesis/classic.ist",
 		"/Users/ml/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/Users/ml/Dropbox/Courses/Master thesis/report/preamble.tex",
@@ -195,7 +196,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -203,15 +204,15 @@
 					"file": "thesis.tex",
 					"settings":
 					{
-						"buffer_size": 6324,
+						"buffer_size": 6354,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								818,
-								818
+								0,
+								0
 							]
 						],
 						"settings":
@@ -230,15 +231,15 @@
 					"file": "Chapters/05_introduction.tex",
 					"settings":
 					{
-						"buffer_size": 22289,
+						"buffer_size": 22483,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1445,
-								1445
+								0,
+								0
 							]
 						],
 						"settings":
@@ -283,15 +284,15 @@
 					"file": "Chapters/06_analysis.tex",
 					"settings":
 					{
-						"buffer_size": 17634,
+						"buffer_size": 19110,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6136,
-								6136
+								12232,
+								12232
 							]
 						],
 						"settings":
@@ -300,7 +301,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 977.0,
+						"translation.y": 2749.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -389,15 +390,15 @@
 					"file": "classicthesis.sty",
 					"settings":
 					{
-						"buffer_size": 33293,
+						"buffer_size": 33757,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								28953,
-								28953
+								0,
+								0
 							]
 						],
 						"settings":

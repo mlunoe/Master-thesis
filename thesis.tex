@@ -6,9 +6,12 @@
 \documentclass[
 		twoside,openright,titlepage,numbers=noenddot,headinclude,%1headlines,
                 footinclude=true,cleardoublepage=empty,
-                BCOR=5mm,paper=a4,fontsize=11pt, % Binding correction, paper type and font size
-                british, % Languages
-                tablecaptionabove]{scrreprt} 
+                BCOR=5mm,paper=a4,fontsize=12pt, % Binding correction, paper type and font size
+                british % Languages
+                ]{scrreprt} 
+
+% bredde 176mm
+% højde 250mm
                
 \usepackage[english]{babel}
 \usepackage{ae} %danish ae, oe and aa
@@ -23,6 +26,22 @@
 
 \newlength{\graphicheight}
 
+%\begin{figure}[h!tp]
+%	\centering
+%	
+%	\def\mygraphic{\includegraphics[width=\textwidth]{img/use-cases}}
+%	%\newlength{\graphicheight}
+%	\settoheight\graphicheight{\mygraphic}
+%	\mygraphic
+%	\marginnote{
+%	\begin{minipage}{\marginparwidth}
+%		\vspace{-\graphicheight}%
+%		\caption{The figure shows the overall use cases of the system and how the web server acts to accomplish them.}
+%		\label{fig:use-cases}
+%		\vspace{\graphicheight}
+%		\end{minipage}
+%	}
+%\end{figure}
 
 %\usepackage[wide,outercaption]{sidecap}
 %\usepackage[style=philosophy-modern,hyperref,square,natbib]{biblatex}
@@ -54,10 +73,25 @@
 %\usepackage{arsclassica}
 
 \usepackage{todonotes}
+
+\usepackage{clrscode3e}
 %\newcommand\todonote[1]{\textcolor{red}{\todo[bordercolor=red,backgroundcolor=white,inline]{? #1}}}
 
+\newcommand\itemdist{\setlength{\itemsep}{6pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}}
 
 \input{arsclassica-settings}
+
+%\renewcommand{\sfdefault}{amsfonts}
+%\usepackage{sfmath}
+%\renewcommand{\rmdefault}{amsfonts}
+%\usepackage[osf,sc]{mathpazo}
+%\renewcommand{\rmdefault}{ppl}
+%\renewcommand{\scdefault}{ppl}
+%\renewcommand{\sfdefault}{ppl}
+%\linespread{1.05}
+\renewcommand*\ttdefault{lmtt}
 
 % General Tips:
 % 1) Make sure to edit the classicthesis-config.file
@@ -121,33 +155,41 @@
 \part{Exploring the field} % First part of the thesis
 
 
-%\include{Chapters/Chapter01} % Chapter 1
+%\include{Chapter01} % Chapter 1
 
-\include{Chapters/05_introduction}
-\include{Chapters/06_relatedwork}
-\include{Chapters/06_analysis}
+\include{05_introduction}
+\include{06_relatedwork}
+\include{06_analysis}
 
-%\include{Chapters/07_theory}
+%\include{07_theory}
 
 
 \cleardoublepage % Empty page before the start of the next part
 
 %------------------------------------------------
 
-\cleardoublepage
-
 \ctparttext{Text for part 2.} % Text on the Part 1 page describing  the content in Part 1
 
 \part{Using what we have learnt}
 
-\include{Chapters/08_design}
-\include{Chapters/09_implementation}
-\include{Chapters/10_evaluation}
-\include{Chapters/11_conclusion}
+\include{08_design}
+\include{09_implementation}
 
-%\include{Chapters/Chapter02} % Chapter 2
-%\include{Chapters/Chapter03} % Chapter 3
-%\include{Chapters/Chapter04} % Chapter 4 - empty template
+\cleardoublepage % Empty page before the start of the next part
+
+%------------------------------------------------
+
+\ctparttext{Text for part 3.} % Text on the Part 1 page describing  the content in Part 1
+
+\part{Learning what we have used}
+
+\include{10_discussion}
+\include{10_evaluation}
+\include{11_conclusion}
+
+%\include{Chapter02} % Chapter 2
+%\include{Chapter03} % Chapter 3
+%\include{Chapter04} % Chapter 4 - empty template
 
 
 %----------------------------------------------------------------------------------------
@@ -158,8 +200,8 @@
 
 \part{Appendix} % New part of the thesis for the appendix
 
-\include{Chapters/A_user-needs} % Appendix A
-%\include{Chapters/Chapter0B} % Appendix B - empty template
+\include{A_user-needs} % Appendix A
+%\include{Chapter0B} % Appendix B - empty template
 
 %----------------------------------------------------------------------------------------
 %	POST-CONTENT THESIS PAGES

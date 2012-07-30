@@ -200,7 +200,9 @@
     {%
     	\relax%
     	% put your own suitable typewriter font here
-    	%\renewcommand{\ttdefault}{\rmdefault}
+        
+    	%\RequirePackage{courier}
+        %\renewcommand*\familydefault{\ttdefault}
     } 
 \ifthenelse{\boolean{@eulermath}}%
     {\PassOptionsToPackage{euler-digits}{eulervm}%
@@ -224,6 +226,25 @@
 	{\relax}{%
 		\RequirePackage{typearea}%
 	}
+%%\ifthenelse{\boolean{@b5paper}}%
+%    %{% B5
+%        \PackageInfo{classicthesis}{B5 paper}%
+%        \areaset[current]{176mm}{250mm}%
+%        \setlength{\textheight}{185mm} % 540pt = 7.5inch = 190.5mm
+%        \setlength{\marginparwidth}{7em}%
+%        \setlength{\marginparsep}{2em}%
+%        %\setlength{\paperwidth}{176mm}  %b5
+%        %\setlength{\paperheight}{250mm} %b5
+%        
+%        \setlength{\topmargin}{-5.4mm}
+%        \setlength{\headheight}{8mm}
+%        \setlength{\headsep}{7mm}
+%        \setlength{\footskip}{10.0mm}
+%        \setlength{\textwidth}{129.36mm-9em}  % 129.36 mm  % width and margins must add to 176 mm:
+%        \setlength{\oddsidemargin}{1.24mm} % 1 inch + 1.24 mm = 26.64 mm inside
+%        \setlength{\evensidemargin}{-5.4mm+9em} % 1 inch - 5.4 mm = 20 mm outside
+%   % }
+%   % {}
 \ifthenelse{\boolean{@a5paper}}%
     {% A5
         \ifthenelse{\boolean{@minionpro}}%
@@ -733,7 +754,8 @@
 %************************************************************
 \clearcaptionsetup{figure}
 \captionsetup{format=plain,font=small,labelfont={bf}}%labelfont={sf,bf}
-\addtolength{\belowcaptionskip}{0pt}
+\setlength{\belowcaptionskip}{0pt}
+%\addtolength{\belowcaptionskip}{0pt}
 %\captionsetup[table]{skip=\medskipamount}
 %\captionsetup{justification= justified,width=.75\textwidth,aboveskip=5pt}
 
@@ -753,22 +775,22 @@
 %************************************************************
 % hyperref
 %************************************************************
-\hypersetup{%
-    colorlinks=true, linktocpage=true, pdfstartpage=1, 
-    pdfstartview=FitV, breaklinks=true, pdfpagemode=UseNone, 
-    pageanchor=true, pdfpagemode=UseOutlines,%
-    plainpages=false, bookmarksnumbered,
-    bookmarksopen=true,%
-    bookmarksopenlevel=1,%
-    hypertexnames=true, pdfhighlight=/O,%
-    urlcolor=webbrown, linkcolor=RoyalBlue, 
-    citecolor=webgreen,%
-    hyperfootnotes=false,pdfpagelabels,
-    pdfsubject={},%
-    pdfkeywords={},%
-    pdfcreator={pdfLaTeX},%
-    pdfproducer={LaTeX with hyperref and ClassicThesis}%
-}
+%\hypersetup{%
+%    colorlinks=true, linktocpage=true, pdfstartpage=1, 
+%    pdfstartview=FitV, breaklinks=true, pdfpagemode=UseNone, 
+%    pageanchor=true, pdfpagemode=UseOutlines,%
+%    plainpages=false, bookmarksnumbered,
+%    bookmarksopen=true,%
+%    bookmarksopenlevel=1,%
+%    hypertexnames=true, pdfhighlight=/O,%
+%    urlcolor=webbrown, linkcolor=RoyalBlue, 
+%    citecolor=webgreen,%
+%    hyperfootnotes=false,pdfpagelabels,
+%    pdfsubject={},%
+%    pdfkeywords={},%
+%    pdfcreator={pdfLaTeX},%
+%    pdfproducer={LaTeX with hyperref and ClassicThesis}%
+%}
 
 
 %************************************************************
