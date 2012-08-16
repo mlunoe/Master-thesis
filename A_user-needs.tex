@@ -10,19 +10,19 @@ This section will define the user needs for the application.
 %Individuals using the Internet for reading / downloading online newspapers / news magazines (tin00097)
 \begin{figure}[h!tp]
 \myfloatalign
-\subfloat[Initial prototype layout with adjustable ratios between articles and a paged interface of each section.]{
+\subfloat[Individuals distributed by educational background.]{
   \includegraphics[width=.4\textwidth]{img/chart-educational.pdf}
   %\label{fig:prototype-iteration1}
 } \qquad
-\subfloat[Second iteration of the prototype with an ``endless'' layout. Sections are placed beneath each other.]{
+\subfloat[Individuals distributed by age.]{
   \includegraphics[width=.4\textwidth]{img/chart-individuals.pdf}
   %\label{fig:prototype-iteration2}
 } \\
-\subfloat[Third iteration of the prototype with a column-based and ``endless'' layout. Sections are placed beneath each other.]{
+\subfloat[Individuals distributed by sex.]{
   \includegraphics[width=.4\textwidth]{img/chart-males-females.pdf}
   %\label{fig:prototype-iteration3}
 } \qquad
-\subfloat[Third iteration of the prototype with a column-based and ``endless'' layout. Sections are placed beneath each other.]{
+\subfloat[Individuals distributed by occupation.]{
   \includegraphics[width=.4\textwidth]{img/chart-occupation.pdf}
   %\label{fig:prototype-iteration4}
 }
@@ -31,7 +31,6 @@ This section will define the user needs for the application.
 \end{figure}
 
 In Figure~\ref{fig:charts-usergroups} is shown the basis for the division into the following user groups:
-
 \begin{table}[h!tp]
 \myfloatalign
 	\marginnote{
@@ -82,25 +81,25 @@ In Figure~\ref{fig:charts-usergroups} is shown the basis for the division into t
 		\midrule
 	\end{tabularx}
 \end{table}
-
+\clearpage
 The user groups provide the basis for the following personas.
 
-\subsection{Thomas: student medium formal education male of age 21}
+\subsection{Thomas: student, medium formal education, male, age 21}
 Thomas is 21 and a student at the Technical University of Denmark to be a bachelor of engineering in software. He is very interested in soccer and is therefore always updated on sports news. He reads about it online, newspapers and talks about it with friends. With big events he even likes to post it on Facebook. As a soon-to-be software engineer he has a natural thirst for news about technology, and he mainly reads these at home at the dormitory.
 wired.com, newz.dk, engadget.com, facebook.com
 computer, Samsung Galaxy Tab
 
-\subsection{Laura: employed high formal education female of age 39}
+\subsection{Laura: employed, high formal education, female, age 39}
 Laura is 39 and is employed as a key account manager. She likes to be updated on strategies and economical status of rivalling companies. She is also very interested in politics and likes to discuss this subject with her friends. She reads economical news and likes to be updated on the run.
 b.dk, borsen.dk, twitter.com
 iPhone, iPad
 
-\subsection{Marie: unemployed no or low formal education female of age 61}
+\subsection{Marie: unemployed, no or low formal education, female, age 61}
 Marie is 61 and a currently unemployed housekeeper. She spends her day looking for a job and taking care of her pet cat until her husband comes home. She mostly looks for the gossip sections or news about crime or big disasters. She also spends some time reading through the travelling guides as she dreams of going away with her husband.
 ekstrabladet.dk, bt.dk, nyhederne.tv2.dk
 computer, Lenovo IdeaPad A1
 
-\subsection{Carl: retired or other inactive high formal education male of age 69}
+\subsection{Carl: retired or other inactive, high formal education, male, age 69}
 Carl is a retired professor in psychology. He likes to discuss human behaviour and relation with his acquaintances and is very interested in cultural events. Therefore he often seeks the cultural sections and discussion fora to see what is going on. 
 politiken.dk, aok.dk, dr.dk
 computer, iPad
@@ -132,20 +131,18 @@ Constraint Programming: fast computation - good for optimal solutions, describes
 Content providers can get to know their readers preferences better and improve the provided content.
 
 \subsection{Benefit Per Cost}
-Revenue flow: Content providers are paid. Income from advertisers (scattered \cite[p. 6-7]{kristin_fredrik.pdf}) and users. Income from selling user behaviour patterns and precise targeted commercials.
+Revenue flow: Content providers are paid. Income from advertisers (scattered \cite[p. 6-7]{kristin-fredrik.pdf}) and users. Income from selling user behaviour patterns and precise targeted commercials.
 
 \subsection{Competition}
 FlipBoard, Wired magazine, Zite and app with actual editors affiliated.
 
 \section{Requirements}
 The above scenarios, user needs and business case led to the following requirements.
-
-\subsection{Non-functional Requirements}
 \begin{itemize}
 	\item ``the clear overview of content, including a beginning and an end, the ease of use, typography and design'' \cite[p. 7]{FULLTEXT01.pdf}
 	\item both general and personal news (collaborate filtering solves that some news are not received, but are universally interesting \cite{fulltext.pdf})
 	\item familiarity in design from printed paper \cite[p. 7]{FULLTEXT01.pdf}
-	\item Design and layout from printed newspaper \cite{hcii2005_1004.pdf}
+	\item Design and layout from printed newspaper \cite{hcii2005-1004.pdf}
 	\item both images and videos - test
 	\item a good ratio of graphical and textual - test
 	\item front page should give a good overview of the content - test
@@ -157,10 +154,9 @@ The above scenarios, user needs and business case led to the following requireme
 	\item incorporate social community and social networks
 \end{itemize}
 
-\subsection{Functional Requirements}
 \subsubsection{Calculations on number of columns}
 \label{sec:column_calc}
-iPad screen size:
+iPad 1 and 2 screen size:
 
 $197 \times 148mm$ or $1024 \times 768px$
 
@@ -199,24 +195,24 @@ average $= 326px$
 \begin{itemize}
 	\item 2 columns in portrait and 3 in landscape
 	\item ``open, turn pages, chose article, read and return'' \cite[p. 6]{FULLTEXT01.pdf}
-	\item section headlines \cite[p. 6-7]{kristin_fredrik.pdf}
+	\item section headlines \cite[p. 6-7]{kristin-fredrik.pdf}
 	\item article headlines
 	\item article summaries / extracts \cite{fulltext.pdf}
-	\item menu w. section headlines \cite[p. 8]{kristin_fredrik.pdf}
-	\item page numbers \cite[p. 6-7]{kristin_fredrik.pdf}
+	\item menu w. section headlines \cite[p. 8]{kristin-fredrik.pdf}
+	\item page numbers \cite[p. 6-7]{kristin-fredrik.pdf}
 	\item press ``like'' or key word based user profile (mark self or highlighted? right click to add): positive + negative list (keywords+categories \cite{10-1-1-19-5583}, \cite{fulltext.pdf} and \cite{gervasum2001ws.pdf})
 	\item full screen display of article
 	\item organise into personalised sections
-	\item opens in front page view (summery of newspaper 8 articles) \cite[p. 8]{kristin_fredrik.pdf}
+	\item opens in front page view (summery of newspaper 8 articles) \cite[p. 8]{kristin-fredrik.pdf}
 	\item adjust variables
 	\item share directly (grey out the ones who have read it)
 	\item comment
 	\item see friends comments
 	\item ``The presentation schema -- headline, abstract, and text, together with a relevance value with respect to the user profile -- rates the highest in terms of user satisfaction, and yet it is not the most frequent.'' \cite{Sections-categories-and-keywords-as-interest-specification-tools-for-personalised-news-services.pdf}
 	\item  ability to search \cite[p. 7]{FULLTEXT01.pdf}
-	\item Landscape + portrait \cite[p. 6-7]{kristin_fredrik.pdf}
-	\item touch screen interaction \cite[p. 6-7]{kristin_fredrik.pdf}
-	\item Functionality from online newspaper \cite{hcii2005_1004.pdf}
+	\item Landscape + portrait \cite[p. 6-7]{kristin-fredrik.pdf}
+	\item touch screen interaction \cite[p. 6-7]{kristin-fredrik.pdf}
+	\item Functionality from online newspaper \cite{hcii2005-1004.pdf}
 	\item Name of columnist \cite[p. 4]{gervasum2001ws.pdf}
 	\item Transparency of implicit relevance feedback (see/modify current weights of categories) \cite[p. 7]{gervasum2001ws.pdf}
 	\item dynamic short-term + static long-term user profile \cite{10-1-1-19-5583}, \cite{fulltext.pdf} and \cite{gervasum2001ws.pdf}
@@ -250,5 +246,6 @@ This section sums up the test results in an unordered list.
  \item Visualisation of user behaviour
  \item Possibility to use it for research
  \item Get articles from magazine and newspaper subscriptions, e.g. by adding them to a specific section
+ \item Play with the text and get it read out loud
  \item It has solved the problems that \url{http://nyhederne.tv2.dk/}\sidenote[1]{The website of a Danish news channel.} has, i.e.\ confusing layout, no overview and hard to navigate
 \end{itemize}

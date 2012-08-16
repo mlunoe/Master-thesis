@@ -226,54 +226,54 @@
 	{\relax}{%
 		\RequirePackage{typearea}%
 	}
-%%\ifthenelse{\boolean{@b5paper}}%
-%    %{% B5
-%        \PackageInfo{classicthesis}{B5 paper}%
-%        \areaset[current]{176mm}{250mm}%
-%        \setlength{\textheight}{185mm} % 540pt = 7.5inch = 190.5mm
-%        \setlength{\marginparwidth}{7em}%
-%        \setlength{\marginparsep}{2em}%
-%        %\setlength{\paperwidth}{176mm}  %b5
-%        %\setlength{\paperheight}{250mm} %b5
-%        
-%        \setlength{\topmargin}{-5.4mm}
-%        \setlength{\headheight}{8mm}
-%        \setlength{\headsep}{7mm}
-%        \setlength{\footskip}{10.0mm}
-%        \setlength{\textwidth}{129.36mm-9em}  % 129.36 mm  % width and margins must add to 176 mm:
-%        \setlength{\oddsidemargin}{1.24mm} % 1 inch + 1.24 mm = 26.64 mm inside
-%        \setlength{\evensidemargin}{-5.4mm+9em} % 1 inch - 5.4 mm = 20 mm outside
-%   % }
-%   % {}
-\ifthenelse{\boolean{@a5paper}}%
-    {% A5
-        \ifthenelse{\boolean{@minionpro}}%
-        {% Minion gets some extra sizes    	
-	        \PackageInfo{classicthesis}{A5 paper, MinionPro}%
-            \areaset[current]{278pt}{556pt}%
-	        \setlength{\marginparwidth}{5em}%
-    	    \setlength{\marginparsep}{1.25em}%
-        }{% Palatino or other
-        	\PackageInfo{classicthesis}{A5 paper, Palatino or other}%
-            \areaset[current]{288pt}{555pt}%
-            \setlength{\marginparwidth}{4em}%
-            \setlength{\marginparsep}{1.25em}%
-        }%
-	}{% A4
-        \ifthenelse{\boolean{@minionpro}}%
-        {% Minion gets some extra sizes        	
-        	\PackageInfo{classicthesis}{A4 paper, MinionPro}%
-            \areaset[current]{312pt}{684pt}% 609 + 33 + 42 head \the\footskip
-            \setlength{\marginparwidth}{7.5em}%
-            \setlength{\marginparsep}{2em}%
-        }{% Palatino or other
-	        \PackageInfo{classicthesis}{A4 paper, Palatino or other}
-	        \areaset[current]{336pt}{750pt} % ~ 336 * factor 2 + 33 head + 42 \the\footskip 
-%   	     \areaset{336pt}{761pt} % 686 (factor 2.2) + 33 head + 42 head \the\footskip 10pt     
-			\setlength{\marginparwidth}{7em}%
-            \setlength{\marginparsep}{2em}%
-        }%
-	}
+%\ifthenelse{\boolean{@b5paper}}%
+    %{% B5
+        \PackageInfo{classicthesis}{B5 paper}%
+        \areaset[current]{176mm}{250mm}%
+        \setlength{\textheight}{185mm} % 540pt = 7.5inch = 190.5mm
+        \setlength{\marginparwidth}{7em}%
+        \setlength{\marginparsep}{2em}%
+        %\setlength{\paperwidth}{176mm}  %b5
+        %\setlength{\paperheight}{250mm} %b5
+        
+        \setlength{\topmargin}{-5.4mm}
+        \setlength{\headheight}{8mm}
+        \setlength{\headsep}{7mm}
+        \setlength{\footskip}{10.0mm}
+        \setlength{\textwidth}{129.36mm-9em}  % 129.36 mm  % width and margins must add to 176 mm:
+        \setlength{\oddsidemargin}{1.24mm} % 1 inch + 1.24 mm = 26.64 mm inside
+        \setlength{\evensidemargin}{-5.4mm+9em} % 1 inch - 5.4 mm = 20 mm outside
+   % }
+   % {}
+%\ifthenelse{\boolean{@a5paper}}%
+%    {% A5
+%        \ifthenelse{\boolean{@minionpro}}%
+%        {% Minion gets some extra sizes    	
+%	        \PackageInfo{classicthesis}{A5 paper, MinionPro}%
+%            \areaset[current]{278pt}{556pt}%
+%	        \setlength{\marginparwidth}{5em}%
+%    	    \setlength{\marginparsep}{1.25em}%
+%        }{% Palatino or other
+%        	\PackageInfo{classicthesis}{A5 paper, Palatino or other}%
+%            \areaset[current]{288pt}{555pt}%
+%            \setlength{\marginparwidth}{4em}%
+%            \setlength{\marginparsep}{1.25em}%
+%        }%
+%	}{% A4
+%        \ifthenelse{\boolean{@minionpro}}%
+%        {% Minion gets some extra sizes        	
+%        	\PackageInfo{classicthesis}{A4 paper, MinionPro}%
+%            \areaset[current]{312pt}{684pt}% 609 + 33 + 42 head \the\footskip
+%            \setlength{\marginparwidth}{7.5em}%
+%            \setlength{\marginparsep}{2em}%
+%        }{% Palatino or other
+%	        \PackageInfo{classicthesis}{A4 paper, Palatino or other}
+%	        \areaset[current]{336pt}{750pt} % ~ 336 * factor 2 + 33 head + 42 \the\footskip 
+%%   	     \areaset{336pt}{761pt} % 686 (factor 2.2) + 33 head + 42 head \the\footskip 10pt     
+%			\setlength{\marginparwidth}{7em}%
+%            \setlength{\marginparsep}{2em}%
+%        }%
+%	}
 % Here are some suggestions for the text widths and heights:
 % Palatino 	10pt: 288--312pt | 609--657pt
 % Palatino 	11pt: 312--336pt | 657--705pt
@@ -421,7 +421,7 @@
         {\spacedallcaps}}
     % sections \FloatBarrier
     \titleformat{\section}
-        {\relax}{\textsc{\MakeTextLowercase{\thesection}}}{1em}{\spacedlowsmallcaps}
+        {\large\relax}{\textsc{\MakeTextLowercase{\thesection}}}{1em}{\spacedlowsmallcaps}
     % subsections
     \titleformat{\subsection}
         {\relax}{\textsc{\MakeTextLowercase{\thesubsection}}}{1em}{\normalsize\itshape}

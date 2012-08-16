@@ -1,16 +1,18 @@
 %!TEX root = ../thesis.tex
-\chapter{Features to be Personalised} % (fold)
+\chapter{Analysis} % (fold)
 \label{ch:analysis}
-This section analyses the user preferences and identifies which features should be modelled as personalisation constraints. It also seeks to define the default setting that consists the general model for a good editorial mix of a digital newspaper.
+This section analyses the user preferences and identifies which features should be implemented in the application. It will also analyse and identify rules of the editorial mix of a conventional newspaper to be modelled as constraints in the application.
+%also seeks to define the default setting that consists the general model for a good editorial mix of a digital newspaper.
 
-The focus of automatically generating the editorial mix introduces temporal, spacial and relational circumstances about the composition. But before these can be modelled as constraints it is necessary to look at the user needs of the application.
+The focus of automatically generating the editorial mix introduces temporal, spatial and relational circumstances about the composition. But before these can be identified as constraints it is necessary to look at the user needs of the application.
 %
 %These will consist the content constraints of the system along with those determined by user preferences. Therefore the constraints that belongs to composition conditions must be presented/defined.
 
-Also some prerequisites must be stated in order to set the focus of the problem, but also for the potential user to relate to the product. The research done by \cite{FULLTEXT01.pdf} and \cite{kristin_fredrik.pdf} determines the preferable size of the digital newspaper to be $14.732 \times 20.828$cm $\sim$ size A5, which reflects the size of the iPad. Therefore this project will target the iPad as its primary device. The hand-held device also introduces mobility, which is also of great preference to the potential users.
+It is also necessary to state that this paper will target the iPad 1 and 2 as its primary devices. The hand-held device also introduces mobility, which is also of great preference to the potential users and moreover, it attracts more in-depth reading of the articles. Furthermore, the research done by \cite{FULLTEXT01.pdf} and \cite{kristin-fredrik.pdf} determines the preferable size of the digital newspaper to be $14.732 \times 20.828$cm $\sim$ size A5, which reflects the size of the iPad.
+%Also a prerequisite must be stated in order to set the focus of the problem, but also for the potential user to relate to the product.  Therefore this paper will target the iPad as its primary device.
 %
 %\begin{itemize}
-	%\item $14.732 \times 20.828$cm $\sim$ size A5, which reflects the size of the iPad% \cite[p. 1]{FULLTEXT01.pdf} % \cite[p. 6-7]{kristin_fredrik.pdf}
+	%\item $14.732 \times 20.828$cm $\sim$ size A5, which reflects the size of the iPad% \cite[p. 1]{FULLTEXT01.pdf} % \cite[p. 6-7]{kristin-fredrik.pdf}
 	%\item reader knows about constraints
 	%\item relevance feedback introduced (click on article, time spend reading it and scroll)
 	%\item argument that transparency of the general model is enough for the user to provide settings \cite[p. 7]{gervasum2001ws.pdf}
@@ -18,12 +20,12 @@ Also some prerequisites must be stated in order to set the focus of the problem,
 
 \section{User Needs}
 This section will define the user needs for the application. A full description of personas, scenarios and business case is found in appendix~\vref{appendix:user-needs}.
+\clearpage
+Because there are so many that reads an online newspaper of some kind, the user group is very large. An example of this is that a whole $17\%$ of individuals, with no or low formal education, use the Internet for reading and downloading online newspapers and news magazines in 2011. Statistics are taken from Eurostat\sidenote{See \url{http://epp.eurostat.ec.europa.eu/tgm/table.do?tab=table&init=1&language=en&pcode=tin00097&plugin=0}.}. And that is the group with the lowest online reading activity. Even if only users of iPads are considered, it does not reduce the problem much as more and more users of tablet computers emerges. This means that the application must accommodate many user needs, and it is therefore rewarding to focus on few, but very general needs to outline the objectives. This is done in the following.
 
-Because there are so many that reads an online newspaper of some kind, the user group is very large, e.g.\ a whole $17\%$ is smallest group of \cite{Eurostat}'s distribution of individuals using the Internet for reading and downloading online newspapers and news magazines in 2011, divided into educational background. The focus of the project on the iPad, does not reduce the problem much as more and more users of tablet computers emerges. This means that the application must accommodate many user needs, and it is therefore rewarding to focus on few, but very general needs to outline the objective of success. This is done in the following.
+From the scenarios it is clear that the users needs an overview of the content and that it should be presented in a digestible layout. This can be done through the front page, where the most interesting stories should be found. In addition only headlines, images and excerpts could be displayed. In order to make the users familiarise the application with conventional newspapers the application could build on a paged interface, from the front page (page $0$) through sections until it reaches the back page. Page numbers could, furthermore, be used to keep the overview. From the scenarios it seems that both general and personal content is needed in order to satisfy users needs for information. However, the users may not necessary look for it. The amount of general versus personalised news is hard to define, but the user can be provided with functionality to adjust it. Also, reviews and opinionated articles could be of interest and maybe even puzzles and cartoons. In all cases it seems that the articles in the newspaper should be fresh and if the user makes changes in the personal settings, the newspaper should instantly update.
 
-From the scenarios it is clear that the users needs an overview of the content and that it should be presented in a nice layout. This can be done through the front page, where the most interesting stories should be found. In addition only headlines, images and excerpts could be displayed. To familiarise it with conventional newspapers the application could build on a paged interface, from the front page (page $0$) through sections until it reaches the back page and to keep the overview page numbers could be used. It seems that both general and personal content is needed in order to satisfy users needs for information. However, it seems that the users may not necessary look for it. The amount of general versus personalised news is hard to define, but the user can be provided with functionality to adjust it. Also, reviews and opinionated articles could be of interest and maybe even puzzles and cartoons. In all cases it seems that the articles in the newspaper should be fresh and if the user makes changes in the personal settings, the newspaper should instantly update.
-
-From the scenarios it is seen that users want to be social with their personal newspaper. This could be implemented both through a community in the application with comments on articles, but also by the possibility of sharing through common social networks. Notifications can be added to provide the user with the functionality of getting information on when there is a comment on a article that the user have already shown interest in or if new articles have arrived on a subject the user follows.
+From the scenarios it is seen that users want to be social with their personal newspaper. This could be implemented both through a community in the application with comments on articles, but also by the possibility of sharing through common social networks. Notifications can be added to provide the user with the functionality of getting information on when there is a comment on articles. Articles that the user have already shown interest in or new articles on a subject the user follows.
 
 Finally, it seems to make sense that the users provide their preferences about sections in keywords, which could also be gathered using relevance feedback. These models of the users can later be used to sell user behaviour patterns and very targeted ads.
 
@@ -31,22 +33,22 @@ Based on the personas, scenarios and business case the following general user ne
 \begin{itemize}\itemdist
 	\item Get an easy overview of the content of the newspaper
 	\item Easily navigate between articles with few touch-friendly interactions
-	\item Read articles presented in a nice and digestible layout
+	\item Read articles presented in a digestible layout
 	\item Read relevant articles based on user defined topics
 \end{itemize}
 
-Furthermore, the editorial mix might not emerge as a need that users are aware of, but the rules of the editorial mix are established to better accommodate user needs in a composition of articles. In order to work with it in the application this is added to the user needs and the rules of the editorial mix are derived in the bottom of this section.
+Furthermore, the editorial mix might not emerge as a need that users are aware of, but the rules of the editorial mix are established to better accommodate user needs in a composition of articles on tablet computers.
 %Furthermore, main hypothesis presented in section~\vref{sec:hypothesis} is added to the user needs, which should express a user need that user may not be aware of.
 \begin{itemize}\itemdist
 	\item Read articles in a composition based on the editorial mix
 \end{itemize}
+In order to work with it in the application this is added to the user needs and the rules of the editorial mix are derived in the final section of this chapter.
 
-These user needs can be interpreted and fulfilled in many ways, e.g.\ relevant articles is very individual to each user and the way to apply these preferences on articles needs to be determined. Therefore no design choices are made before the problem have been analysed closer.
+These user needs can be interpreted and fulfilled in many ways, e.g.\ to establish whether an article is relevant to a user is very individual and the way to apply these preferences on articles needs to be addressed. Therefore no design choices are made before the problem have been analysed on a deeper level.
 
 \section{Use Cases}
 %These user needs and the results from the conducted tests proposes some use cases from the application. Theses will presented here.
 This section presents use cases based on the user needs from the previous section.
-\clearpage
 %\begin{itemize}\itemdist
 %	\item Select relevant subject categories
 %	\item Show articles under relevant subject category
@@ -106,7 +108,7 @@ This section presents use cases based on the user needs from the previous sectio
 \myfloatalign
 	\begin{tabular}{p{0.2\textwidth}|p{0.7\textwidth}} \toprule 
 		\textbf{Use case \#4} & Read relevant articles based on user defined topics\\ \midrule
-		\textbf{Description} & It is for the user to read relevant articles of topics based on data gathered about user interests\\ \midrule
+		\textbf{Description} & It is possible for the user to read relevant articles of topics based on data gathered about user interests\\ \midrule
 		\textbf{Actors} & User, web server\\ \midrule
 		\textbf{Scenario} 	& 1. The user uses the application regularly as suggested in use cases~\ref{tab:use_case1} to \ref{tab:use_case3}\\
 								& 2. The system gathers data about user interests\\
@@ -132,8 +134,8 @@ This section presents use cases based on the user needs from the previous sectio
 \caption{Use case 5}
 \label{tab:use_case5}
 \end{table}
-
-Notice that no specific assumption about the design was made in these use cases, but in stead merely that some components, like menus, headlines and a representation of the user interests are present.
+\cleardoublepage
+Notice that no specific assumption about the design was made in these use cases, but instead merely that some components, like menus, headlines and a representation of the user interests are present.
 
 There are many ways to achieve the presented use cases, but the next section will draw from the presented use cases and the explored literature to derive requirements.
 %In order to fulfil the user needs, more general use cases are derived.
@@ -160,15 +162,15 @@ There are many ways to achieve the presented use cases, but the next section wil
 %\subsection{Non-functional Requirements}
 In the explored literature, scenarios and presented use cases expresses some non-functional requirements. These are described in this section.
 
-User needs states the requirement of having a clear overview of the content and as stated in \cite{FULLTEXT01.pdf}, this includes a clear marking of the beginning and the end of the articles and sections. This is obtained by both having a summery of the most interesting articles on the front page and by having a list of headlines in each section.
+User needs states the requirement of having a clear overview of the content and as stated in \cite{FULLTEXT01.pdf}, this includes a clear marking of the beginning and end of the articles and sections. This is obtained by both having a summary of the most interesting articles on the front page and by having a list of headlines in each section.
 
-From the user needs it is also required that the system should be easily navigated and as stated by \cite{kristin_fredrik.pdf}, this should be through clickable sections, headlines and through paging, or as the users from \cite{FULLTEXT01.pdf} describes it; ``open, turn pages, chose article, read and return''. \cite{FULLTEXT01.pdf} also states that the newspaper indexing is the most effective ``navigational'' tool in newspapers and headlines are the main entry points to text, which means that these should be very central in application.
+From the user needs it is also required that the system should be easily navigated and as stated by \cite{kristin-fredrik.pdf}, this should be through clickable sections, headlines and through pagination, or as the users from \cite{FULLTEXT01.pdf} describes it; ``open, turn pages, chose article, read and return''. \cite{FULLTEXT01.pdf} also states that the newspaper indexing is the most effective ``navigational'' tool in newspapers and headlines are the main entry points to text, which means that these should be very central in the application.
 
-The layout, typography and design should be familiar to what is found in conventional newspapers, as stated by \cite{FULLTEXT01.pdf} and \cite{hcii2005_1004.pdf}. This is achieved by choosing a structure that resembles that of a newspaper and displaying content in balanced columns. In appendix~\vref{sec:column_calc} is found calculations on how many columns should be used on the iPad and on desktop computers based on conventional newspapers. The result of the calculations is that there should be 2 columns in portrait mode and 3 columns in landscape and on desktop computers of 1200px. However, it only requires a screen of 1320px before 4 columns would be optimal. But as the project targets the iPad screen size only 2 and 3 columns will be considered from here on.
+The layout, typography and design should be familiar to what is found in conventional newspapers, as stated by \cite{FULLTEXT01.pdf} and \cite{hcii2005-1004.pdf}. This is achieved by choosing a structure that resembles that of a newspaper and displaying content in balanced columns. In appendix~\vref{sec:column_calc} is found calculations on how many columns should be used on the iPad and on desktop computers based on the column sizes from conventional newspapers. The result of the calculations is that there should be $2$ columns in portrait mode and $3$ columns in landscape and on desktop computers of $1200$px in width. However, it only requires a screen of $1320$px in width before 4 columns would be optimal. But as this project targets the iPad 1 and 2 screen sizes only $2$ and $3$ columns will be considered from here on.
 
-The contents of the newspaper should consist of both personal and general news according to the scenarios. Furthermore, the typography of the application should also resemble that of a conventional newspaper. It should contain a good ratio of both graphical and textual content and should, when possible, supply multimedia content. The conclusions made from the empirical data in \cite{FULLTEXT01.pdf}, about exploring which features to bring from conventional to digital newspapers, was that valuation and position of the news was important. More importantly that the reader should be guided through the digital newspaper. It is, however, crucial to consider that their empirical basis is not very large. They have a qualitative selection of respondents from newspapers that have, recent to its execution, become dedicated to the project. Moreover, they have chosen 16 open questions for the respondents to answer, which should provide some sort of basis for their conclusions. In this project it is chosen to use them as guidelines, but the choices made on this basis must be verified\sidenote[1]{Earlier statements from this paper have been backed by additional sources.}.
+The contents of the newspaper should consist of both personal and general news according to the scenarios. Furthermore, the typography of the application should also resemble that of a conventional newspaper. It should contain a good ratio of both graphical and textual content and should, when possible, supply multimedia content. The conclusions made from the empirical data in \cite{FULLTEXT01.pdf}, about exploring which features to bring from conventional to digital newspapers, was that valuation and position of the news was important. More importantly that the reader should be guided through the digital newspaper. It is, however, crucial to consider that their empirical basis is not very substantial. They have a qualitative selection of respondents from newspapers that have, recent to its execution, become dedicated to the project. Moreover, they have chosen 16 open questions for the respondents to answer, which should provide some sort of basis for their conclusions. In this project it is chosen to use them as guidelines, but the choices made on this basis must be verified\sidenote{Earlier statements from the paper have been backed by additional sources.}\hspace{-1em}.
 
-That the reader should be guided through the newspaper using valuation of the items does, however, fall in line with the editorial mix, which also have been used in conventional newspapers for a long time. This suggests control of the temporal, spacial and relational values of individual articles and between them. Also, using the Gestalt principles \cite{Tidwell} suggests providing a visual hierarchy so the user can see the relative importance of the page elements and the relationship among them.
+That the reader should be guided through the newspaper using valuation of the items does, however, fall in line with the editorial mix, which also have been used in conventional newspapers for a long time. This suggests control of the temporal, spatial and relational values of individual articles and between them. Also, using the Gestalt principles \cite{Tidwell} suggests providing a visual hierarchy so the user can see the relative importance of the page elements and the relationship among them.
 %textual relation, position of and matching time
 %\begin{itemize}\itemdist
 	%\item Ease of use
@@ -187,37 +189,35 @@ That the reader should be guided through the newspaper using valuation of the it
 %\subsection{Functional Requirements}
 Some technical requirements have also been gathered from the explored literature.
 
-\cite{fulltext.pdf} suggests to use article excerpts in addition to the navigation using clearly marked sections and article headlines, and that these should be personalised. The results from \cite{kristin_fredrik.pdf} suggests that the menu with clickable sections should be placed on the left side of the screen, but they could have been biased as it was already placed there in the tested prototype. In, addition, they found this as a good choice as they recognised it from the web. A menu in the top of the page would therefore also be in line with their findings, as it is a general pattern of the web \cite{Tidwell}. In addition, it would take up less space in the view, leaving more room for the general purpose of the application, namely reading. The menu items will work well as the user defines the content of them. Furthermore, it would aid the user to relate more to these divisions if it is possible for him to name them himself.
+\cite{fulltext.pdf} suggests to use article excerpts in addition to the navigation using clearly marked sections and article headlines, and that these should be personalised. The results from \cite{kristin-fredrik.pdf} suggests that the menu with clickable sections should be placed on the left side of the screen, but they could have been biased as it was already placed there in the tested prototype. In, addition, they found this as a good choice as they recognised it from the web. A menu in the top of the page would therefore also be in line with their findings, as it is a general pattern of the web \cite{Tidwell}. In addition, it would take up less space in the view, leaving more room for the general purpose of the application, namely reading. The menu items will work well as the user defines the content of them. Furthermore, it would aid the user to relate more to these divisions if it is possible for him to name them himself.
 
 Furthermore, it should be possible for the user to get an overview of the headlines contained in a section. This could be done by just having a list of the headlines, or by using the overview plus detail pattern presented by \cite{Tidwell}.
 
-Many articles discuss different ways of represent the user's interests. It seems, however, that both \cite{fulltext.pdf} and \cite{User-Modeling-for-Adaptive-News-Access.pdf} generate good results with a dynamic short-term user model in combination with a static long-term user profile.
-
-\todo[inline]{Rewrite to fit list. Maybe not divide into functional and non-functional.}
+Many articles discuss different ways of representing the user's interests. It seems, however, that both \cite{fulltext.pdf} and \cite{User-Modeling-for-Adaptive-News-Access.pdf} generate good results with a dynamic short-term user model in combination with a static long-term user profile.
 
 Finally, the implementation of a community in the application should be done with the possibility of sharing the story on different social networks, but could also include comments on articles, as suggested in the scenarios.
-
+\clearpage
 These requirements can be summed up in the following list:
 \begin{itemize}\itemdist
-	\item Summery of few most relevant articles on the front page
-	\item Clear section and article headlines and personalised article excerpts to ease navigation
-	\item Menu of section, that is always visible
-	\item Paged navigation through sections
+	\item Summary of few most relevant articles on the front page
 	\item Overview of article headlines
+	\item Clear section and article headlines and personalised article excerpts to ease navigation
+	\item Paginated navigation of articles
 	\item Personal and general news
-	\item Layout, typography and design should be familiar to a newspaper
+	\item Layout, typography and design should be resemble that of a newspaper
 	\item Visual hierarchy
-	\item Balanced columns should be divided into screen size chunks
-	\item Serve multimedia content
+	\item Balanced columns% should be divided into screen size chunks
 	\item The reader should be guided through the newspaper using valuation of the items in terms of categories of the editorial mix
+	\item Menu of sections should resemble those from the web
+	%\item Serve multimedia content
 	\item Combination of long-term and short term interest model of the user
 	\item Incorporate community and social networking
 \end{itemize}
 
 \section{The Editorial Mix}% (constraints)
-The task at hand is to decompose the spacial, temporal and relational features of the composition of articles that provides the best satisfaction of the individual user preferences into constraints. This section analyses the existing literature on reading behaviour of conventional and digital newspaper and derives constraints to compose the editorial mix of.
+The task at hand is to decompose the spatial, temporal and relational features of the composition of articles that provides the best satisfaction of the individual user preferences into constraints. This section analyses the existing literature on reading behaviour of conventional and digital newspaper and derives constraints that supports in-depth reading to compose the editorial mix of.
 
-The reading behaviour of conventional newspapers differs from of them read digitally. In the experiments done in \cite{holmqvist2003reading} it is concluded that the net paper\sidenote[1]{Newspapers on the Internet.} readers read stories thematically close to their own specific profession or interests. So it is important to provide this setting for the reader. The readers also used the front page as a provider of main entry points. And finally, the readers ``claim to scan more in order to find the two or three stories they will read in the net paper'' which is explained by the poorer chances of links catching reader interest. However, it could be possible to attract the reading behaviour from conventional newspapers onto digital platforms - it is certainly interesting to see an equal analysis of the reading behaviour of tablet computers, which calls for more in-depth reading. If a digital platform are to attract more in-depth reading it requires some flow in the presentation of the articles, i.e.\ it requires an editorial mix, so the readers do not feel like they have left the main trail \cite{holmqvist2003reading}.
+Users reading behaviour when reading conventional newspapers differs from when reading digital newspapers. In the experiments done in \cite{holmqvist2003reading} it is concluded that the net paper\sidenote{Newspapers on the Internet.} readers read stories thematically close to their own specific profession or interests. So it is important to provide this setting for the reader. The readers also used the front page as a provider of main entry points. And finally, the readers ``claim to scan more in order to find the two or three stories they will read in the net paper'' which is explained by the poorer chances of links catching reader interest. However, it could be possible to attract the reading behaviour from conventional newspapers onto digital platforms -- it is certainly interesting to see an equal analysis of the reading behaviour of tablet computers, which calls for more in-depth reading (\cite{TabletRead}). If digital tablet platforms are to attract more in-depth reading it requires some flow in the presentation of the articles, i.e.\ it requires an editorial mix, so the readers do not feel like they have left the main trail, as explained by the users from \cite{holmqvist2003reading}.
 %net paper readers scan more than newspaper readers. They claim to scan more in order to find the two or three stories they will read in the net paper.
 %Concerning article topics, the net paper readers read stories thematically close to their own specific profession or interests. All net paper readers were reading the news category that could be termed `scandals and catastrophes'.
 %
@@ -226,44 +226,44 @@ The reading behaviour of conventional newspapers differs from of them read digit
 %The poorer chances of links catching reader interest may be the explanation why net paper readers have to scan more, why they read only certain types of texts and why they are bored so soon.
 %
 %When they probed deeper into an article they felt that they had left the main trail. In other words, only the front page is conceived of as a reliable provider of entry points \cite{holmqvist2003reading}
+\clearpage
 
-To attract reading behaviour of conventional newspaper it is worth while understanding readers expectations of these. \cite{holsanova2006entry} confirms a summery of reading behaviour assumptions from \cite{kress1999reading} on conventional newspapers using eye-tracking measurements:
+To attract reading behaviour of conventional newspapers it is worthwhile understanding readers expectations of these. \cite{holsanova2006entry} confirms a summary of reading behaviour assumptions from \cite{kress1999reading} on conventional newspapers using eye-tracking measurements:
 \begin{itemize}\itemdist
-	\item Readers prefer the most general information at the top and the most specific information at the bottom of the semiotic space.
-	\item Readers look for the most important information in the centre of the page and less important information on the periphery.
-	\item Readers look for paratexts\sidenote[1]{\cite{genette1997paratexts} defines paratext as those productions accompanying a text, such as an author's name, a title, a preface, or illustrations.}.
+	\item Readers prefer the most general information at the top and the most specific information at the bottom of the semiotic space
+	\item Readers look for the most important information in the centre of the page and less important information on the periphery
+	\item Readers look for paratexts\sidenote{\cite{genette1997paratexts} defines paratext as those productions accompanying a text, such as an author's name, a title, a preface, or illustrations.}
 \end{itemize}
 
 And, two are not confirmed, but not declined either:
 \begin{itemize}\itemdist
-	\item Readers look for graphically salient elements; however, it is important to bear in mind that `what is made salient is culturally determined' \cite{kress1999reading}.
-	\item Readers follow elements connected to each other by framing devices such as lines and arrows.
+	\item Readers look for graphically salient elements; however, it is important to bear in mind that `what is made salient is culturally determined' \cite{kress1999reading}
+	\item Readers follow elements connected to each other by framing devices such as lines and arrows
 \end{itemize}
 
-That the most important information should be in the centre of the page will be hard to attract on digital platforms because of the limited space. Because of the screen size only one or two, and in some cases three, articles are shown at a time and the user will have to scroll to see the next items. However, the relation between adjacent articles can still be controlled, so a featured\sidenote[1]{A featured article means providing it with more space than others, a central position and it is often accompanied with graphically salient elements.} article should be adjacent to some smaller, but still very relevant articles. This will hopefully attract the same behaviour, but of cause needs to be confirmed.
+That the most important information should be in the centre of the page will be hard to attract on digital platforms because of the limited space. Because of the screen size only one or two, and in some cases three, articles are shown at a time and the user will have to scroll to see the next items. However, the relation between adjacent articles can still be controlled, so a featured\sidenote{A featured article means providing it with more space than others, a central position and it is often accompanied with graphically salient elements.} article should be adjacent to some smaller, but still very relevant articles. This will hopefully attract the same behaviour, but of course needs to be confirmed.
 
 Also, a central position is hard to obtain, as many articles will be listed below each other, so a central position is here deemed to be higher than its relevant non-featured articles.
 
 %\item Readers prefer new information and expect this to be on the right in the semiotic space.
-%\item Readers scan the semiotic space before taking a closer look at certain units\sidenote[2]{It should be noted that each reader might give priority to one or a few of these seven principles when creating meaning of the semiotic space.}.
-
+%\item Readers scan the semiotic space before taking a closer look at certain units\sidenote{It should be noted that each reader might give priority to one or a few of these seven principles when creating meaning of the semiotic space.}.
+\clearpage
 Based on the user study and the explored literature on reading behaviour the editorial mix problem can be divided in two; (1) the front page and (2) the sections.
 
 \paragraph{1} The purpose of the front page is to draw attention and provide an intriguing overview of the whole newspaper. This is done by using many images and providing headlines and excerpts of the most relevant articles of the newspaper. The most relevant article should be featured in the centre with a selection of a little less, but still very relevant articles adjacent to it. A visual hierarchy should be provided so the user can see the relative importance of the page elements and the relationship among them. The front page should, if available, provide interesting articles from all sections as main entry points.
-%\sidenote[1]{The research on the composition has been done by looking through the front pages of a stack of newspapers - both conventional and digital.}
+%\sidenote{The research on the composition has been done by looking through the front pages of a stack of newspapers - both conventional and digital.}
 
-\paragraph{2} The purpose of each section is to provide a flow of articles relevant to a, by the user provided, topic that keeps the user interested and invites for in-depth reading. More general articles should be placed in the top of the screen and more specific at the bottom, with a featured main article in the centre. Framing and lines should guide the user to what is related and a graphical .
-%Looking through conventional newspapers it seems that they try, whenever possible, to present an interesting featured article and provide a selection of articles on the same subject to surround it. All, of cause, within the section topic. The visual hierarchy is again crucial, to distinguish the importance of the articles and their relationship. There might exist more patterns, but they were possible to deduct using this manual method. In order to come closer to understanding what conventional newspapers does, in terms of categories of the editorial mix, it could be interesting to analyse their composition, e.g.\ using the in \cite{00953970.pdf} presented algorithm in combination with a heat map to determine where eye activity is highest on the screen.
+\paragraph{2} The purpose of each section is to provide a flow of articles relevant to a, by the user provided, topic that keeps the user interested and invites for in-depth reading. More general articles should be placed in the top of the screen and more specific at the bottom, with a featured main article in the centre. Framing and lines should guide the user to what is related.
+%Looking through conventional newspapers it seems that they try, whenever possible, to present an interesting featured article and provide a selection of articles on the same subject to surround it. All, of course, within the section topic. The visual hierarchy is again crucial, to distinguish the importance of the articles and their relationship. There might exist more patterns, but they were possible to deduct using this manual method. In order to come closer to understanding what conventional newspapers does, in terms of categories of the editorial mix, it could be interesting to analyse their composition, e.g.\ using the in \cite{00953970.pdf} presented algorithm in combination with a heat map to determine where eye activity is highest on the screen.
 
 These descriptions can be decomposed into the following constraints.
-
 \paragraph{General Constraints}
 \label{sec:analysis_mix}
 \begin{itemize}\itemdist
 %\subsubection{Unary}
-	\item A featured articles should be allowed to take up more space
-	\item A featured articles should be accompanied by an image
-	\item A featured should have a central position
+	\item A featured article should be allowed to take up more space
+	\item A featured article should be accompanied by an image
+	\item A featured article should have a central position
 	\item A non-featured article should take up less space
 %\subsubection{Binary}
 	\item A featured article should be adjacent to non-featured articles
@@ -292,27 +292,29 @@ These descriptions can be decomposed into the following constraints.
 	\item The section should contain a balanced weight between graphical and textual content
 	\item Images should be spread evenly in the section
 \end{itemize}
+
+The following chapter will discuss and present the choices in design of the application. 
 %
 %\todo[inline]{In which period of time is an article relevant to a user? Maybe if it is still available, then it is still interesting -- new approaches or discussion about the subject might arise. How do we control that a news item is not missed? Keep index of what has been viewed in addition to what has been read.}
 %\begin{itemize}
 	%\item ``open, turn pages, chose article, read and return'' \cite[p. 6]{FULLTEXT01.pdf}
-	%\item section headlines \cite[p. 6-7]{kristin_fredrik.pdf}
+	%\item section headlines \cite[p. 6-7]{kristin-fredrik.pdf}
 	%\item article headlines
 	%\item article summaries / extracts \cite{fulltext.pdf}
-	%\item menu w. section headlines \cite[p. 8]{kristin_fredrik.pdf}
-	%\item page numbers \cite[p. 6-7]{kristin_fredrik.pdf}
+	%\item menu w. section headlines \cite[p. 8]{kristin-fredrik.pdf}
+	%\item page numbers \cite[p. 6-7]{kristin-fredrik.pdf}
 	%\item press ``like'' or key word based user profile (mark self or highlighted? right click to add): positive + negative list (keywords+categories \cite{10-1-1-19-5583}, \cite{fulltext.pdf} and \cite{gervasum2001ws.pdf})
 	%\item full screen display of article
 	%\item organise into personalised sections
-	%\item opens in front page view (summery of newspaper 8 articles) \cite[p. 8]{kristin_fredrik.pdf}
+	%\item opens in front page view (summary of newspaper 8 articles) \cite[p. 8]{kristin-fredrik.pdf}
 	%\item adjust variables
 	%\item share directly (grey out the ones who have read it)
 	%\item comment
 	%\item see friends comments
 	%\item ``The presentation schema -- headline, abstract, and text, together with a relevance value with respect to the user profile -- rates the highest in terms of user satisfaction, and yet it is not the most frequent.'' \cite{Sections-categories-and-keywords-as-interest-specification-tools-for-personalised-news-services.pdf}
 	%\item  ability to search \cite[p. 7]{FULLTEXT01.pdf}
-	%\item Landscape + portrait \cite[p. 6-7]{kristin_fredrik.pdf}
-	%\item touch screen interaction \cite[p. 6-7]{kristin_fredrik.pdf}
+	%\item Landscape + portrait \cite[p. 6-7]{kristin-fredrik.pdf}
+	%\item touch screen interaction \cite[p. 6-7]{kristin-fredrik.pdf}
 	%\item Functionality from online newspaper \cite{hcii2005_1004.pdf}
 	%\item Name of columnist \cite[p. 4]{gervasum2001ws.pdf}
 	%\item Transparency of implicit relevance feedback (see/modify current weights of categories) \cite[p. 7]{gervasum2001ws.pdf}
@@ -335,7 +337,7 @@ These descriptions can be decomposed into the following constraints.
 %	\item easy navigation
 %	\item contemplated typography and design
 %	\item most interesting articles on the front page
-%	\item opens in front page view (summery of newspaper few articles)
+%	\item opens in front page view (summary of newspaper few articles)
 %	\item navigation through section headlines, article headlines and article summaries / excerpts
 %	\item back page, funnies?
 %	\item put in personalised sections

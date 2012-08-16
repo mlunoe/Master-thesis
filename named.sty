@@ -37,6 +37,28 @@
   }}
 
 \let\@internalcite\cite
-\def\cite{\def\citeauthoryear##1##2{##1, ##2}\@internalcite}
-\def\shortcite{\def\citeauthoryear##1##2{##2}\@internalcite}
+\def\cite{\def\citeauthoryear##1##2{##1}\@internalcite}
+\def\shortcite{\def\citeauthoryear##1##2{##1, ##2}\@internalcite}
 \def\@biblabel#1{\def\citeauthoryear##1##2{##1, ##2}[#1]\hfill}
+
+%\def\cite{\def\@citeseppen{-1000}%
+% \def\@cite##1##2{[\nobreak\hskip 0in{##1\if@tempswa , ##2\fi}]}%
+% \def\citeauthoryear##1##2{##1, ##2}\@internalcite}
+%
+%\def\citetext{\def\@citeseppen{-1000}%
+% \def\@cite##1##2{\nobreak\hskip 0in{##1\if@tempswa , ##2\fi}}%
+% \def\citeauthoryear##1##2{##1~[##2]}\@internalcite}
+%
+%\def\citenoparens{\def\@citeseppen{-1000}%
+% \def\@cite##1##2{\nobreak\hskip 0in{##1\if@tempswa , ##2\fi}}%
+% \def\citeauthoryear##1##2{##1, ##2}\@internalcite}
+%
+%\def\shortcite{\def\@citeseppen{1000}%
+% \def\@cite##1##2{[{##1\if@tempswa , ##2\fi}]}%
+% \def\citeauthoryear##1##2{##2}\@internalcite}
+%
+%\def\citeauthor#1{\def\@cite##1##2{{##1\if@tempswa , ##2\fi}}%
+% \def\citeauthoryear##1##2{##1}\@citedata{#1}}
+%
+%\def\citeyear#1{\def\@cite##1##2{{##1\if@tempswa , ##2\fi}}%
+% \def\citeauthoryear##1##2{##2}\@citedata{#1}}

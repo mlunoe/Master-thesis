@@ -1,0 +1,83 @@
+%!TEX root = thesis.tex
+\chapter{Discussion} % (fold)
+\label{ch:discussion}
+%- Evaluate the solution and compare existing techniques for personalisation to the ones used in the solution.
+This section will discuss the uses of the application and of the CPL.
+
+Diskussionen er det interessante, det andet skal man bare forstå nok.
+
+Hvis jeg kigger det på denne her vinkel, så får jeg det her og det her ud af det.
+Hvordan kommer vi videre med det her, hvad er det der er det vigtige.
+
+%The introduction of a more elaborate control of the editorial mix to the digital newspapers satisfies user needs better than alternatives (placing articles in a list with the most interesting article first).
+%Hvad har jeg gjort ift. andre og hvad er bedre.
+
+\section{Application}
+It was possible to provide a composition of personal articles that follows rules of the editorial mix, which in turn should provide a better reading experience of personal content on the web. The main difference from other news sites and this application is that it is the user that decides what is interesting and what is not, i.e\ the user has become the editor.
+
+The only looks at the displayed content, served on the basis of relevance feedback. The displayed content could be optimised by looking at the user behaviour and learning from it. Collaborative filtering or clustering could be used to generate user groups to suggest targeted articles; ``users that like some of the articles as you do likes this article''. These technologies can also be used to improve the existing sections for a given user.
+%The ads can also be targeted to specific user groups with specific behaviours, so advertisers may reach there very specific audience.
+
+The application is, however, not bound to its domain of a newspaper. Any page that needs to serve a personalised composition of information on the Internet, can use this application. Or, this application could be used to gather information around the Internet, like Wavii\sidenote[1]{\url{https://wavii.com/}} does, but serve it under user defined topics, in a nicely presented layout and with a relevant reading flow. Examples of this are aggregation of news from social sites, information about tourist attractions to compose a vacation, or information about bargains that fit the individual user.
+
+The first example could be just for personal uses, but the keyword analysis could provide substantial insight about user behaviour assembled into groups of e.g.\ interests, geographic location or age. The system could then be used as a tool to access vital knowledge about trending behaviours to use for e.g.\ targeting adverts or developing products that satisfies user needs better.
+ This information has the potential to create value.
+\todo[inline]{Is this what Google Trends does?}
+
+The second example could be used by a travel agency to provide personally composed vacations, or just by the users them selves, where the travel agency provides the necessary information. In the case of planning a vacation there might be restrictions of which attraction to see first, the distance between them and the time frame. If the travel agency formalises the problem of planning a vacation the restrictions could be exposed to the user, who can state their preferences, and in turn get a promising vacation.
+
+In the third example different kinds of online shops could engage in a network where the user could order anything. The system could then suggest different combinations of complimentary items, e.g.\ if the user needs to shop for a dinner party, the system could suggest combinations of ingredients for the dish the user searched for and propose a wine that is specifically good with the ingredients. The difference between this and other systems, is where other systems might show a long list of the same items, this system can be modelled to show only of each kind based on similarity measures.
+
+The application in principle could compose even a print copy of the newspaper, with the personalised sections and content and specific ads to go on the printed edition. User could then select how often the newspaper should arrive at the door and when its content should be generated.
+
+The revenue flow could come from an online auctions of targeted ads, using \cite{AdSense}. However, it seems that AdSense scrapes the cached page and uses WordNet extract semtic meaning, possibly along with other techniques. And it is therefore not possible to serve keywords from topics and subjects to base the ads on, even though it would make it more precise. It is, however, possible to control what is shown on the page, which, in the application, contains targeted content. Central places between articles could be sold to the highest bid. 
+
+To attract users to the system \cite{AdWords} could be used. Here it is possible to serve the extracted keywords to get targeted ads on other pages and might aid the awareness of the system.
+
+\section{Constraint Personalisation Library}
+The automatic composition of items with metadata that should follow some rules can be found in many personalisation problem, or even other problems as well. The possibilities for this library seems to be manifold, and it could be interesting to explore the full extend of the possibilities by making it available for everyone, in the hope that someone takes it and uses it in a completely new context that it was never intended for. Meaning that, the full importance and possibilities will not unfold until it the library is introduced at an open source platform, such as Github.
+
+
+
+
+
+
+
+, through Google AdWordsThis application does actually do what Google AdSense does -- it uses WordNet to extract meaning from sites to sell ads on them.
+%online auktion af reklamer via adwords.
+%Jeg gør faktisk hvad Google AdSense gør!
+In recent years content of the Internet have become more user generated, through blogs and social networks. This application supports this development because it...
+Det der har været interessant indenfor de sidste par år:
+indhold er mere og mere brugergeneret
+det her gør de andre (udgiver populære artikler)
+i princippet understøtter applikationen de ting som sker.
+
+%Collaborate filtering på brugere > brugergrupper:
+%- dem der har læst det her har også læst det her!
+%- reklamering på brugergruppe basis
+%- bruge det til at forbedre sektioner: andre der interesserer sig for tech interesserer sig også for gaming. spørge brugeren om dette emne kunne være interessant.
+
+
+, zite, wired magazine, Reeder (read it later/pocket), Instapaper
+inspiration fra nyheder: forskellen mit og deres er at brugeren selv bestemmer hvad der skal ske i mit
+
+alt det der bliver genereret fra en brugeren baseret på bag of words, daglig, uge, måned, skiftende trends over tid. Valgt det her for at skabe værdi. Denne information giver mulighed for at skabe værdi.
+
+En avis er nogle anoncer, så skal jeg finde artikler og et editorial mix der understøtter til disse anoncer.
+Folk vil betale for historien på Wall Street Journal, fordi de er så gode.
+
+video feed med tekst kan bruges til at finde videoer der passer til historierne. Reuters, Wall Street Journal, ABC News, BBC, 
+
+aktiviteter groupon, aok - sammensætning af en ferie eller turist bureau. pris niveau som constraint.
+
+online tilbudsaviser, netto, føtex, superbrugsen. constriaints kun food eksempelvis.
+
+musik tilbud, koncerter tid og begrænsning i km eller land.
+
+nykredit har lanceret data om hvordan din økonomi bliver forvaltet.
+
+tlf abonnement personaliseret
+
+%The development of the Internet from a distributor of information to a library of digital applications has deeply integrated the users in every step of an applications lifetime. It has become harder to distinguish between super users and developers, applications are branched and modified according to every need and authors can therefore no longer predict which use his application can be to another user -- nor should he have to.
+
+% section discussion (end)

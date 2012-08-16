@@ -1,22 +1,25 @@
-%!TEX root = ../thesis.tex
-\chapter{Creating the Editorial Mix} % (fold)
+%!TEX root = thesis.tex
+\chapter{Introduction} % (fold)
 \label{ch:introduction}
-This chapter introduces the editorial mix of a digital newspaper and which parameters to account for when composing the newspaper. It is afterwards discussed which of these parameters are suited for personalisation, and how this can be done. The proposed approach is then presented with its pros and cons, which results in a list of contributions, that this project has to the field of personalisation.
+This chapter introduces the problem of creating a composition of articles that follow the principal of the editorial mix in a digital newspaper that supports the in-depth reading behaviour users have on tablet computers (\cite{TabletRead}). Because conventional newspapers support this behaviour inspiration is sought from this field. Afterwards the paper introduces personalisation to features from the editorial mix and discusses the contribution of Constraint Programming as a technology in this context. The chapter concludes with a problem definition and a description of what this paper goes through in order to solve the problem.
+%This chapter introduces the editorial mix of a digital newspaper and which parameters to account for when composing the newspaper. It is afterwards discussed which of these parameters are suited for personalisation, and how this can be done. The proposed approach is then presented with its pros and cons, which results in a list of contributions, that this project has to the field of personalisation.
 %\todo[inline]{Introduce an automated editorial mix to the digital newspaper. Bringing rss-readers and digital newspapers closer together.}
 
-\todo[inline]{What am I trying to achieve? Broad introduction, why is the following theory necessary}
+Before it is possible to solve the problem of the editorial mix it needs to be defined. This is done in the following section.
 
 \section{The Editorial Mix Problem}
-In the conventional newspapers the editors job is to compose an intriguing front page that offers the contents of the sections that might interest the individual user. His challenge is to accommodate the needs of the newspapers segment of readers, divide the articles into sections, with a nice reading flow and attractive illustrations, and hand-pick articles to go on the front page. In 1965 \cite{EditorsDilemma} defines the editorial mix problem as finding the least number of items to obtain maximum audience coverage, but with adaptive web sites it is possible to obtain a single user's preferences and accommodate them. Therefore it is possible to redefine the problem to:
+In the conventional newspapers the editors job is to compose an intriguing front page that offers the contents of the sections that might interest the individual user. His challenge is to accommodate the needs of the newspapers segment of readers, divide the articles into sections, with a nice reading flow and attractive illustrations, and hand-pick articles to go on the front page. In 1965 \cite{EditorsDilemma} defines the editorial mix problem as finding the least number of items to obtain maximum audience coverage, but with adaptive web sites it is possible to obtain a single user's preferences and accommodate them.
+\clearpage
+Therefore it is possible to redefine the problem of finding the personal editorial mix to:
 \begin{quotation}
 	\emph{Finding the composition of articles that provides the best satisfaction of the individual user preferences.}
 \end{quotation}
 %
 %But what if a computer could do this?
 %"their segment of readers", hvis readers? Måske det ville lyde bedre hvis man skrev "the paper's segment of readers" eller noget i den dur.
-An important part of the editorial mix is also that each piece of the mix needs to be interesting in it self, as stated by \cite{Tidwell} in her definition of the editorial mix pattern.
+An important part of the editorial mix is also that each piece of the mix needs to be interesting in it self, as stated by \cite{Tidwell} in her definition of the editorial mix pattern. The personal editorial mix is from here on referred to as the editorial mix.
 
-\cite{perkowitz-Adaptive-Web-Sites} decomposes the problem of synthesising an adapted page into several subproblems\sidenote[1]{In the subproblems stated here, ``hyperlink'' has been replaced by ``item'' to appreciate them more generally, rather than the original specific sense.}:
+If we look at the personalisation part of the problem, \cite{perkowitz-Adaptive-Web-Sites} decomposes the problem of synthesising an adapted page into several subproblems\sidenote{In the subproblems stated here, ``hyperlink'' has been replaced by ``item'' to generalise them.}:
 \begin{itemize}\itemdist
 	\item What is the content (that is, set of items) of the index page?
 	\item Does it have a coherent topic? What should its title be?
@@ -26,29 +29,39 @@ An important part of the editorial mix is also that each piece of the mix needs 
 	\item Is it appropriate to add the page to the site? If so, where?
 \end{itemize}
 
-Some efforts have been made to digitally calculate similarities between articles and based on a current article suggest similar reading material or use collaborate filtering to suggest articles based on other users' reading behaviour. Some papers propose a composition of articles from user picked RSS-feeds, which can, e.g.\ in the case of Google Reader, be divided into sections. This comes close to conventional newspapers, but there is no ordering of the flow of articles. The ordering, flow and choice of relevant articles is from here on referred to as using \emph{relational} features for creating the editorial mix.
+Some efforts have been made to digitally calculate similarities between articles and based on a current article suggest similar reading material or suggest articles based on other users' reading behaviour. Some papers propose a composition of articles from user picked RSS-feeds, which can, e.g.\ in the case of Google Reader\sidenote{A Web-based aggregator, see \url{http://www.google.com/reader}.}, be divided into sections. This comes close to conventional newspapers, but there is no ordering of the flow of articles. The ordering, flow and choice of relevant articles based on its content, is from here on referred to as using \emph{relational} features for creating the editorial mix.
 % "Others offer composition of articles..." Others giver ikke mening her, hvem mener du?
+%or use collaborate filtering to
+\clearpage
+The solution for some digital newspapers is still to have an editor to create their coherent composed digital newspaper, like the New York Times or Wired Magazine\sidenote{A monthly magazine and on-line periodical, that reports on how new and developing technology affects culture, the economy, and politics.}.
 
-The solution for some digital newspapers is still to have an editor to create their coherent composed digital newspaper, like the New York Times or Wired Magazine. Flipboard, on the other hand, compose their editorial mix of articles from feeds and divide their pages into three (or more rarely four or five) articles\sidenote[1]{Flipboard includes specialised layouts with more articles per page for Twitter.} with excerpts and images, much like conventional newspapers front pages. How they choose their composition is kept a business secret, but it does seem to vary a lot, see Figure~\ref{fig:flipboard-screenshot}.
+Flipboard\sidenote{A social-network aggregation, magazine-format application software for Android and iOS.}, on the other hand, compose their editorial mix of articles from feeds and divide their pages into three (or more rarely four or five) articles\sidenote{Flipboard includes specialised layouts with more articles per page for Twitter content.} with excerpts and images, much like conventional newspapers front pages. How they choose their composition is kept a business secret, but it does seem to vary a lot, see Figure~\ref{fig:flipboard-screenshot}.
 
 \begin{figure}[h!tp]
  	\begin{center}
  		\includegraphics[width=.45\textwidth]{img/flipboard2}
  	\end{center}
- 	\caption{A screenshot of composition of three articles in Flipboard, with different subjects, i.e.\ world crime, world finance and technology news.}
- 	\label{fig:flipboard-screenshot}
+ 	\marginnote{
+	 	\begin{minipage}{\marginparwidth}
+	 		\vspace{-100pt}
+ 			\caption{A screenshot of composition of three articles in Flipboard, with different subjects, i.e.\ world crime, world finance and technology news.}
+ 			\label{fig:flipboard-screenshot}
+ 		\end{minipage}
+	}
 \end{figure}
 
-\todo[inline]{Maybe put in a reference to a conventional newspaper.}
+It is hard to say if there is a control behind the placement of content other than the choice of featured and non-featured articles, but this is actually an example of a computationally composed newspaper. 
 
-It is hard to say if there is a control behind the placement of content other than the choice of featured and non-featured articles, but this is actually an example of a computationally composed newspaper. The placement and amount of room given for an article is from here on referred to as using \emph{spacial} features for creating the editorial mix.
+The placement and amount of room given for an article is from here on referred to as using \emph{spatial} features for creating the editorial mix.
 
-Finally, subjects of articles have more relevance at some points in time than others, and editors choose the amount of time stories should be available in, where RSS-readers just displays the newest articles first, which are not always the most relevant. This selection of articles within a chosen time frame is from here on referred to as using \emph{temporal} features for creating the editorial mix.
+Finally, subjects of articles have more relevance at some points in time than others, and editors choose the amount of time stories should be available in, where RSS-readers just displays the newest articles first, which are not always the most relevant.
+
+This selection of articles within a chosen time frame is from here on referred to as using \emph{temporal} features for creating the editorial mix.
 
 One thing that is vastly different from newspapers to RSS-readers is the ability to deliver personalised content, in that a user can choose which RSS-feeds to follow, whereas readers of newspapers need to navigate it in order to find interesting articles. Also, where newspapers have quality assurance of its content, RSS-readers have a seemingly unlimited amount of articles.
 
 \section{Personalising a Digital Newspaper}
-\cite{BushMemex} describes a collective memory library machine that can be indexed, called the memex. Items in the library are linked together forming personal association trails. This is the early conception of the hypertext media that would later become the World Wide Web and later personalised web applications. With many respects that is what this project tries to achieve; i.e.\ link information in the form of articles together and present them in personalised trials defined by the user. As opposed to \cite{BushMemex} proposed manual linking, it is now possible to, e.g.\ classify and compute similarity automatically, which greatly aids the process. 
+\cite{BushMemex} describes a collective memory library machine that can be indexed, called the Memex. Items in the library are linked together forming personal association trails. This is the early conception of the hypertext media that would later become the World Wide Web and later again personalised web applications. In many respects that is what this project tries to achieve; i.e.\ link information in the form of articles together and present them in personalised trails defined by the user. As opposed to \cite{BushMemex} proposed manual linking, it is now possible to, e.g.\ classify and compute similarity automatically, which greatly aids the process. 
 
 User preferences are very diverse, and it is therefore hard to accommodate every individual in a single solution. A digital solution must be bound to a specific domain, but must also be open for novel use.
 
@@ -62,10 +75,10 @@ User preferences are very diverse, and it is therefore hard to accommodate every
 	
 %\cite{WebMiningMulvenna} defines the goal of personalisation systems as follows: ``to provide users with the information they want or need, without expecting from them to ask for it explicitly''
 
-The three categories of the editorial mix can be described in the sense of personalisation as well. Accommodating individual user preferences based on \emph{spacial personalisation} is achieved by a placement of articles, \emph{temporal personalisation} by selecting articles of higher news value based on their relevance time frame and, finally, \emph{relational personalisation} by selecting articles that provides more value based on their respective and collaborate topics. Temporal personalisation is also obtained by letting user preferences have a life time and decrease the preference influence on which articles to select as time passes. This is referred to as personalising using a ``temporal user model'', whereas the former is referred to as personalising ``temporal user preferences''.
+The three categories of the editorial mix, relational, spatial and temporal, can be described in the sense of personalisation as well. Accommodating individual user preferences based on \emph{spatial personalisation} is achieved by a placement of articles, \emph{temporal personalisation} by selecting articles of higher news value based on their relevance time frame and, finally, \emph{relational personalisation} by selecting articles that provides more value based on their respective and collaborative topics. Temporal personalisation is also obtained by letting user preferences have a life time and decrease the preference influence on which articles to select as time passes. This is referred to as personalising using a ``temporal user model'', whereas the selection of articles based on their relevance time frame specifically is referred to as personalising ``temporal user preferences''.
 %Der er noget galt her, men er ikke helt sikker på hvad: "decrease its in influence.."
 
-All three categories are related, as they each provide some value to the editorial mix; a different spacial placement of a specific article can, e.g.\ provide a different composition of the editorial mix and therefore a different relational value to the user, which also means that the user will discover articles at different times and therefore also provide different temporal value.
+All three categories are related, as they each provide some value to the editorial mix; a different spatial placement of a specific article can, e.g.\ provide a different composition of the editorial mix and therefore a different relational value to the user, which also means that the user will discover articles at different times and therefore also provide different temporal value.
 %or the editorial composition/arrangement
 
 This paper seeks a more general approach to solving personalisation problems, and tries to establish the contributions of Constraint Programming to this field.
@@ -84,140 +97,62 @@ This paper seeks a more general approach to solving personalisation problems, an
 %
 As a declarative programming language, Constraint Programming (CP) offers means for describing the problem to be solved using constraints and a general purpose constraint solver. Once the general purpose solver is set up, the constraints can be defined to model the problem to be solved, but does not necessarily make it easy. However, the problem definition can easily be extended and modified afterwards.
 
-\begin{flushright}{\slshape
-	``Ordinary people generally aren't interested (and rightly so) in low-level programming details -- they just want to express the problem in some reasonably congenial way and let the system get on with solving the problem. [...] Having to deal only (or mostly) with the logic component simplifies many things for the programmer. First, (the logic component of) a declarative program is generally easier to write and to understand than a corresponding imperative program. Second, a declarative program is also easier to reason about and to transform, as much current research in functional and logic programming shows.''} \\ \medskip
--- \cite{LloydDeclarative}
-\end{flushright}
+%\begin{flushright}{\slshape
+%	``Ordinary people generally aren't interested (and rightly so) in low-level programming details -- they just want to express the problem in some reasonably congenial way and let the system get on with solving the problem. [...] Having to deal only (or mostly) with the logic component simplifies many things for the programmer. First, (the logic component of) a declarative program is generally easier to write and to understand than a corresponding imperative program. Second, a declarative program is also easier to reason about and to transform, as much current research in functional and logic programming shows.''} \\ \medskip
+%-- \cite{LloydDeclarative}
+%\end{flushright}
 
 %Because the editorial mix consists of somewhat hidden parameters CP is 
-The editorial mix, and personalisation problems in general, consists of a series of requirements on what should be shown to the user. These requirements changes according to the individual user, often just by an adjustment of a general requirement. Because CP is a language for modelling requirements, it can be a great contribution to this field. If requirements are modelled as logic constraints, the changes to the individual user could be done by adjusting variables and parameters of the given values to fit the individual user.
+The editorial mix, and personalisation problems in general, consists of a series of requirements on what should be shown to the user. These requirements changes according to the individual user, often just by an adjustment of general requirements. Because CP is a language for modelling requirements, in that it functions on a set of constraints, it can be a great contribution to this field. If requirements are modelled as logic constraints, the changes to the individual user could be done by adjusting variables and parameters of the given values to fit the individual user.
 %Also, with logic comes precise solutions, but this does not come without a cost as stochastic approaches often beat logic by lengths. However, stochastic variables can be introduced to CP.
 %\todo[inline]{explain, give examples}
-
 %\section{Short Introduction to Constraint Programming}
 %\label{sec:CP}
-To be able to use CP to solve our personalisation problems, it is necessary to define which problems CP works with. Constraint Satisfaction Problems (CSPs) and Constraint Optimisation Problems (COPs) are the two types of problems CP can be used to solve. The following descriptions of CSPs and COPs have been modified to fit personalisation problems from the original definitions provided by \cite{AIRussell} and~\cite{CPApt}.
 
-A Constraint Satisfaction Problem is defined by the 4-tuple $(\mathcal{V}, \mathcal{X}, \mathcal{D}, \mathcal{C})$, where $\mathcal{V}$ is the set of values, $\mathcal{X}$ is the set of variables, $\mathcal{D}$ is the corresponding set of domains and $\mathcal{C}$ is the set of constraints on the variables.
-
-Each variable has a corresponding domain and each domain has sub-domains corresponding to the sub-variable, or attribute, of each variable.A value has a set of attributes, that may extend that of a variable, but if a variable is assigned, the variable's attributes should reflect that of its assigned value\sidenote[1]{Others do not consider representation of values because they in their case only consist of simple integer, real or boolean values.}\hspace{-.6em}. Unlike \cite{AIRussell} and~\cite{CPApt} a constraint is here defined as a function on specific variables returning a boolean value. Therefore the tuple of $u$ values with $w$ attributes, $n$ variables with $m$ attributes and $p$ constraints, where the $i$th constraint is defined on $s_i$ variables, can be expanded to:
-
-\hspace{-\marginparwidth}
-\hspace{-\marginparsep}
-\begin{minipage}{.8\largefigure}
-\begin{align}
-\begin{pmatrix}\vspace{3pt}
-\mathcal{V}:&
-	\begin{Bmatrix}
-		v_1:
-		\begin{pmatrix}
-			v_1.a_1\\
-			\vdots\\
-			v_1.a_w\\
-		\end{pmatrix}
-		, \ldots,
-		v_u:
-		\begin{pmatrix}
-			v_u.a_1\\
-			\vdots\\
-			v_u.a_w\\
-		\end{pmatrix}
-	\end{Bmatrix},\\\hspace{3pt}
-	\mathcal{X}:&
-	\begin{Bmatrix}
-		x_1:
-		\begin{pmatrix}
-			x_1.a_1\\
-			\vdots\\
-			x_1.a_m\\
-		\end{pmatrix}
-		, \ldots,
-		x_n:
-		\begin{pmatrix}
-			x_n.a_1\\
-			\vdots\\
-			x_n.a_m\\
-		\end{pmatrix}
-	\end{Bmatrix},\\\hspace{3pt}
-	\mathcal{D}:&
-	\begin{Bmatrix}
-		d_1:
-		\begin{pmatrix}
-			d_1.a_1\\
-			\vdots\\
-			d_1.a_m\\
-		\end{pmatrix}
-		, \ldots,
-		d_n:
-		\begin{pmatrix}
-			d_n.a_1\\
-			\vdots\\
-			d_n.a_m\\
-		\end{pmatrix}
-	\end{Bmatrix},\vspace{6pt}\\
-	\mathcal{C}:&
-	\begin{Bmatrix}
-		c_1: func(x_{(1,1)}, \ldots,x_{(1,s_1)}) \rightarrow \mathbb{B},\\
-		\vdots\\
-		c_p: func(x_{(p,1)}, \ldots,x_{(p,s_p)}) \rightarrow \mathbb{B}
-	\end{Bmatrix}
-\end{pmatrix}
-\label{eq:problem_spec}
-\end{align}
-\vspace{6pt}
-\end{minipage}
-Where $\mathbb{B}$ is either \texttt{true} or \texttt{false}.
-
-A CSP is a special case of a Constraint Optimisation Problem (COP) and a COP is defined by the 5-tuple $(\mathcal{V}, \mathcal{X}, \mathcal{D}, \mathcal{C}, \mathcal{O})$, where the three first elements are defined as in a CSP and $\mathcal{O}$ is a set objective (or cost) functions on variables, that determines the quality of a current state. The set of objective functions can be described with the same structure as constraints in CSPs and can be expanded as follows with $q$ constraints, where the $i$th function is defined on $t_i$ variables.
-
-\begin{align*}
-	\mathcal{O}:&
-	\begin{Bmatrix}
-		o_1: func(x_{(1,1)}, \ldots,x_{(1,t_1)}) \rightarrow \mathbb{R},\\
-		\vdots\\
-		o_q: func(x_{(q,1)}, \ldots,x_{(q,t_q)}) \rightarrow \mathbb{R}
-		%o_1 : func(x_i, \cdots,x_{i+t}) \rightarrow \mathbb{R}, \cdots, o_l : func(x_j, \cdots,x_{j+u}) \rightarrow \mathbb{R}
-	\end{Bmatrix}
-\end{align*}
-
-Where $\mathbb{R}$ is the set of real numbers.
-
-Satisfaction (or regular) constraints are also called hard constraints and objective functions are called soft constraints because a solution can be found if all hard constraints are satisfied, whereas and optimal assignment is enough to satisfy objective functions.
-
-Finally, a constraint on a single variable is called an unary constraint, a constraint on two variables is called a binary constraint and a constraint on three or more variables is called a global constraint.
+The editorial mix is a combinatorial optimisation problem, which is a special case of an optimisation problem -- the difference being that combinatorial optimisation problems works on finite sets, whereas optimisation problems can work on infinite sets as well (\cite{schrijver2003combinatorial}). Combinatorial optimisation problems enforce further constraints to the problem, because it should be possible to find the solution in the real world. In a personalised newspaper this would be that a combination of attributes for an article should reflect that of a real article. It could be solved just by finding the combination of attributes that best fits the problem definition, but the solution could be a combination that is not possible to find in the real world. Because CP is good for combinatorial problems, this would also be a contribution.
 
 %\subsection{Constraint Optimisation Problems}
 %Wiki: ``A constraint optimization problem can be defined as a regular constraint satisfaction problem in which constraints are weighted and the goal is to find a solution maximizing the weight of satisfied constraints.
 %Alternatively, a constraint optimization problem can be defined as a regular constraint satisfaction problem augmented with a number of `local' cost functions. The aim of constraint optimization is to find a solution to the problem whose cost, evaluated as the sum of the cost functions, is maximized or minimized.''
 %\todo[inline]{Find reference that is not from wikipedia}
-
 %\todo[inline]{? Første side er vigtig for karaktergivningen. ``Det er komplekst det her, Nå, der er et bud på det... osv.''}
 %\todo[inline]{Introduce web personalisation}
 \section{Problem Description}
-\todo[inline]{Tilføj editorial mix til de første linjer af problemformulering så det er skåret ud i pap at problemet vel primært er hvordan man kan personalisere the editorial mix og dernæst hvorvidt constraint programming kunne være en løsning.}
-\todo[inline]{Motivation: Since you have a goal, there must be some problem that you are trying to solve. Explain this problem.}
+%\todo[inline]{Tilføj editorial mix til de første linjer af problemformulering så det er skåret ud i pap at problemet vel primært er hvordan man kan personalisere the editorial mix og dernæst hvorvidt constraint programming kunne være en løsning.}
+%\todo[inline]{Motivation: Since you have a goal, there must be some problem that you are trying to solve. Explain this problem.}
+This paper attempts to create a system with the ability to automatically arrange personalised articles that complement each other in an editorial mix to attract more in-depth reading for tablet computers. Therefore the main hypothesis can be expressed as the following:
 
-\paragraph{Main hypothesis suggestion 1}
+\paragraph{Main hypothesis}
 \label{sec:hypothesis}
-Is it possible to use Constraint Programming to solve the editorial mix problem.
+\begin{quotation}
+	\emph{Is it possible to personalise the editorial mix of a digital newspaper?}
+\end{quotation}
+%\begin{quotation}
+%	\emph{Is it possible to use Constraint Programming to solve the editorial mix problem?}
+%\end{quotation}
+%\todo[inline]{A system with the ability to arrange articles that complement each other nearby each other.}
 %It is possible to generate a composition of articles, based on placement, size, content, date of origin and user interests that satisfies the user needs better than alternatives (placing articles in a list with the most interesting article first).
-
 %\paragraph{Main hypothesis suggestion 2}
 %The introduction of a more elaborate control of the editorial mix to the digital newspapers satisfies user needs better than alternatives (placing articles in a list with the most interesting article first).
-
-This project is a feasibility study of the implementation of CP in the field of personalisation. The criteria of success is whether it is possible to successfully implement general techniques of personalisation using CP and to make personalisation more accessible with the aid of CP.
+%This project is a feasibility study of the implementation of CP in the field of personalisation. The criteria of success is whether it is possible to successfully implement general techniques of personalisation using CP and to make personalisation more accessible with the aid of CP.
 %\footnote{In constraint satisfaction, constrained optimization seeks for a solution maximizing or minimizing a cost function, Wikipedia.}
 %\footnote{Personalization involves using technology to accommodate the differences between individuals, Wikipedia.}
 %The overall idea is to implement CP as a technique for personalisation of digital solutions and attempt to make personalisation more accessible with the aid of CP.
-Therefore the project will be divided into two main areas; i.e.\ an assessment of the use of CP in the context of personalisation and a direct application of this in the form of a personal digital newspaper, where CP is used to personalise the content and composition of a digital newspaper.
-
-Many techniques for personalising digital solutions already exists, but the role of CP within this domain has not been determined. This project seeks to explore CP as a tool to make the personalisation of digital solutions.% more accessible.??
+The paper will be divided into two main areas; i.e.\ an application of a personal digital newspaper, where Constraint Programming (CP) is used to personalise the content and the composition of articles and an assessment of CP in the context of personalisation.
+%This paper will be divided into two main areas; i.e.\ an assessment of the use of CP in the context of personalisation and a direct application of this in the form of a personal digital newspaper, where CP is used to personalise the content and composition of a digital newspaper.
+Therefore this paper proposes CP as a technology for modelling this problem and solving it using a general purpose solver. With this technology a more elaborate control of the composition of articles in digital newspapers is introduced. Rules of the editorial mix and personalisation are utilised and applied. Many techniques for personalising digital solutions already exists, but the role of CP within this domain has not been determined. This paper seeks to explore CP as a tool for making personalised digital solutions.% more accessible.??
 
 \subsection{Personalisation Challenges}
-In an attempt to introduce a personal editorial mix in the digital newspaper, the report will try to analyse which preferences the users will have with respect to the content, composition and the time frame of relevant articles. It will describe the search for articles to fit the user needs as an Constraint Optimisation Problem and try to solve it. What makes a newspaper is not only the accumulated content of its articles, but the arrangement of them. ``Which articles should go where'' is just as important, and the placement of articles in the newspaper should therefore go through an equal solving process.
+In an attempt to introduce a personal editorial mix in the digital newspaper, this paper analyses the preferences of users with respect to the layout, navigation and information structure of the application. It will seek inspiration from conventional newspapers to determine rules of composition and describe the search for articles to fit the user needs and the editorial mix as a Constraint Optimisation Problem (COP) and solve it. %What makes a newspaper is not only the accumulated content of its articles, but the arrangement of them. ``Which articles should go where'' is just as important, and the placement of articles in the newspaper should therefore go through an equal solving process.
 
 \subsection{Algorithmic Challenges}
-To be able to use and assess CP in the context of personalisation a full understanding must be acquired. Features that can be solved using CP will be modelled as a COP and solved. Furthermore, because the problem has a fixed budget for finding a solution, its algorithmic complexity will be analysed. The findings will be concluded in an evaluation of the applicability of CP to personalisation problems.
+%To be able to use and assess CP in the context of personalisation a full understanding must be acquired.
+%Features that can be solved using CP will be modelled as a COP and solved. Furthermore,
+Because the problem has a fixed budget for finding a solution, algorithmic solutions will be discussed and a solution will be chosen and implemented. The findings will be concluded in an evaluation of the applicability of CP to personalisation problems.
+
+\clearpage
+\section{The Structure of the Paper}
+In the following chapter (chapter~\ref{ch:related_work}) related work will be discussed and inspirations from these will be gathered. After this an analysis of the user needs and possible proposed use cases will be presented to derive requirements as features for the system in chapter~\ref{ch:analysis}. The chapter will analyse the editorial mix and conclude in a list of rules for the composition of articles. Chapters~\ref{ch:design1} through \ref{ch:implementation} will discuss and present the design and implementation of the solution. An evaluation of the solution is thereafter presented in chapter~\ref{ch:evaluation} and uses of it are discussed in chapter~\ref{ch:discussion}. Finally the paper will conclude if the main hypothesis can be verified and the value of CP for producing personalised solutions.
 
 %
 %

@@ -24,6 +24,8 @@
 \newcommand{\myUni}{Technical University of Denmark\xspace}
 \newcommand{\myLocation}{Kgs. Lyngby\xspace}
 \newcommand{\myTime}{August 2012\xspace}
+\def\thesisnumber{78}
+\def\thesisyear{2012}
 %\newcommand{\myVersion}{}
 
 
@@ -136,22 +138,40 @@ pdfproducer={LaTeX with hyperref and classicthesis}
 
 
 \definecolor{lightergray}{gray}{0.99}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\definecolor{Apricot}{RGB}{139, 69, 19}
 
-\lstset{language=[LaTeX]Tex,
+\lstdefinelanguage{JavaScript}{
+    keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break, push},
+    ndkeywords={class, export, boolean, throw, implements, import, this, Variable, Domain, Subdomain, Constraint},
+    comment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]',
+    morestring=[b]",
+    keywordstyle=\color{RoyalBlue},
+    ndkeywordstyle=\color{purple},
+    basicstyle=\normalfont\ttfamily,
+    commentstyle=\color{Emerald}\ttfamily,
+    stringstyle=\ttfamily\color{Apricot}
+}
+
+\lstset{language=JavaScript,
     keywordstyle=\color{RoyalBlue},
     basicstyle=\normalfont\ttfamily,
     commentstyle=\color{Emerald}\ttfamily,
-    stringstyle=\rmfamily,
+    stringstyle=\ttfamily\color{Apricot},
     numbers=none,
     numberstyle=\scriptsize,
     stepnumber=5,
     numbersep=8pt,
+    tabsize=2,
     showstringspaces=false,
     breaklines=true,
     frameround=ftff,
     frame=lines,
     backgroundcolor=\color{lightergray}
-} 
+}
+
 
 \lstset{	morekeywords=%
         {RequirePackage,newboolean,DeclareOption,setboolean,%

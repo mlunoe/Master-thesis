@@ -1,35 +1,38 @@
 %!TEX root = ../thesis.tex
-\chapter{Proposed Design} % (fold)
-\label{ch:design}
-This section describes the different choices in the interface for a digital newspaper and how the application can provide the user with an personal editorial mix.
+\chapter{Design} % (fold)
+\label{ch:design1}
+This section discusses different choices in the interface for a digital newspaper and how the application can provide the user with a personal editorial mix.
 
-Before it is possible express the editorial mix problem formally the interface of the application must be described, because the constraints will have to make some assumptions about the application structure. The two following sections will describe the layout and typography and the interaction with the application, respectively.
+Before it is possible express the editorial mix problem formally the interface of the application must be described, because the constraints will have to make some assumptions about the application structure. The two following sections will describe the layout and typography of the application followed by the interaction with it.
 
 \section{Layout and Typography}% (Interface Design)
-After the definition of the initial requirements was done the first prototype was developed. Its main features followed the requirements on turning pages, choosing an article, read it and returning to the overview of articles, see Figure~\ref{fig:prototype-iteration1}. And after a small preliminary survey it became clear, that a column-based layout showing full articles would be more attractive, and would provide a better opportunity to explore the editorial mix. With a column-based layout the digital newspaper would have more resemblance to conventional newspapers and therefore it was possible to apply some of the same principles of the editorial mix.
+\label{sec:layout_typography}
+This section describes iterations of the design in terms of layout and typography and the preliminary work to base design choices on.
+
+After the definition of the initial requirements was done the first prototype was developed. Its main features followed the requirements on turning pages, choosing an article, read it and returning to the overview of articles, see Figure~\ref{fig:prototype-iteration1}. And after a small preliminary survey it became clear, that a column-based layout showing full articles would be more attractive, and would provide a better opportunity to explore the editorial mix. With a column-based layout the digital newspaper would have more resemblance to conventional newspapers and therefore it was possible to apply some of the same principles of the editorial mix. This choice removed the paginated layout and instead introduced a scrollable layout to have enough space for the articles to fit in.
 \begin{figure}%
 %\centering%
 \makebox[\textwidth][r]{% %%% as above; this time, the
 %%% figures flushes from the left
-\subfloat[Initial prototype layout with adjustable ratios between articles and a paged interface of each section.\label{fig:prototype-iteration1}]%
-	{\includegraphics[width=.38\largefigure]{img/prototype-iteration1}}%
+\subfloat[Initial prototype layout with adjustable ratios between articles and a paginated interface of each section.\label{fig:prototype-iteration1}]%
+	{\includegraphics[width=.37\largefigure]{img/prototype-iteration1}}%
 	\qquad%
-\subfloat[Second iteration of the prototype with an ``endless'' layout. Sections are placed beneath each other.\label{fig:prototype-iteration2}]%
-	{\includegraphics[width=.38\largefigure]{img/prototype-iteration2}}%
+\subfloat[Second iteration of the prototype with an scrollable layout. Sections are placed beneath each other.\label{fig:prototype-iteration2}]%
+	{\includegraphics[width=.37\largefigure]{img/prototype-iteration2}}%
 }
 \\
 \makebox[\textwidth][r]{% %%% as above; this time, the
-\subfloat[Third iteration of the prototype with a column-based and ``endless'' layout. Sections are placed beneath each other.\label{fig:prototype-iteration3-1}]%
-	{\includegraphics[width=.38\largefigure]{img/prototype-iteration3-1}}%
+\subfloat[Third iteration of the prototype with a column-based and scrollable layout. Sections are placed beneath each other.\label{fig:prototype-iteration3-1}]%
+	{\includegraphics[width=.37\largefigure]{img/prototype-iteration3-1}}%
 	\qquad%
-\subfloat[Third iteration of the prototype with a column-based and ``endless'' layout. Sections are placed beneath each other.\label{fig:prototype-iteration3-2}]%
-	{\includegraphics[width=.38\largefigure]{img/prototype-iteration3-2}}%
+\subfloat[Third iteration of the prototype with a column-based and scrollable layout. Sections are placed beneath each other.\label{fig:prototype-iteration3-2}]%
+	{\includegraphics[width=.37\largefigure]{img/prototype-iteration3-2}}%
 }
 \caption{The figure shows three iterations of the prototype layout.}%
 \label{fig:prototype-iterations}%
 \end{figure}
-
-Figure~\ref{fig:prototype-iterations} shows three iterations of the prototype design, which were based on the derived requirements. The third iteration of the prototype was used as the foundation for user tests. The prototype consisted of the basic navigation between topic categories, i.e.\ sections, and articles. Navigational choices was made in order to present the general idea of the framework, but where more crucial choices on its uses have not been made jet. This was also to encourage the test subjects to talk about what uses they would have of the presented framework. However, they were also asked about the navigational structure and indeed some changes had to be done. A specification of the test can be found in Table~\ref{tab:test-description}.
+\clearpage
+Figure~\ref{fig:prototype-iterations} shows three iterations of the prototype design, which were based on the derived requirements. The third iteration of the prototype (Figure~\ref{fig:prototype-iteration3-1} and~\ref{fig:prototype-iteration3-2}) was used as the foundation for user tests. The prototype consisted of the basic navigation between topic categories, i.e.\ sections, and articles. Navigational choices was made in order to present the general idea of the framework, but where more crucial choices on its uses have not yet been made. This was also to encourage the test subjects to talk about what uses they would have of the presented framework. However, they were also asked about the navigational structure and indeed some changes had to be done. A specification of the test can be found in Table~\ref{tab:test-description}.
 \begin{table}[h!tp]
 	\myfloatalign
 	\marginnote{
@@ -48,36 +51,49 @@ Figure~\ref{fig:prototype-iterations} shows three iterations of the prototype de
 		\midrule
 			\textbf{Materials} & An iPad with the application running and a computer to write notes on the test subject's statements and propositions.\\
 		\midrule
-			\textbf{Description} & The test subject was presented with the prototype layout seen in Figure~\ref{fig:prototype-iteration3-1} and~\ref{fig:prototype-iteration3-2}. The test was conducted as an informal qualitative talk with a basis in the test subject's interests in such a product. Transcripts from each test can be found at \url{http://lestrade.imm.dtu.dk/~s062596/data/test-transcripts.zip} and a summery of the results in section~\vref{sec:test_results}.\\
+			\textbf{Description} & The test subject was presented with the prototype layout seen in Figure~\ref{fig:prototype-iteration3-1} and~\ref{fig:prototype-iteration3-2}. The test was conducted as an informal qualitative talk with a basis in the test subject's interests in such a product. Transcripts from each test can be found at \url{http://lestrade.imm.dtu.dk/~s062596/data/test-transcripts.zip} and a summary of the results in section~\vref{sec:test_results}.\\
 		\bottomrule
 		\end{tabularx}
 	}
 \end{table}
 
-The main points from the user test was that the newspaper should provide an overview of its contents, that it should be easy to navigate relevant new and archived articles, that the users wanted to provide relevance feedback on articles and indication of the relevance of the article. Moreover, the newspaper should provide a good balance between imagery and textual content, that white space in between articles is not a problem and that an article should be read screen by screen, even if it means dividing text into a new set of columns. It was pointed out that some problems may arise if there is not room enough in the top menu, e.g.\ when in portrait mode and, as the test subjects specifically requested, this could be solved by introducing a carousel-like arrow buttons to scroll the tabs, or even just using touch interactions. Moreover, the user should be able to read the newspaper screen by screen, meaning that trailing text should be put into a new set of columns whenever it exceeds the screen, see Figure~\ref{fig:reading1} and \ref{fig:reading2}.
-\begin{sidefigure}%
-	\vspace{-220pt}
+The main points from the user test was that the newspaper should provide an overview of its contents and that it should be easy to navigate relevant new and archived articles. The users also wanted to provide relevance feedback on articles and wanted an indication of the relevance of the article. Moreover, that the newspaper should provide a good balance between images and textual content and that images should be as large as possible. It was also noted that white space in between articles was not a problem and that an article should be read screen by screen, even if it means dividing text into a new set of columns. Some of the test subjects pointed out that problems may arise if there is not room enough in the top menu, e.g.\ when in portrait mode and, as the test subjects specifically requested, this could be solved by introducing a carousel-like arrow buttons to scroll menu items, or even just using touch interactions. Moreover, the user should be able to read the newspaper screen by screen, meaning that trailing text should be put into a new set of columns whenever it exceeds the screen, see Figure~\ref{fig:reading}.
+\begin{figure}[h!tp]
+	%\vspace{-220pt}
 	\myfloatalign%
 	%\hspace{-17.8pt}
-	\includegraphics[width=\marginparwidth]{img/reading1} 
-	\caption{Reading pattern where the user has to scroll in order to see the full length of the column.}%
-	\label{fig:reading1}%
-\end{sidefigure}
-
-One user in particular expressed that the application had solved the problems that \url{http://nyhederne.tv2.dk/}\sidenote[1]{The website of a Danish news channel.} has and given the additional features it would provide a readable layout, easy navigation and a good overview of its content. No user expressed the need for any general news as presumed in the scenarios, only personalised news was of preference to the test subjects. They argued that if they wanted news of some kind, they would just create a section for it. Even so \cite{fulltext.pdf} argues that common sense dictates some ``breaking'' articles to be universally interesting and that the problem of some user may not receive them\sidenote[1]{This is also known as the black sheep problem.} could be solved be collaborate filtering. Collaborate filtering is a good way apply wisdom of the crowd to the application, which might make it stronger as the number users grows. Finally according to the user tests, it should be chosen from which period the articles should come from, as opposed to what was extracted from the scenarios and respondents from \cite{FULLTEXT01.pdf} which suggests that the paper should be continuously updated.
-
-\begin{sidefigure}%
-	\myfloatalign%
+	\subfloat[Reading pattern where the user has to scroll in order to see the full length of the column.\label{fig:reading1}]{\includegraphics[width=\marginparwidth]{img/reading1}}
+	\qquad
 	%\hspace{-17.8pt}
-	\includegraphics[width=\marginparwidth]{img/reading2} 
-	\caption{Reading pattern where the user can finish reading a whole page before scrolling to read the next.}%
-	\label{fig:reading2}%
-\end{sidefigure}
+	\subfloat[Reading pattern where the user can finish reading a whole page before scrolling to read the next.\label{fig:reading2}]{\includegraphics[width=\marginparwidth]{img/reading2}}
+	\caption{The figure shows reading patterns of full length columns and columns divided into screen sized chunks.}%
+	\label{fig:reading}
+\end{figure}
+%\begin{sidefigure}
+%	%\vspace{-220pt}
+%	\myfloatalign%
+%	%\hspace{-17.8pt}
+%	\includegraphics[width=\marginparwidth]{img/reading1}
+%	\caption{Reading pattern where the user has to scroll in order to see the full length of the column.}
+%	\label{fig:reading1}
+%\end{sidefigure}
+%\begin{sidefigure}
+%	%\vspace{-220pt}
+%	\myfloatalign%
+%	%\hspace{-17.8pt}
+%	\includegraphics[width=\marginparwidth]{img/reading2}
+%	\caption{Reading pattern where the user can finish reading a whole page before scrolling to read the next.}
+%	\label{fig:reading2}
+%\end{sidefigure}
+
+Many of the test subjects played around with the text and expressed that it was good that the iPad could read the text out loud for them. One user in particular expressed that the application with some polish would provide a readable layout, easy navigation and a good overview of its content. She thought that this was the problems with \url{http://nyhederne.tv2.dk/}\sidenote{The website of a Danish news channel.}. No user expressed the need for any general news as presumed in the scenarios, only personalised news was of preference to the test subjects. They argued that if they wanted news of some kind, they would just create a section for it.
+
+Even so \cite{fulltext.pdf} argues that common sense dictates some ``breaking'' articles to be universally interesting and that the problem of some user may not receive them\vspace{60pt}\sidenote{This is also known as the black sheep problem.}\vspace{-60pt} could be solved by collaborative filtering. Collaborative filtering is a good way to apply wisdom of the crowd to the application, which might make it stronger as the number users grows. Finally according to the user tests, it should be chosen from which period the articles should come from, as opposed to what was extracted from the scenarios and respondents from \cite{FULLTEXT01.pdf} which suggests that the paper should be continuously updated.
 
 Based on the user feedback a new design was developed. It is seen in Figure~\ref{fig:mockups}.
 \begin{figure}%
 \myfloatalign
-\makebox[\textwidth][r]{
+\makebox[\textwidth][l]{
 	\subfloat%
 			{\includegraphics[width=.43\largefigure]{img/mockup-landscape}}
 		\qquad
@@ -85,52 +101,56 @@ Based on the user feedback a new design was developed. It is seen in Figure~\ref
 		{\includegraphics[width=.33\largefigure]{img/mockup-portrait}}
 }
 \marginnote{
-	\begin{minipage}{\marginparwidth}
+	%\begin{minipage}{\marginparwidth}
+	\parbox{\marginparwidth}{
 		%\vspace{-100pt}
 		\caption{\\The figure shows mockups of the layout in landscape and portrait mode, respectively.}%
 		\label{fig:mockups}%
-	\end{minipage}
-	}
+		}
+	%\end{minipage}
+}
 \end{figure}
 
-The top menu from the prototypes is kept, but arrows are added to solve the problem of overflow if the items gets too numerous. That the menu presents the items along side each other supports the fact that sections visually lie beside each other in the navigational space, i.e.\ the user can flick (see Figure~\ref{fig:flick}) the section and an animated transition slides the section out and the next in.
-\begin{sidefigure}[h!tp]
-	\myfloatalign
-	\includegraphics[width=\marginparwidth]{img/flick}
-	\caption{Touch gesture: Quickly brush surface with fingertip.}
-	\label{fig:flick}
-\end{sidefigure}
+The top menu from the prototypes is kept, but arrows are added to solve the problem of overflow if the items gets too numerous. The menu bar is given a dark colour to provide some visual contrast from content to functionality. In the new layout articles are shown in full and images are maximised. Rules of readability determines, as opposed to that on print, that small point size text work better with a sans-serif font \cite{Tidwell}. The neutral Helvetica has therefore been chosen as the body text, whereas the article headlines are the most important thing on the page, and therefore are supplied with the largest typeface. To provide them with further focus a serif font has been used. The section headers are assigned with a medium size, but wide, font because the user needs to navigate using this headline. However, the user already knows the name of the section (he has probably given it himself) and does therefore not necessarily need to read it -- just recognise it. On this basis the section headline is placed in a bar and supplied with the same light colour as the background. This makes them more neutral, but still easy to navigate using the bar. To relate the paratext with the section they are supplied with the same colour as the section bar. This should let the user associate the article with the topic of the section. Furthermore, the line that was on top of the articles (see Figure~\ref{fig:prototype-iteration3-2}) is moved to be beside it. This visually indicates when an article starts and ends. This will also aid to understand that the article continues if the article columns should be divided into screen sizes. Again the same colour as the section bar is used to set both the visual and contextual frame.
 
-The top menu bar is given a dark colour to provide some visual contrast from content to functionality. In the new layout articles are shown in full and images are maximised. Rules of readability determines, as opposed to that on print, that small point size text work better with a sans-serif font \cite{Tidwell}. The neutral Helvetica has therefore been chosen as the body text, whereas the article headlines are the most important thing on the page, and therefore are supplied with the largest typeface. To separate them further from the body text a serif font has been used. The section headers are assigned with a medium size, but wide, font because the user needs to navigate using this headline. However, the user already knows the name of the section (he has probably given it himself) and does therefore not necessarily need to read it - just recognise it. On this background the section headline is placed in a bar and supplied with the same light colour as the background. This makes them more neutral, but still easy to navigate using the bar. To relate the paratext with the section they are supplied with the same colour as the section bar. This should let the user associate the article with the topic of the section. Furthermore, a the line that was on top of the articles (see Figure~\ref{fig:prototype-iteration3-2}) is moved to be beside it. This is visually indicate when an article starts and ends. This will also aid to understand that the article continues if the article columns should be divided into screen sizes. Again the same colour as the section bar is used to set both the visual and contextual frame.
-
-In the prototype the menu consisted of all the settings in a modal panel, but the test subjects wanted a division between visual tools, e.g.\ changing size of the font or colour scheme, and the content settings, i.e.\ the control of what each section should contain. The former is moved into a side menu with a button to access the latter, which kept in a modal panel. This way the handy visual tools are only one interaction away, whilst the more complex settings are hidden away with two interactions. And the overview of article headlines in the section could be done as in Sublime Text 2\sidenote[1]{Sublime Text 2 is a text editor for coding.}, see Figure~\ref{fig:sublime}
+In the prototype the menu consisted of all the settings in a modal panel, but the test subjects wanted a division between visual tools, e.g.\ changing size of the font or colour scheme, and the content settings, i.e.\ the control of what each section should contain. The former is moved into a side menu with a button to access the latter, which is kept in a modal panel. This way the handy visual tools are only one interaction away, whilst the more complex settings are hidden away with two interactions. And the overview of article headlines in the section could be done as in Sublime Text 2\sidenote{Sublime Text 2 is a text editor for coding.}, see Figure~\ref{fig:sublime}
 \begin{figure}[h!tp]
 	\myfloatalign
 	\includegraphics[width=.5\textwidth]{img/sublime}
 	\marginnote{
 		\begin{minipage}{\marginparwidth}
+			\vspace{-220pt}
 			\caption{The figure shows the overview plus detail function in Sublime Text 2.}
 			\label{fig:sublime}
 		\end{minipage}
 	}
 \end{figure}
-
 This overview could be placed in the side menu and show a larger (and readable) scale of headlines and the user should be able to see the images further down in the newspaper.
 
 \section{Interactions}% (Interface Design)
-In Figure~\ref{fig:navigation} is the navigational of the application structure outlined. 
+In Figure~\ref{fig:navigation} is the navigational structure of the application outlined. 
 \begin{figure}[h!tp]
 	\myfloatalign
-		\includegraphics[width=.45\textwidth]{img/navigation}
+		\includegraphics[width=.7\textwidth]{img/navigation}
 	\marginnote{
 		\begin{minipage}{\marginparwidth}
-			\caption{The figure shows the navigational structure of the application.}
+			\vspace{-240pt}
+			\caption{The figure shows the navigational structure of the application. Arcs are navigational interactions and nodes are pages in the application.}
 			\label{fig:navigation}
 		\end{minipage}
 	}
 \end{figure}
+The three sections (grey nodes) holds the contents of the newspaper, and can be extended with additional sections through the settings menu. That the top menu presents the items along side each other supports the fact that sections lay along side each other in the navigational space, i.e.\ it is possible to navigate to sections beside the current through the flick gesture (see Figure~\ref{fig:flick}).
+% sections visually lie beside each other in the navigational space, i.e.\ the user can flick  the section and an animated transition slides the section out and the next in.
+\begin{sidefigure}[h!tp]
+	\myfloatalign
+	%\vspace{200pt}
+	\includegraphics[width=\marginparwidth]{img/flick}
+	\caption{Touch gesture: Quickly brush surface with fingertip.}
+	\label{fig:flick}
+\end{sidefigure}
 
-The three sections are holds the contents of the newspaper, which can be extended with additional sections through the settings menu. The sections lay along side each other in the navigational space and it is possible to navigate to sections beside the current through the flick gesture, but through the top menu it is possible to go directly to any of the sections. Because the top menu is visible at all times except when in the settings menu, it is possible to go directly to any of the sections and do a search anywhere from the application, except of cause from the settings menu. This means that the application is very interconnected and since the settings menu is meant to be used rarely the extra navigational step does not matter. The settings menu should only be used the first time the user opens the application to adjust the basic settings and then afterwards only to correct if the application does not comply with the user preferences, or when the super user wants to adjust the settings. In a perfect world the user would never have to open the settings menu to adjust anything, only observe while the application learns the user interests and delivers what is expected.
+An animated transition could visually supports this structure by sliding the section out and the next in (same direction as the gesture). It is, however, still possible to directly reach any of the section through the top menu. Because the top menu is visible at all times except when in the settings menu, it is possible to go directly to any of the sections and do a search anywhere from the application, except of course from the settings menu. This means that the application is very interconnected and since the settings menu is meant to be used rarely the extra navigational step does not matter. The settings menu should only be used the first time the user opens the application to adjust the basic settings and then afterwards only to correct if the application does not comply with the user preferences, or when the super user wants to adjust the settings. In a perfect world the user would never have to open the settings menu to adjust anything, only observe while the application learns the user interests and delivers what is expected.
 
 When the user is at first presented with the application he should have as a direct path as possible leading to actually reading articles, which is of main user needs. He is presented with a form to make choices about the contents of the newspaper. The application provides the possibility for choosing whether the front page should be visible or not. This functionality is given to the user that would rather just have his sections and no front page. After this the user can choose the topic for the first section from a list of predefined topics. If the topic he is looking for is not in the list he can choose to fill out some keywords to cover his interests. After this he can provide it with a name for the section and choose to add another section or save his user profile. It is also possible for him to choose how many articles he would like in each section, including the front page. Figure~\vref{fig:mockup-form} shows a mockup of the settings menu.
 \begin{figure}[h!tp]
@@ -138,22 +158,125 @@ When the user is at first presented with the application he should have as a dir
 		\includegraphics[width=.45\textwidth]{img/mockup-form}
 	\marginnote{
 		\begin{minipage}{\marginparwidth}
+			\vspace{-300pt}
 			\caption{The figure shows mockup of the form that constitutes the settings menu.}
 			\label{fig:mockup-form}
 		\end{minipage}
 	}
 \end{figure}
+%\todo[inline]{Heuristics evaluering?}
 
-To be able to solve the editorial mix problem using CP it must be expressed as a COP and the presented constraints must be translated to logical constraints. This is done in the following section.
+Finally, it is important to state that users tend to play more with the screen when reading on tablet computers. Therefore the application should support selection of text and as from the text it should be possible to get it read out loud. This way articles can also become audio books.
+
+To be able to solve the editorial mix problem using CP it must be introduced and the presented constraints must be translated to logical constraints. This is done in the following chapter.
+
+\chapter{Constraint Programming}
+\label{ch:design2}
+The purpose of this chapter is to introduce the reader shortly to CP and afterwards define the problem as a COP. Different possibilities for implementation exists and this chapter will discuss these choices and conclude with a choice of algorithm.
+
+\section{Constraint Programming and Personalisation}
+%\todo[inline]{Om skriv til mere pædagogisk og forståeligt. Argumentér for at CP er god til kombinatoriske problemer.}
+To be able to use CP to solve the editorial mix as a personalisation problem, it is necessary to define which problems CP works with. Constraint Satisfaction Problems (CSPs) and Constraint Optimisation Problems (COPs) are the two types of problems CP can be used to solve. The following descriptions of CSPs and COPs have been modified to fit personalisation problems from the original definitions provided by \shortcite{AIRussell} and~\cite{CPApt}.
+
+A Constraint Satisfaction Problem is defined by the 4-tuple $(\mathcal{V}, \mathcal{X}, \mathcal{D}, \mathcal{C})$, where $\mathcal{V}$ is the set of values, $\mathcal{X}$ is the set of variables, $\mathcal{D}$ is the corresponding set of domains and $\mathcal{C}$ is the set of constraints on the variables.
+
+Each variable has a corresponding domain and each domain has sub-domains corresponding to the attribute of each variable. A value also has a set of attributes, but they may extend the variables set of attributes. However, if a variable is assigned, the variable's attributes should reflect that of its assigned value\vspace{-40pt}\sidenote{Others do not consider representation of values because they in their case only consist of simple integer, real or boolean values.}\vspace{40pt}\hspace{-.6em}. Unlike \shortcite{AIRussell} and~\cite{CPApt} a constraint is here defined as a function on specific variables returning a boolean value.
+
+Therefore the tuple of $u$ values with $w$ attributes, $n$ variables with $m$ attributes and $p$ constraints, where the $i$th constraint is defined on $s_i$ variables, can be expanded to:
+%\hspace{-\marginparwidth}
+%\hspace{-\marginparsep}
+%\begin{minipage}{.8\largefigure}
+\begin{align}
+\begin{pmatrix}\vspace{3pt}
+\mathcal{V}:&
+	\begin{Bmatrix}
+		v_1:
+		\begin{pmatrix}
+			v_1.a_1\\
+			\vdots\\
+			v_1.a_w\\
+		\end{pmatrix}
+		, \ldots,
+		v_u:
+		\begin{pmatrix}
+			v_u.a_1\\
+			\vdots\\
+			v_u.a_w\\
+		\end{pmatrix}
+	\end{Bmatrix},\\\hspace{3pt}
+	\mathcal{X}:&
+	\begin{Bmatrix}
+		x_1:
+		\begin{pmatrix}
+			x_1.a_1\\
+			\vdots\\
+			x_1.a_m\\
+		\end{pmatrix}
+		, \ldots,
+		x_n:
+		\begin{pmatrix}
+			x_n.a_1\\
+			\vdots\\
+			x_n.a_m\\
+		\end{pmatrix}
+	\end{Bmatrix},\\\hspace{3pt}
+	\mathcal{D}:&
+	\begin{Bmatrix}
+		d_1:
+		\begin{pmatrix}
+			d_1.a_1\\
+			\vdots\\
+			d_1.a_m\\
+		\end{pmatrix}
+		, \ldots,
+		d_n:
+		\begin{pmatrix}
+			d_n.a_1\\
+			\vdots\\
+			d_n.a_m\\
+		\end{pmatrix}
+	\end{Bmatrix},\vspace{6pt}\\
+	\mathcal{C}:&
+	\begin{Bmatrix}
+		c_1: func(x_{(1,1)}, \ldots,x_{(1,s_1)}) \rightarrow \mathbb{B},\\
+		\vdots\\
+		c_p: func(x_{(p,1)}, \ldots,x_{(p,s_p)}) \rightarrow \mathbb{B}
+	\end{Bmatrix}
+\end{pmatrix}
+\label{eq:problem_spec}
+\end{align}
+%\vspace{6pt}
+%\end{minipage}
+Where $\mathbb{B}$ is either \texttt{true} or \texttt{false}.
+
+A CSP is a special case of a Constraint Optimisation Problem (COP) and a COP is defined by the 5-tuple $(\mathcal{V}, \mathcal{X}, \mathcal{D}, \mathcal{C}, \mathcal{O})$, where the first four elements are defined as in a CSP and $\mathcal{O}$ is a set of objective (or cost) functions on variables, that determines the quality of a current state. The set of objective functions can be described with the same structure as constraints in CSPs and can be expanded as follows with $q$ constraints, where the $i$th function is defined on $t_i$ variables.
+\begin{align}
+	\mathcal{O}:&
+	\begin{Bmatrix}
+		o_1: func(x_{(1,1)}, \ldots,x_{(1,t_1)}) \rightarrow \mathbb{R},\\
+		\vdots\\
+		o_q: func(x_{(q,1)}, \ldots,x_{(q,t_q)}) \rightarrow \mathbb{R}
+		%o_1 : func(x_i, \cdots,x_{i+t}) \rightarrow \mathbb{R}, \cdots, o_l : func(x_j, \cdots,x_{j+u}) \rightarrow \mathbb{R}
+	\end{Bmatrix}
+	\label{eq:objective}
+\end{align}
+
+Where $\mathbb{R}$ is the set of real numbers.
+
+Satisfaction (or regular) constraints are also called hard constraints and objective functions are called soft constraints because a solution can be found if all hard constraints are satisfied, whereas an optimal assignment is enough to satisfy objective functions.
+
+Finally, a constraint on a single variable is called an unary constraint, a constraint on two variables is called a binary constraint and a constraint on three or more variables is called a global constraint.
 
 \section{Problem Representation}
-The division of rules between the front page and the section can be kept in the problem representation, which will, as we will see later, be the source for the possibility of incorporating lazy loading of each section. This section will therefore present a general problem specification for a section, which can be used in every section and on the front page, with varying constraints. Also, the front page will through this section and the following be referred to as a section, and specifically as section $0$.
+\label{sec:problem_representation}
+The division of rules between the front page and the section can be kept in the problem representation, which will, as we will see later, be the source for the possibility of incorporating lazy loading of each section. This section will therefore present a general problem specification for a section, which can be used in every section and on the front page, with varying constraints. Also, the front page will throughout this chapter be referred to as a section, and specifically as section $0$.
 
-The set of values, $\mathcal{V}$, from equation~\vref{eq:problem_spec} in the problem is represented by a library of currently available articles and the set of variables, $\mathcal{X}$, is represented by the available positions in the section. Each variable can then be assigned a value in the form of a specific article and when a complete assignment satisfies all constraints, a solution has been found. An article consists of a set of attributes, e.g.\ a date, the number of words in the article and a number indicating a relevance. Constraints are defined on variables and through them bound to their specific places in the section.
+The set of values, $\mathcal{V}$, from equation~\ref{eq:problem_spec} in the problem is represented by a library of currently available articles and the set of variables, $\mathcal{X}$, is represented by the available positions in the section. Each variable can then be assigned a value in the form of a specific article and a solution has been found, when a complete assignment satisfies all constraints. An article consists of a set of attributes, e.g.\ a date, the number of words in the article and a number indicating a relevance. Constraints are defined on variables and through them bound to their specific places in the section.
 
-In the following the constraints presented in section~\vref{sec:analysis_mix} will be formulated as logical constraints divided into general constraints for all sections and specific constraints for the front page and other sections, respectively. Constraints defined on variables with letters, e.g.\ $x_a$ and $x_b$, means that the constraint is defined for every combination of variables from the problem. Hard constraints returns whether it is satisfied and preference constraints returns a violation, where $0$ means not violated.
+In the following the constraints presented in section~\vref{sec:analysis_mix} will be formulated as logical constraints divided into general constraints for all sections and specific constraints for the front page and other sections, respectively. Constraints defined on variables with letters $a$ and $b$, i.e.\ $x_a$ and $x_b$, means that the constraint is defined for every combination of variables from the problem. Hard constraints (equation~\ref{eq:problem_spec}) returns whether it is satisfied and preference constraints (equation~\ref{eq:objective}) returns a violation, where $0$ means not violated.
 
-\paragraph{General Unary Constraints}
+\subsection*{General Unary Constraints}
+\vspace{-30pt}
 \begin{align}
 	\begin{Bmatrix}
 		\texttt{time-frame}(x_a) &\rightarrow& x_a.date >= today-7,\\
@@ -166,23 +289,29 @@ In the following the constraints presented in section~\vref{sec:analysis_mix} wi
 		\texttt{featured-image}(x_a) &\rightarrow& x_a.featured = \texttt{false}\ \vee\\
 			&&x_a.has\_image = \texttt{false}
 	\end{Bmatrix}
+	\label{eq:general_unary}
 \end{align}
 %\texttt{\textbf{if}}(
 %)\\
 %&&\texttt{ \textbf{return} } 0 \texttt{ \textbf{else return} } 1
 
-Where $n$ is the number of positions and therefore variables, in the section and $today$ is variable that holds the current date. The \texttt{time-frame} constraint is set to include articles from a week ago, but can of cause be adjusted. As the layout is defined in 2 and 3 columns the \texttt{featured-space} constraint is satisfied only when the article fills out 2 or three 3 columns. Likewise with the \texttt{nonfeatured-space} which is only satisfied with articles that fills 1 or 2 columns. \texttt{featured-image} is a constraint, to control that a featured article should have an image. These three constraints could be used as they are, but could also function as assignments along with a calculation of the relevance to base the rest of the constriants on, i.e.\ to determine that a featured article is an article with many words, has an image and has a lot of relevance; otherwise it is not.
+Where $today$ is variable that holds the current date. The \texttt{time-frame} constraint is a part of the temporal aspect of the problem. It is set to include articles from a week ago, but can of course be adjusted. As the layout is defined in 2 and 3 columns the \texttt{featured-space} constraint is satisfied only when the article fills out 2 or three 3 columns. Likewise with the \texttt{nonfeatured-space} which is only satisfied with articles that fills 1 or 2 columns. These two constraints are a part of the spatial aspect of the problem. \texttt{featured-image} is a constraint, to control that a featured article should have an image. These final three constraints could be used as they are, but could also function as assignments along with a calculation of the relevance to base the rest of the constriants on, i.e.\ to determine that a featured article is an article with many words, has an image and has a lot of relevance; otherwise it is not.
+%$n$ is the number of positions and therefore variables, in the section and
 
-\paragraph{General Binary Constraints}
-%\begin{minipage}{.8\largefigure}
+\subsection*{General Binary Constraints}
+\hspace{-40pt}
+\begin{minipage}{.9\largefigure}
+\vspace{-30pt}
 \begin{align}
-\hspace{-60pt}
+%\hspace{-60pt}
 	\begin{Bmatrix}
 		\texttt{featured-adj}(x_a, x_b) &\rightarrow& \texttt{not adjacent}(x_a,x_b)\ \vee\\
 			&&(x_a.featured = \texttt{false}\ \wedge\\
 			&&x_b.featured = \texttt{false})\ \vee\\
-			&&x_a.featured = \texttt{true}\ \wedge\\
-			&&x_b.featured = \texttt{true},\\
+			&&(x_a.featured = \texttt{true}\ \wedge\\
+			&&x_b.featured = \texttt{false})\ \vee\\
+			&&(x_a.featured = \texttt{false}\ \wedge\\
+			&&x_b.featured = \texttt{true}),\\
 		\texttt{featured-pos}(x_a, x_b) &\rightarrow& \texttt{not adjacent}(x_a,x_b)\ \vee\\
 			&&(x_a.featured = \texttt{false}\ \wedge\\
 			&&x_b.featured = \texttt{false})\ \vee\\
@@ -198,30 +327,36 @@ Where $n$ is the number of positions and therefore variables, in the section and
 			&&\texttt{\textbf{else return }}0
 	\end{Bmatrix}
 \end{align}
-%\end{minipage}
-Where $\texttt{max(number,\ number)}$ is a function that returns the maximum of the given numbers and $\texttt{similarity}(variable,\ variable)$ is a function that returns the mutual similarity between the values of two given variables. These general binary constraints control most of the editorial mix, because they express that to featured articles should not be placed adjacent to each other, that featured articles should be placed higher than its adjacent non-featured articles and that adjacent articles should have the same subject. The latter is a preference constraint because some uncertainty is introduced when controlling that two articles should have the same subject. That articles have the same subject can approximately be determined by how similar they are to each other, i.e.\ if the articles are much too similar they could be articles on the same story, and if they differ too much, they may be on a different subject. However, in between should roughly determine that the articles are on the same or a similar subject, which is what is needed. In the \texttt{adj-subj} constraint this is done by the returning a violence based on the parabolic function seen in Figure~\ref{fig:curve}.
+\end{minipage}
+
+Where $\texttt{max(number,\ number)}$ is a function that returns the maximum of the given numbers and $\texttt{similarity}(variable,\ variable)$ is a function that returns the mutual similarity between the values of two given variables. These general binary constraints control most of the editorial mix, because they express that two featured articles should not be placed adjacent to each other, that featured articles should be placed higher than its adjacent non-featured articles and that adjacent articles should have the same subject. The latter is a preference constraint because some uncertainty is introduced when controlling that two articles should have the same subject. That articles have the same subject can approximately be determined by how similar they are to each other, i.e.\ if the articles are much too similar they could be articles on the same story, and if they differ too much, they may be on a different subject. However, in between should roughly determine that the articles are on the same or a similar subject, which is what is needed. In the \texttt{adj-subj} constraint this is done by returning a violation based on the parabolic function seen in Figure~\ref{fig:curve}.
 \begin{figure}%
 \myfloatalign
 \includegraphics[width=.45\textwidth]{img/curve}
 \marginnote{
 	\begin{minipage}{\marginparwidth}
-		\caption{Plot of $64 x^2 - 64 x +15.36$.}%
+		\vspace{-200pt}
+		\caption{Plot of $10 x^2 - 14 x +4.8$.}%
 		\label{fig:curve}%
 	\end{minipage}
 	}
 \end{figure}
 
-If the similarity of the two articles are below $0.6$ or above $0.8$, than its distance to this point will determine its violence by the parabolic function. These numbers are of cause adjustable and will vary according to the selected similarity function, but are given to show a more expressive example.
+The function was chosen to express the needed violation if articles did not match the desired similarity. If the similarity of the two articles are below $0.6$ or above $0.8$, then its distance to this point will determine its violation by the parabolic function. These numbers are of course adjustable and will vary according to the selected similarity function, but are given to show a more expressive example. These constraints are part of the relational aspect of the problem.
 %(-1.4a+sqrt((-1.4a)^2-4a(-0.1+0.49a)))/(2a)=0.8
 %(-14/225+sqrt((-14/225)^2-4*2/45*137/1125))/(4/45)
-\paragraph{General Global Constraints}
+\subsection*{General Global Constraints}
+\vspace{-30pt}
+\makebox[\textwidth][r]{
+\begin{minipage}{.9\largefigure}
 \begin{align}
 	\begin{Bmatrix}
 		\texttt{all-diff}(x_1,\ldots,x_n) &\rightarrow& \bigwedge\limits_{i=1,\dots,n}\bigwedge\limits_{j=1,\dots,n}\ \texttt{similarity}(x_i,x_j) < 0.9
 	\end{Bmatrix}
 \end{align}
-
-The final of the general function determines that every article must be different. In the constraint this is expressed by checking if the similarity between the articles is too high, it could also be done by just checking the id, but this might introduce more of the same story, but from different content providers.
+\end{minipage}
+}
+Where $n$ is the number of positions and therefore variables, in the section. The final of the general functions determines that every article must be different. In the constraint this is expressed by checking if the similarity between the articles is too high, it could also be done by just checking the internal application ID of the article, but this might introduce more of the same story, but from different content providers. This is also a part of the relational aspect of the problem.
 %\begin{itemize}\itemdist
 %%\subsubection{Unary}
 %	\item An articles should be within a given time frame
@@ -236,7 +371,11 @@ The final of the general function determines that every article must be differen
 %	\item All articles should be different
 %\end{itemize}
 
-\paragraph{Front Page Constraints}
+\subsection*{Front Page Constraints}
+%\makebox[\textwidth][l]{
+\hspace{-30pt}
+\begin{minipage}{.9\largefigure}
+\vspace{-30pt}
 \begin{align}
 	\begin{Bmatrix}
 		\texttt{main-stories}(x_a) &\rightarrow& \bigvee\limits_{i=1,\dots,g}\ \texttt{relevance}(x_a,i) >= 0.75,\\
@@ -244,8 +383,10 @@ The final of the general function determines that every article must be differen
 		&&\texttt{\textbf{else return }}1
 	\end{Bmatrix}
 \end{align}
+\end{minipage}
+%}
 
-Where $g$ is number of sections and $\texttt{relevance}(variable,\ section\ number)$ returns the relevance of the given variable in the given section number. The former constraint expresses the need for only articles of high relevance on the front page and the latter that nonfeatured articles preferably also should have images on the front page.
+Where $g$ is number of sections and $\texttt{relevance}(variable,\ section\ number)$ returns the relevance of the given variable in the given section number. The former constraint expresses the need for only articles of high relevance on the front page. This is therefore also a part of the relational aspect of the problem. The latter expresses that non-featured articles preferably also should have images on the front page.
 %\begin{itemize}\itemdist
 %%\subsubection{Unary}
 %	\item An article should have a very high level of relevance to at least one of the section topics
@@ -254,7 +395,10 @@ Where $g$ is number of sections and $\texttt{relevance}(variable,\ section\ numb
 %%\subsubection{Global}
 %\end{itemize}
 
-\paragraph{Section Constraints}
+\subsection*{Section Constraints}
+\hspace{-40pt}
+\begin{minipage}{.9\largefigure}
+\vspace{-30pt}
 \begin{align}
 	\begin{Bmatrix}
 		\texttt{topic}(x_a) &\rightarrow& \texttt{relevance}(x_a,k) >= 0.65,\\
@@ -263,31 +407,40 @@ Where $g$ is number of sections and $\texttt{relevance}(variable,\ section\ numb
 		\texttt{image}(x_t, x_{t+1}, x_{t+2}, x_{t+3}) &\rightarrow& \texttt{\textbf{if}}(\bigvee\limits_{i=t,\dots,t+3}\ x_i.has\_image)\\
 		&& \texttt{\textbf{ return }}0\texttt{\textbf{ else return }}1
 	\end{Bmatrix}
+	\label{eq:section_constraints}
 \end{align}
+\end{minipage}
 
-Where $k$ is the current section number, $a_1,\dots,a_m$ is a list of articles from the front page that should be contained in this section and $x_t$ are variables where $t$ fulfils the equation $(t-1) \% 3 = 0$. In other words, it is defined for every fourth variable. The three section constraints controls that articles should be relevant to the topic, that this section contains all necessary articles from the front page and that at least every fourth article should should hold an images.
+Where $k$ is the current section number, $a_1,\dots,a_m$ is a list of articles from the front page that should be contained in this section and $x_t$ are variables where $t$ fulfils the equation $(t-1)\ \texttt{\textbf{mod}}\ 3 = 0$. In other words, it is defined for every fourth variable. The first section constraints controls that articles should be relevant to the topic, which is therefore a relational part of the problem. The two latter controls that this section contains all necessary articles from the front page and that at least every fourth article should hold images.
 
-These constraints are more or less simply translated from the presented textual constraints into logical functions and luckily only few contains multiple or every variable in the problem. It is in many cases profitable to choose a different representation of the problem if constraints builds on multiple variables. This can be done e.g\ by a tree decomposition or a reduction of the constraints to binary constraints. To compose the tree decomposition, first the constraint graph\sidenote[1]{A constraint graph is a graph where vertices are variables of the problem and their links are the constraints that binds them.} needs to be considered. In this problem a complete graph of all variables will emerge, as it contains constraints that holds every variable. The tree decomposition is done by dividing the problem into subproblems and viewing them as ``mega-variables'' with their set of solutions as their respective domains, so the outermost problem becomes a tree. This works well if no subproblem is too large \cite{AIRussell}, but for a complete graph of $n$ variables the tree decomposition will become a problem of $n-1$ subproblems each with $n-1$ variables, which is not very efficient. As each subproblem can be solved independently the decomposition could be done continuously until small enough problems emerge. However, the time is of cause dependent on the branching factor of the tree, so this is not efficient either. Reduction of constraints to binary constraints can be done by introducing new variables, with constraints that defines the relation to this and old variables in the new problem. \cite{AIRussell} however argues that it is possible to design special-purpose inference algorithms that only handles global constraints and in practise this can be done by counting the number of variables the constraint is defined for and then deciding how to handle it.
+It is worth noting that there is no constraint defining combinations of attributes to make up articles. In a classical sense the CP could solve this problem, but would probably end up with a combination of attributes for each article, that would solve the problem perfectly, but is impossible to find in the library. The classical sense of CP is therefore in some cases more hypothetical, meaning that it would solve the problem in terms of numbers and boolean values, but does not reflect the real world. This approach works well for school examples like a planning problem or the well-known $n$-Queens problem\sidenote{A classic CP problem: Place $n$ queens on a $n \times n$ chessboard, so no queen is attacked.} and if one were to follow the classical sense of CP one would have to define constraints expressing legal combinations of attributes. This will, however, not be an optimised solution as the library of articles potentially could be very big in this problem and would require a constraint for each, which would increase the problem size and therefore the time to solve it significantly. A small example of this is an automatic playlist generator written in Prolog, that defines a whole music library and generates a playlist based on some constraints\sidenote{The library can be downloaded here: \url{http://lestrade.imm.dtu.dk/~s062596/data/PrologAPG.zip}.}. Running this program one realises that this is not very efficient for a library of about $5000$ songs. Therefore a novel approach is proposed. Instead of defining constraints based on the library of articles values are assigned based on look-ups in the library, which thereby introduces implicit constraints of attribute constraints, i.e.\ it is never possible for the system to find a combination of attributes, which is not found in the library, because they are taken from the library. This will also introduce some randomness to the compositions, which is often sought in real world problems.
+%\todo[inline]{I do not have a reference for this last part. Does it matter? what about combinatorial personalisation problems?}
 
+Following the classical sense of CP the variables could be viewed as ``mega-variables'' and the combination of attributes could be defined as a sub-problem. The combination of attributes found in the library could be expressed as a big logical OR constraint. Whenever a value for a variable in the super-problem is needed the sub-problem could be solved. This structure of the sub-problem will incrementally look through the library returning the first value combination of attributes that satisfies the big logical OR constraint. This is done every time the super-problem needs a value, which is not an optimal solution.
 
-\section{Choice of algorithm}
-Several algorithms exists to solve CSPs and many of them can be converted to work on COPs. A depth-first search using \textsc{Backtracking} can e.g.\ be used. The search continues with a descendant spanning the whole tree, which is independently viewed as a new CSP. The search backtracks to the parent node, whenever an empty domain is encountered. The algorithm stops with the first assignment that satisfies the CSP if a single solution or inconsistency is sought. Because no information, other than that given in the problem formulation, is used to solve the problem it is a uniformed search and therefore not expected to perform very well~\cite[p. 73]{AIRussell}.
+The presented constraints are more or less simply translated from the presented textual constraints into logical functions and luckily only few contains multiple or every variable in the problem. It is in many cases profitable to choose a different representation of the problem if constraints builds on multiple variables. This can be done e.g\ by a tree decomposition or a reduction of the constraints to binary constraints. To compose the tree decomposition, first the constraint graph\sidenote{A constraint graph is a graph where vertices are variables of the problem and their links are the constraints that binds them.} needs to be considered. In this problem a complete graph of all variables will emerge, as it contains constraints that holds every variable. The tree decomposition is done by dividing the problem into sub-problems and again viewing them as ``mega-variables'' with their set of solutions as their respective domains, so the outermost problem becomes a tree. \shortcite{AIRussell} states that this works well if no sub-problem is too large, but for a complete graph of $n$ variables the tree decomposition will become a problem of $n-1$ sub-problems each with $n-1$ variables, which is not very efficient. As each sub-problem can be solved independently the decomposition could be done continuously until small enough problems emerge. However, the time is of course dependent on the branching factor of the tree, so this is not efficient either. Reduction of constraints to binary constraints can be done by introducing new variables, with constraints that defines the relation to this and old variables in the new problem. \shortcite{AIRussell} however argues that it is possible to design special-purpose inference algorithms that only handles global constraints and in practice this can be done by counting the number of variables the constraint is defined for and then deciding how to handle it.
+
+\section{Choice of Algorithm}
+Because the problem is a fixed budget computation problem, in that the user should not have to wait too long for a solution, it is worthwhile exploring the algorithm choices of the solution.
+
+Several algorithms exists to solve CSPs and many of them can be converted to work on COPs. A depth-first search using \textsc{Backtracking} can e.g.\ be used. The search continues with a descendant spanning the whole tree, which is independently viewed as a new CSP. The search backtracks to the parent node, whenever an empty domain is encountered. The algorithm stops with the first assignment that satisfies the CSP if a single solution or inconsistency is sought. Because no information, other than that given in the problem formulation, is used to solve the problem it is a uniformed search and therefore not expected to perform very well~\shortcite[p. 81]{AIRussell}.
 %, but . In the papers \cite{LSVossen} and \cite{lunoe} are argumentations for using the $Min-Conflicts$ algorithm is found
 
 With the use of heuristics the search can be improved. An example of this is the \textsc{branch and bound} search which work on COPs, but can handle CSPs as well. The branch and bound heuristic bounds the search by an objective function, that returns the current best assignment. States after a worse assignment is encountered are therefore not considered. Another example of a heuristic function is the \emph{most-constrained-variable} (MCV) heuristic. This function always selects the variable that appears in the largest number of constraints, to be assigned next. When used with backtracking, the performance can be greatly improved~\cite[pp. 337]{CPApt}.
 
 \emph{Constraint Propagation} is another type of heuristic. Where the branch and bound heuristic is concerned with which variable to select, constraint propagation is concerned with the implications of the assignment of a variable. This means that if the assignment of a variable removes the possibility of some values to others in the solution, the values are removed from these domains. An example of this is \emph{arc consistency}. If every constraint is represented by an arc, like in the constraint graph, but directed, arc consistency is when there for every value exists some value that it is consistent with. Arc consistency can be applied multiple times to obtain \textit{path consistency} and until no inconsistency is left, which is the property of the \textsc{MAC} (Maintaining Arc Consistency) algorithm.
 
-\textsc{forward checking} uses propagation whenever a variable is assigned to a value to detect inconsistency. It does, however, not detect for new inconsistencies after the removal of values. The worst-case time for \textsc{MAC} is $O(n^2d^3)$ for $n$ arcs and $d$ values in a problem~\cite[p. 146]{AIRussell}. Even so will, \textsc{MAC}, still not find every inconsistency \cite[p. 150]{CPApt} and \cite[p. 147]{AIRussell}.
+\textsc{forward checking} uses propagation whenever a variable is assigned to a value to detect inconsistency. It does, however, not detect for new inconsistencies after the removal of values.
+%The worst-case time for \textsc{MAC} is $O(cd^3)$ for $c$ binary constraints and $d$ values in a problem as described in~\cite[p. 210+218]{AIRussell 1(146)}. Even so will, \textsc{MAC}, still not find every inconsistency (\cite[p. 150]{CPApt} and \cite[p. 211]{AIRussell 1(147)}).
 %The enumeration and Constraint Propagation heuristics are both direct properties of the \textsc{forward checking} search.
 
-
 Finally there is the \textsc{Min-Conflicts} algorithm. It is the result of the application of \textit{local search} to CSPs. It uses the min-conflicts heuristic, which chooses the value that results in a minimum number of conflicts. The algorithm is shown in Figure~\ref{fig:minConflicts}.
+\clearpage
 \begin{figure}[ht!p]
-	\hspace{-70pt}
-	\newsavebox{\fmbox}
-	\begin{lrbox}{\fmbox}
-	\begin{minipage}{.75\largefigure}
+	%\hspace{-40pt}
+	\newsavebox{\minconflictsbox}
+	\begin{lrbox}{\minconflictsbox}
+	\begin{minipage}{.8\largefigure}
 		\vspace{-5pt}
 		\begin{codebox}
 \zi \proc{Min-Conflicts}($csp$, $max\_steps$) \kw{returns} a solution or failure
@@ -310,18 +463,27 @@ Finally there is the \textsc{Min-Conflicts} algorithm. It is the result of the a
 		\end{codebox}
 		\vspace{-5pt}
 	\end{minipage}
-	\end{lrbox}\fbox{\usebox{\fmbox}}
-	\caption{The \proc{Min-Conflicts} algorithm for solving CSPs by local search. The initial state may be chosen randomly or by a greedy assignment process that choses a minimal conflict value for each variable in turn. The \proc{Conflicts} function counts the number of constraints violated by a particular value, given the rest of the current assignment~\protect\cite[p. 151]{AIRussell}.}
+	\end{lrbox}\fbox{\usebox{\minconflictsbox}}
+	%\marginnote{
+	%\begin{minipage}{\marginparwidth}
+		%\vspace{-230pt}
+		\caption{The \proc{Min-Conflicts} algorithm for solving CSPs by local search. The initial state may be chosen randomly or by a greedy assignment process that choses a minimal conflict value for each variable in turn. The \proc{Conflicts} function counts the number of constraints violated by a particular value, given the rest of the current assignment~\protect\shortcite[p. 221]{AIRussell}.}
 	\label{fig:minConflicts}
+	%\end{minipage}
+	%}
 \end{figure}
 
-Local search are algorithms that do not care about which path they take to a solution, just that they find one. The \textsc{Min-Conflicts} algorithm operates by moving to neighbours from a current state using the \emph{min-conflicts} heuristic, i.e.\ selecting the value that results in a minimum number of conflicts with other variables. It can be applied to both CSPs and COPs. In the latter the techniques of \emph{hill climbing} and \emph{simulated annealing} can be used to improve the search~\cite{LSVossen}. Local search has proved very effective in solving many CSPs and COPs. For the \textsc{Min-Conflicts} algorithm to work an initial complete assignment is needed, so it can operate on a current state. The efficiency is depending on this initial state~\cite{AIRussell}.
+Local search are algorithms that do not care about which path they take to a solution, just that they find one. The \textsc{Min-Conflicts} algorithm operates by moving to neighbours from a current state using the \emph{min-conflicts} heuristic, i.e.\ selecting the value that results in a minimum number of conflicts with other variables. It can be applied to both CSPs and COPs. In the latter the techniques of \emph{hill climbing} and \emph{simulated annealing} can be used to improve the search~\cite{LSVossen}. Local search has proved very effective in solving many CSPs and COPs. For the \textsc{Min-Conflicts} algorithm to work an initial complete assignment is needed, so it can operate on a current state. The efficiency is depending on this initial state~\shortcite{AIRussell}.
 
-In~\cite[p. 143]{AIRussell} a thorough survey on commonly used algorithms efficiency on commonly known CSPs is conducted and the results from the $n$-Queens problem is listed in table~\ref{tab:nQueen}.
+In~\shortcite[p. 143]{AIRussell2} a thorough survey on commonly used algorithms efficiency on commonly known CSPs is conducted and the results from the $n$-Queens problem is listed in table~\ref{tab:nQueen}.
 \begin{table}[ht!p]
-\footnotesize
-\caption{Comparison of various CSP algorithms on the $n$-Queens problem. The algorithms from left to right, are simple backtracking, backtracking with most constrained variable (MCV) heuristic, forward checking, forward checking with MCV, and \textsc{Min-Conflicts} local search. Listed in each cell is the median number of consistency checks (over five runs), required to solve all $n$-Queens problems for $n$ from 2 to 50; note that all entries are in thousands (K).  Numbers in parentheses mean that no answer was found in allotted number of checks~\protect\cite[p. 143]{AIRussell}.}
+%\footnotesize
+%\marginnote{
+	%\begin{minipage}{\marginparwidth}
+\caption{Comparison of various CSP algorithms on the $n$-Queens problem. The algorithms from left to right, are simple backtracking, backtracking with most constrained variable (MCV) heuristic, forward checking, forward checking with MCV, and \textsc{Min-Conflicts} local search. Listed in each cell is the median number of consistency checks (over five runs), required to solve all $n$-Queens problems for $n$ from 2 to 50; note that all entries are in thousands (K).  Numbers in parentheses mean that no answer was found in allotted number of checks~\protect\shortcite[p. 143]{AIRussell2}.}
 \label{tab:nQueen}
+	%\end{minipage}
+%}
 	\begin{tabular}{|l|l|l|l|}
 		\hline
 		Problem& Backtracking& BT+MCV& Forward Checking\\
@@ -343,9 +505,9 @@ In~\cite[p. 143]{AIRussell} a thorough survey on commonly used algorithms effici
 
 \end{table}
 
-Table~\ref{tab:nQueen} shows that the \textsc{Min-Conflicts} local search is by far the most efficient algorithm for solving the $n$-Queens problem. The initial assignment of the editorial mix problem can be randomly chosen or by a greedy algorithm and the neighbour states can be generated by selecting a new value for a variable or swapping the values of two. The conflicts function could return the number hard constraints violated plus the sum of violation of the preference constraints~\cite[pp. 372]{CPApt}\cite[p. 150]{AIRussell}. It is afterwards up to the solution check, to check if all hard constraints are satisfied and if an optimal solution has been found for the preference constraints. In choosing a variable MCV can be used to guide the search than the proposed random conflicted choice.
+Table~\ref{tab:nQueen} shows that the \textsc{Min-Conflicts} local search is by far the most efficient algorithm for solving the $n$-Queens problem. The initial assignment of the editorial mix problem can be randomly chosen or by a greedy algorithm and the neighbour states can be generated by selecting a new value for a variable or swapping the values of two. The \textsc{Conflicts} function could return the number of hard constraints violated plus the sum of violation of the preference constraints (\cite[pp. 372]{CPApt} and \shortcite[p. 150]{AIRussell}). It is afterwards up to the solution check, to check if all hard constraints are satisfied and if an optimal solution has been found for the preference constraints. In choosing a variable, MCV can be used to guide the search more than the proposed random conflicted choice.
 
-Because the local search techniques can be applied to the \textsc{Min-Conflicts} algorithm and because of its iterative nature this algorithm is chosen to solve the problem. The property that the algorithm starts by an initial complete assignment and refines the it, makes it attractive for the purpose of composing the newspaper and solving personalisation problems in general. Either it returns an optimal solution or it the returns the current best assignment if there is no iterations left.
+Because the local search techniques can be applied to the \textsc{Min-Conflicts} algorithm and because of its iterative nature this algorithm is chosen to solve the problem. The property that the algorithm starts by an initial complete assignment and refines it, makes it attractive for the purpose of composing the newspaper and solving personalisation problems in general. Either it returns an optimal solution or it returns the current best assignment if there is no iterations left.
 
 %\begin{itemize}\itemdist
 %%\subsubection{Unary}
@@ -379,24 +541,26 @@ Because the local search techniques can be applied to the \textsc{Min-Conflicts}
 %After the navigational structure of the application has been determined
 %possible to describe how the system should handle these tasks.
 \section{Application Structure}
-After the description of the interface, the problem and choice in algorithm it is possible to discuss how the client side should handle user requests and the web server should handle the requests from the client side. In Figure~\ref{fig:use-cases} is shown a use case diagram of how the client side and web server handles use cases.
+After the description of the interface, the problem and choice in algorithm it is possible to discuss how the client side should handle user requests and the web server should handle the requests from the client side.
 %\sidecaptionfigure{\textwidth}{img/use-cases}{The figure shows the overall use cases of the system and how the web server acts to accomplish them.}{fig:use-cases}
 \begin{figure}[h!tp]
 	\myfloatalign
 	\makebox[\textwidth][l]{
 		\includegraphics[width=.8\largefigure]{img/use-cases}
 	}
-	%\marginnote{
-		%\begin{minipage}{\marginparwidth}
+	\marginnote{
+		\begin{minipage}{\marginparwidth}
+			\vspace{-20pt}
 			\caption{The figure shows the use cases of the system and how the client side handles them and how the web server acts to accomplish requests from the client side.}
 			\label{fig:use-cases}
-		%\end{minipage}
-	%}
+		\end{minipage}
+	}
 \end{figure}
+In Figure~\ref{fig:use-cases} is shown a use case diagram of how the client side and web server handles use cases. An extra use case has been added in the diagram to show how the system should handle the initial topic selection by the user. The user is able to select relevant topic categories to get an easy start with the application and his choices are thereafter saved to the user profile for later use. The user can thereafter get an overview of the content from the front page or read articles from a selected topic category, both in a nice readable layout and in a composition based on the editorial mix. Moreover, it is possible to get an overview of the articles within a section from a list of headlines from articles contained within it.
 
-In the diagram and extra use case has been added to show how the system should handle the initial topic selection by the user. The user is able to select relevant topic categories to get an easy start with the application and his choices are thereafter saved to the user profile for later use. The user can thereafter get an overview of the content from the front page or read articles from a selected topic category, both in a nice readable layout and in a composition based on the editorial mix. Moreover, it is possible to an overview of the articles within a section from a the list of headlines from articles contained within it.
+From the constraints presented in this section it is possible to derive server tasks. As noted earlier the latter three constraints in equation~\ref{eq:general_unary} could be used as functions to determine if the article is featured or not. It makes sense to do this on the server as a pre-computation along with the similarity and relevance of articles. For this to be possible some metadata on the articles is needed. In order to determine how many columns an article should fill a word count or character count is needed for each article. In addition, it could also be interesting to look at the image sizes, which potentially could hold much information, and in some cases even constitute the body of the article.
 
-The next chapter will present the technical specification of the implementation, which constitutes the product of this project.
+The next chapter will present the implementation of the client and server, which constitutes the product of this project.
 %
 %\todo[inline]{Which design choices to focus on?}
 %

@@ -493,6 +493,82 @@ Evaluation
 
 Conclusion
 
+///////////////////////////
+
+[Synset('flower.n.01'),
+ [Synset('angiosperm.n.01'),
+  [Synset('spermatophyte.n.01'),
+   [Synset('vascular_plant.n.01'),
+    [Synset('plant.n.02'),
+     [Synset('organism.n.01'),
+      [Synset('living_thing.n.01'),
+       [Synset('whole.n.02'),
+        [Synset('object.n.01'),
+         [Synset('physical_entity.n.01'), [Synset('entity.n.01')]]]]]]]]]]]
+
+>>> flower = wn.synset('flower.n.02')
+>>> pprint(flower.tree(hyp)) 
+[Synset('flower.n.02'),
+ [Synset('reproductive_structure.n.01'),
+  [Synset('plant_organ.n.01'),
+   [Synset('plant_part.n.01'),
+    [Synset('natural_object.n.01'),
+     [Synset('whole.n.02'),
+      [Synset('object.n.01'),
+       [Synset('physical_entity.n.01'), [Synset('entity.n.01')]]]]]]]]]
+       
+>>> flower = wn.synset('flower.n.03')
+>>> pprint(flower.tree(hyp)) 
+[Synset('flower.n.03'),
+ [Synset('time_period.n.01'),
+  [Synset('fundamental_quantity.n.01'),
+   [Synset('measure.n.02'),
+    [Synset('abstraction.n.06'), [Synset('entity.n.01')]]]]]]
+
+>>> apple = wn.synset('apple.n.01')
+>>> pprint(apple.tree(hyp)) 
+[Synset('apple.n.01'),
+ [Synset('edible_fruit.n.01'),
+  [Synset('fruit.n.01'),
+   [Synset('reproductive_structure.n.01'),
+    [Synset('plant_organ.n.01'),
+     [Synset('plant_part.n.01'),
+      [Synset('natural_object.n.01'),
+       [Synset('whole.n.02'),
+        [Synset('object.n.01'),
+         [Synset('physical_entity.n.01'), [Synset('entity.n.01')]]]]]]]]],
+  [Synset('produce.n.01'),
+   [Synset('food.n.02'),
+    [Synset('solid.n.01'),
+     [Synset('matter.n.03'),
+      [Synset('physical_entity.n.01'), [Synset('entity.n.01')]]]]]]],
+ [Synset('pome.n.01'),
+  [Synset('fruit.n.01'),
+   [Synset('reproductive_structure.n.01'),
+    [Synset('plant_organ.n.01'),
+     [Synset('plant_part.n.01'),
+      [Synset('natural_object.n.01'),
+       [Synset('whole.n.02'),
+        [Synset('object.n.01'),
+         [Synset('physical_entity.n.01'), [Synset('entity.n.01')]]]]]]]]]]]
+
+>>> apple = wn.synset('apple.n.02')
+>>> pprint(apple.tree(hyp)) 
+[Synset('apple.n.02'),
+ [Synset('apple_tree.n.01'),
+  [Synset('fruit_tree.n.01'),
+   [Synset('angiospermous_tree.n.01'),
+    [Synset('tree.n.01'),
+     [Synset('woody_plant.n.01'),
+      [Synset('vascular_plant.n.01'),
+       [Synset('plant.n.02'),
+        [Synset('organism.n.01'),
+         [Synset('living_thing.n.01'),
+          [Synset('whole.n.02'),
+           [Synset('object.n.01'),
+            [Synset('physical_entity.n.01'),
+             [Synset('entity.n.01')]]]]]]]]]]]]]]
+
 //////// ARTICLES /////////
 Find articles from:
 "Constriant Optimization personalisation"

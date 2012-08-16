@@ -6,7 +6,7 @@
 \documentclass[
 		twoside,openright,titlepage,numbers=noenddot,headinclude,%1headlines,
                 footinclude=true,cleardoublepage=empty,
-                BCOR=5mm,paper=a4,fontsize=12pt, % Binding correction, paper type and font size
+                BCOR=5mm,paper=b5,fontsize=10pt, % Binding correction, paper type and font size
                 british % Languages
                 ]{scrreprt} 
 
@@ -18,7 +18,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{amsmath,amssymb,amsthm}
-\usepackage{named}
+\usepackage{namedplus}
+%\usepackage{authordate1-4}
 \usepackage{varioref}
 \usepackage{marginnote}
 \usepackage{xifthen}
@@ -129,9 +130,10 @@
 %\cleardoublepage\include{FrontBackmatter/Foreword} % Uncomment and create a Foreword.tex to include a foreword
 
 \cleardoublepage\include{FrontBackmatter/Abstract} % Abstract page
+\cleardoublepage\include{FrontBackmatter/Acknowledgements.ars}
 %\cleardoublepage\include{FrontBackmatter/01_abstract} % Abstract page
 %\cleardoublepage\include{FrontBackmatter/02_resume} % Abstract page
-%\cleardoublepage\include{FrontBackmatter/03_preface} % Abstract page
+\cleardoublepage\include{FrontBackmatter/03_preface} % Abstract page
 %\cleardoublepage\include{FrontBackmatter/04_acknowledge} % Acknowledgements page
 
 %\cleardoublepage\include{FrontBackmatter/Publication} % Publications from the thesis page
@@ -150,10 +152,8 @@
 %----------------------------------------------------------------------------------------
 
 
-\ctparttext{Text for part 1.} % Text on the Part 1 page describing  the content in Part 1
-
-\part{Exploring the field} % First part of the thesis
-
+\ctparttext{Discussing solutions to the problem of automatically generating the editorial mix and identifying rules that constitute the editorial mix.} % Text on the Part 1 page describing  the content in Part 1
+\part{Defining the problem} % First part of the thesis
 
 %\include{Chapter01} % Chapter 1
 
@@ -168,9 +168,8 @@
 
 %------------------------------------------------
 
-\ctparttext{Text for part 2.} % Text on the Part 1 page describing  the content in Part 1
-
-\part{Using what we have learnt}
+\ctparttext{Discussing choices and presenting the solution.} % Text on the Part 1 page describing  the content in Part 1
+\part{The Proposed Solution}
 
 \include{08_design}
 \include{09_implementation}
@@ -178,13 +177,12 @@
 \cleardoublepage % Empty page before the start of the next part
 
 %------------------------------------------------
+\addtocontents{toc}{\protect\newpage}
+\ctparttext{Evaluation of the solution and discussion of uses in new contexts.} % Text on the Part 1 page describing  the content in Part 1
+\part{Evaluation and Perspectives}
 
-\ctparttext{Text for part 3.} % Text on the Part 1 page describing  the content in Part 1
-
-\part{Learning what we have used}
-
-\include{10_discussion}
 \include{10_evaluation}
+\include{10_discussion}
 \include{11_conclusion}
 
 %\include{Chapter02} % Chapter 2
@@ -201,11 +199,13 @@
 \part{Appendix} % New part of the thesis for the appendix
 
 \include{A_user-needs} % Appendix A
+\include{B_topics}
 %\include{Chapter0B} % Appendix B - empty template
 
 %----------------------------------------------------------------------------------------
 %	POST-CONTENT THESIS PAGES
 %----------------------------------------------------------------------------------------
+
 
 \cleardoublepage\include{FrontBackmatter/Bibliography} % Bibliography
 
